@@ -1,0 +1,87 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<!-- Fig. 2.13 tabla2.html -->
+<!-- Tabla de HTML5 compleja. -->
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tablas</title>
+        <link rel="stylesheet" type = "text/css" href = "/Estilos/Botones.css">
+    </head>
+    <body>
+      <h1>Décimo Primer Ejemplo de HTML: Tablas</h1>
+      <hr>
+      <h1>Ejemplo de tabla: combinado de filas y columnas</h1>
+      <table border = "1">
+        <caption> Una tabla de muestra m&aacute;s compleja </caption>
+
+        <thead>
+            <tr> <!-- <tr> inserta una fila en la tabla -->
+                <th>Desarrollo Web-Fronted</th> <!-- inserta una celda de encabezado -->
+                <th>Desarrollo Web-Backend</th>
+                <th><strong>Fecha de realizaci&oacute;n</strong></th>
+            </tr>            
+        </thead>
+        <tbody>
+            <!-- los elementos rowspan y colspan combinan el número especificado de celdas en sentido vertical u horizontal-->
+            <tr>
+                <!-- combina dos filas-->
+                 <th rowspan = "2">
+                    <img src = "..//Resources/HTML5.png" width = "150" height = "180" alt = "Recurso no encontrado">
+                 </th>
+                 <th rowspan = "2">
+                    <img src = "..//Resources/Python.webp" width = "150" height = "180" alt = "Recurso no encontrado">
+                 </th>      
+                 <!-- combinando cuatro filas -->
+                <th rowspan = "2">
+                    <strong>: 03/Septiembre de 2026</strong>
+                </th>
+            <tr> <!-- fila para aplicar el salto de línea por la aplicación del rowspan -->
+            </tr>                          
+            </tr>
+                <!-- combina dos filas-->
+                 <th rowspan = "2">
+                    <img src = "..//Resources/CSS3.png" width = "150" height = "180" alt = "Recurso no encontrado">
+                 </th>
+                 <th rowspan = "2">
+                    <img src = "..//Resources/PHP.png" width = "150" height = "180" alt = "Recurso no encontrado">
+                 </th>      
+                <th rowspan = "2">
+                    <strong>: 04/Septiembre de 2026</strong>
+                </th>
+            <tr>
+
+            </tr>  
+            <tr>
+               <!-- combina dos filas-->
+                 <th rowspan = "2">
+                    <img src = "..//Resources/JavaScript.png" width = "150" height = "180" alt = "Recurso no encontrado">
+                 </th>
+                 <th rowspan = "2">
+                    <img src = "..//Resources/Java.png" width = "150" height = "180" alt = "Recurso no encontrado">
+                 </th>      
+                <th rowspan = "2">
+                    <strong>: 04/Septiembre de 2026</strong>
+                </th>  
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>
+                    Consultado de: <a href = "https://miguelgomezsa.com/blog/lenguajes-backend-y-frontend">haga click</a>
+                </th>
+                <th>
+                    Consultado de: <a href = "https://miguelgomezsa.com/blog/lenguajes-backend-y-frontend">haga click</a>
+                </th>
+            </tr>
+        </tfoot>
+      </table>
+      <hr>
+      <nav>
+            <span><a class = "boton" href = "Index_Ejemplos.html">Menú Principal</a></span>
+            <span><a class = "boton" href="EjemploNo2.12.html">&larr; Anterior</a></span>
+            <span><a class = "boton" href = "EjemploNo2.14.html">&rarr; Siguiente</a></span>
+      </nav>
+    </body>
+</html>

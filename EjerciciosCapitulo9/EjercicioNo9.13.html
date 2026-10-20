@@ -1,0 +1,63 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<!-- Ejercicio 9.13: potenciaEntera.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <title>Ejercicio 9.13: Potencia Entera</title>
+    <script>
+      document.writeln( "<h1>Ejercicio 9.13: Potencia entera</h1>" );
+      document.writeln( "<hr>" );
+      document.writeln( "<p>Escribe una función potenciaEntera( base, exponente ) que devuelva base elevada a exponente (por ejemplo, potenciaEntera( 3, 4 ) = 3·3·3·3). Usa for o while."+
+        " El formulario debe tener dos campos de texto y un botón.</p>" );
+      document.writeln( "<hr>" );
+      document.writeln( "<h2>Solución:</h2>" );
+      function iniciar()
+      {
+         var boton = document.getElementById( "botonCalcular" );
+         boton.addEventListener( "click", mostrarPotencia, false );
+      } // fin de la función iniciar
+
+      function mostrarPotencia()
+      {
+         var base = parseInt( document.getElementById( "campoBase" ).value );
+         var exponente = parseInt( document.getElementById( "campoExponente" ).value );
+         var resultado = document.getElementById( "resultado" );
+
+         if ( isNaN( base ) || isNaN( exponente ) || exponente < 0 )
+            resultado.innerHTML = "Escriba una base entera y un exponente entero mayor o igual que 0.";
+         else
+            resultado.innerHTML = base + "<sup>" + exponente + "</sup> = " +
+               potenciaEntera( base, exponente );
+      } // fin de la función mostrarPotencia
+
+      // devuelve base elevada a exponente, usando un ciclo for
+      function potenciaEntera( base, exponente )
+      {
+         var resultado = 1;
+
+         for ( var i = 1; i <= exponente; ++i )
+            resultado *= base;
+
+         return resultado;
+      } // fin de la función potenciaEntera
+
+      window.addEventListener( "load", iniciar, false );
+   </script>
+</head>
+<body>
+    <form action="#">
+      <p><label>Base: <input id="campoBase" type="text" size="6"></label>
+         <label>Exponente: <input id="campoExponente" type="text" size="6"></label>
+         <input id="botonCalcular" type="button" value="Calcular"></p>
+   </form>
+   <p id = "resultado"></p>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo9.12.html">&larr;Anterior</a>
+        <a class="boton" href="EjercicioNo9.14.html">Siguiente&rarr;</a>
+    </nav>
+</body>
+</html>

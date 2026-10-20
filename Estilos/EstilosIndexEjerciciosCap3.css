@@ -1,0 +1,60 @@
+/* Capítulo 3 · Ejercicios — Estilo Wonder Woman
+   Paleta: rojo oscuro, azul real, dorado y crema */
+
+body {
+   background-color: #FDF6E3;      /* fondo */
+   color: #1A1F2E;;                 /* texto principal */
+   font-family: Georgia, 'Times New Roman', serif;
+   margin: 0;
+   padding: 20px 40px;
+}
+
+h1 {
+   color: #F4C430;
+   background-color: #9B1030;
+   border: 3px solid #1F3C88;
+   border-bottom: 8px solid #F4C430;
+   padding: 0.4em 0.6em;
+   text-transform: uppercase;
+   letter-spacing: 2px;
+}
+
+p {
+   color: #1B1B3A;
+   line-height: 1.6;
+   max-width: 70ch;                /* líneas cómodas de leer */
+   border-left: 4px solid #1F3C88;
+   padding-left: 0.8em;
+}
+
+a {
+   color: white;
+   font-weight: bold;
+}
+
+ul {
+   background-color: #1F3C88;
+   border: 3px solid #F4C430;
+   padding: 1em 1em 1em 2.5em;
+   max-width: 60ch;
+}
+
+li {
+   color: #FFFFFF;
+   padding: 0.3em 0.5em;
+   border-bottom: 1px solid #162B66;
+   list-style-type: circle;
+}
+
+li::marker {
+   color: #F4C430;
+}
+
+li:last-child {
+   border-bottom: none;
+}
+
+li:hover {
+   background-color: #9B1030;
+   color: #F4C430;
+}

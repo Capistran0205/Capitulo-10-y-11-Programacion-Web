@@ -1,0 +1,136 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5.9</title>
+    <link rel="stylesheet" type="text/css" href="/Estilos/Botones.css">
+    <style type="text/css">
+        #recorrido {
+            position: relative;
+            width: 260px;
+            height: 260px;
+            border: 2px dashed gray;
+        }
+
+        #cuadro {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background-color: #ED2100;
+            border-radius: 10px;
+            -webkit-animation: patronCuadrado 8s linear infinite;
+            -moz-animation: patronCuadrado 8s linear infinite;
+            animation: patronCuadrado 8s linear infinite;
+        }
+
+        @-webkit-keyframes patronCuadrado {
+            0% {
+                left: 0px;
+                top: 0px;
+            }
+
+            25% {
+                left: 200px;
+                top: 0px;
+            }
+
+            50% {
+                left: 200px;
+                top: 200px;
+            }
+
+            75% {
+                left: 0px;
+                top: 200px;
+            }
+
+            100% {
+                left: 0px;
+                top: 0px;
+            }
+        }
+
+        @-moz-keyframes patronCuadrado {
+            0% {
+                left: 0px;
+                top: 0px;
+            }
+
+            25% {
+                left: 200px;
+                top: 0px;
+            }
+
+            50% {
+                left: 200px;
+                top: 200px;
+            }
+
+            75% {
+                left: 0px;
+                top: 200px;
+            }
+
+            100% {
+                left: 0px;
+                top: 0px;
+            }
+        }
+
+        @keyframes patronCuadrado {
+            0% {
+                left: 0px;
+                top: 0px;
+            }
+
+            25% {
+                left: 200px;
+                top: 0px;
+            }
+
+            50% {
+                left: 200px;
+                top: 200px;
+            }
+
+            75% {
+                left: 0px;
+                top: 200px;
+            }
+
+            100% {
+                left: 0px;
+                top: 0px;
+            }
+        }
+
+        footer {
+            clear: both;
+            margin-top: 40px;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Ejercicio 5.9</h1>
+    <hr>
+    <p><b>(Animación)</b> Cree una animación infinita de un elemento que se mueva en un patrón cuadrado.</p>
+    <hr>
+    <div id="recorrido">
+        <div id="cuadro"></div>
+    </div>
+    <footer>
+        <nav>
+            <a class="boton" href="Index_Ejercicios.html">Menú Principal</a>
+            <a class="boton" href="EjercicioNo5.8.html">&larr;Anterior</a>
+            <a class="boton" href="EjercicioNo5.10.html">&rarr;Siguiente</a>
+        </nav>
+    </footer>
+</body>
+
+</html>

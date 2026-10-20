@@ -1,0 +1,70 @@
+<!-- Capistran Ortiz Diego -->
+ <!DOCTYPE html>
+<!-- Ejercicio 8.8: EjercicioNo8.8.html -->
+<!-- Interés compuesto con tasas del 5 al 10%. -->
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <title>Ejercicio 8.8: Interés compuesto con tasas del 5 al 10%.</title>
+    <style>
+        table   { width: 300px;
+                border-collapse: collapse;
+                background-color: lightblue;
+                margin-bottom: 1.5em; }
+      table, td, th { border: 1px solid black;
+                      padding: 4px; }
+      th      { text-align: left;
+                color: white;
+                background-color: darkblue; }
+      tr.filaimpar { background-color: white; }
+    </style>
+    <script>
+      document.writeln( "<h1>Ejercicio 8.8: Interés compuesto con tasas del 5 al 10%</h1>" );
+      document.writeln( "<hr>" );
+      document.writeln( "<p>Modifique el programa de interés compuesto del ejercicio 8.6, repitiendo sus pasos para las tasas de interés del 5, 6, 7, 8, 9 y 10%. Use una instrucción for para variar la tasa de interés."+
+            " Use una tabla separada para cada tasa."+
+        "</p>" );
+      document.writeln( "<hr>" );
+      document.writeln( "<h2>Solución:</h2>" );
+      var principal = 1000.00; // monto principal
+      var tasa;                // tasa de interés como decimal
+      var monto;               // monto actual de dinero
+
+      // un ciclo externo para variar la tasa de interés
+      for ( var porcentaje = 5; porcentaje <= 10; ++porcentaje )
+      {
+         tasa = porcentaje / 100; // 5 -> 0.05, 6 -> 0.06, ...
+
+         document.writeln( "<table>" );
+         document.writeln( "<caption>Interés compuesto al " +
+            porcentaje + "%</caption>" );
+         document.writeln( "<thead><tr><th>Año</th>" +
+            "<th>Monto en depósito</th></tr></thead><tbody>" );
+
+         // un ciclo interno para los 10 años
+         for ( var anio = 1; anio <= 10; ++anio )
+         {
+            monto = principal * Math.pow( 1.0 + tasa, anio );
+
+            if ( anio % 2 == 0 )
+               document.writeln( "<tr class = 'filaimpar'><td>" + anio +
+                  "</td><td>" + monto.toFixed( 2 ) + "</td></tr>" );
+            else
+               document.writeln( "<tr><td>" + anio +
+                  "</td><td>" + monto.toFixed( 2 ) + "</td></tr>" );
+         } // fin del for interno
+
+         document.writeln( "</tbody></table>" );
+      } // fin del for externo
+    </script>
+ </head>
+ <body>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo8.7.html">&larr;Anterior</a>
+        <a class="boton" href="EjercicioNo8.9.html">Siguiente&rarr;</a>
+    </nav>
+ </body>
+ </html>

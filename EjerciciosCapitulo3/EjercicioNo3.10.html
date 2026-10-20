@@ -1,0 +1,238 @@
+<!-- Capistran Ortiz Diego-->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3.10: Disposición de las Imágenes acorde al Libro de Deitel</title>
+    <link rel="stylesheet" type="text/css" href="/Estilos/Botones.css">
+</head>
+
+<body>
+
+    <header>
+        <!-- representa el contenido introductorio de una página o de una sección como títulos, subtítulos o incluso una imagen para logo-->
+        <h1>Ejercicio 3.10: Disposición de las Imágenes acorde al Libro de Deitel</h1>
+        <hr>
+        <p>Modifique la solución del ejercicio anterior (3.9) para generar los gráficos de la sección como figuras. Las imágenes se porporcionan en la carpeta Resources</p>
+        <hr>
+    </header>
+
+    <nav>
+        <!-- para agrupar diversos enlaces de navegación como si fuera el índice de un libro (índice principal de la página) -->
+        <ul>
+            <li><a href="#seccion321">3.2.1 input tipo color</a></li>
+            <li><a href="#seccion322">3.2.2 input tipo date</a></li>
+            <li><a href="#seccion325">3.2.5 input tipo email</a></li>
+            <li><a href="#seccion327">3.2.7 input tipo number</a></li>
+            <li><a href="#seccion328">3.2.8 input tipo range</a></li>
+            <li><a href="#seccion329">3.2.9 input tipo search</a></li>
+            <li><a href="#seccion3210">3.2.10 input tipo tel</a></li>
+            <li><a href="#seccion3211">3.2.11 input tipo time</a></li>
+        </ul>
+    </nav>
+
+    <main> <!-- representa el contenido principal y único de una página web y es único por sitio-->
+
+        <article id="seccion321">
+            <!-- representa una pieza de contenido independiente y autocontenido en forma de bloques-->
+            <header>
+                <h2>3.2.1 input tipo color</h2>
+            </header>
+
+            <section> <!-- agrupa contenido relacionado -->
+                <p>
+                    El tipo input color permite al usuario introducir un color. Al momento
+                    de escribir este libro, algunos navegadores despliegan el tipo input
+                    color como un campo de texto en donde el usuario puede introducir un
+                    código hexadecimal o el nombre de un color. Hay dos navegadores, Chrome
+                    y Opera, que muestran un selector de color similar al cuadro de diálogo
+                    de colores de Microsoft Windows, que se muestra en la figura 3.2. En el
+                    futuro, cuando haga clic en un elemento input color, es muy probable que
+                    el resto de los navegadores muestren un selector de color también.
+                </p>
+
+                <figure>
+                    <img src="/Resources/Fig3.2.png" alt="Recurso no encontrado de un diálogo para seleccionar colores"
+                        width="500" height="450">
+                    <figcaption>
+                        Figura 3.2 | Un diálogo para seleccionar colores en Chrome.
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img src="/Resources/Fig3.3.png" alt="Recurso no encontrado autofocus del elemento input de color"
+                        width="500" height="450">
+                    <figcaption>
+                        Figura 3.3 | Autofocus en el elemento input de color en Firefox
+                    </figcaption>
+                </figure>
+            </section>
+        </article>
+
+        <article id="seccion322">
+            <header>
+                <h2>3.2.2 input tipo date</h2>
+            </header>
+
+            <section>
+                <figure>
+                    <img src="/Resources/Fig3.6.png"
+                        alt="Recurso no encontrado de nuevos tipos de entrada y atributos de formularios de HTML5"
+                        width="500" height="450">
+                    <figcaption>
+                        Figura 3.6 | Un control selector de fecha en Chrome.
+                    </figcaption>
+                </figure>
+            </section>
+        </article>
+
+        <article id="seccion325">
+            <header>
+                <h2>3.2.5 input tipo email</h2>
+            </header>
+
+            <section>
+                <figure>
+                    <img src="/Resources/Fig3.7.png"
+                        alt="Recurso no encontrado de validación de una dirección de correo electrónico en firefox"
+                        width="500" height="450">
+                    <figcaption>
+                        Figura 3.7 | Validación de una dirección de correo electrónico en Firefox.
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <ol type="a">
+                        <li>
+                            <p>Campo de texto con el texto del placeholder de color gris. <br><img
+                                    src="/Resources/Fig3.8 Placeholder.png"
+                                    alt="Recurso no encontrado de campo de texto con placeholder" width="500"
+                                    height="450"></p>
+                        </li>
+                        <li>
+                            <span>Campo de texto con el texto del placeholder de color gris. <br> <img
+                                    src="/Resources/Fig3.8 No Placeholder.png"
+                                    alt="Recurso no encontrado de campo de texto en foco" width="500"
+                                    height="450"></span>
+                        </li>
+                    </ol>
+                    <figcaption>
+                        Figura 3.8 | El texto del placeholder desaparece cuando el elemento input obtiene el enfoque en
+                        chrome.
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img src="/Resources/Fig3.9.png" alt="Recurso no encontrado para demostración del atributo required"
+                        width="500" height="450">
+                    <figcaption>
+                        Figura 3.9 | Desmotración del atributo required en Chrome
+                    </figcaption>
+                </figure>
+            </section>
+        </article>
+
+        <article id="seccion327">
+            <header>
+                <h2>3.2.7 input tipo number</h2>
+            </header>
+
+            <section>
+                <figure>
+                    <img src="/Resources/Fig3.10.png" alt="Recurso no encontrado para demostración input number"
+                        width="500" height="450">
+                    <figcaption>
+                        Figura 3.10 | El tipo input number con un atributo value de 4, como se despliega en Firefox
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img src="/Resources/Fig3.11.png" alt="Recurso no encontrado para verificación de input number"
+                        width="500" height="450">
+                    <figcaption>
+                        Figura 3.11 | Firefox verificando que un número sea correcto
+                    </figcaption>
+                </figure>
+            </section>
+        </article>
+
+        <article id="seccion328">
+            <header>
+                <h2>3.2.8 input tipo range</h2>
+            </header>
+
+            <section>
+                <figure>
+                    <img src="/Resources/Fig3.12.png"
+                        alt="Recurso no encontrado para el control deslizante range con un atributo" width="500"
+                        height="450">
+                    <figcaption>
+                        Figura 3.12 | Control deslizante range con un atributo value de 10, como se despliega en Firefox
+                    </figcaption>
+                </figure>
+            </section>
+        </article>
+
+        <article id="seccion329">
+            <header>
+                <h2>3.2.9 input tipo search</h2>
+            </header>
+
+            <section>
+                <figure>
+                    <img src="/Resources/Fig3.13.png"
+                        alt="Recurso no encontrado para demostración del atributo required" width="500" height="450">
+                    <figcaption>
+                        Figura 3.13 | Introducir una consulta de búsqueda en Chrome
+                    </figcaption>
+                </figure>
+            </section>
+        </article>
+
+        <article id="seccion3210">
+            <header>
+                <h2>3.2.10 input tipo tel</h2>
+            </header>
+
+            <section>
+                <figure>
+                    <img src="/Resources/Fig3.14.png"
+                        alt="Recurso no encontrado para demostración del atributo required" width="500" height="450">
+                    <figcaption>
+                        Figura 3.14 | Validación de un número telefónico que usa el atributo pattern en el tipo input
+                        tel en Firefox
+                    </figcaption>
+                </figure>
+            </section>
+        </article>
+
+        <article id="seccion3211">
+            <header>
+                <h2>3.2.11 input tipo time</h2>
+            </header>
+
+            <section>
+                <figure>
+                    <img src="/Resources/Fig3.15.png"
+                        alt="Recurso no encontrado para demostración del atributo required" width="200" height="250">
+                    <figcaption>
+                        Figura 3.15 | Elemento input time como se despliega en Chrome
+                    </figcaption>
+                </figure>
+            </section>
+        </article>
+
+    </main>
+    <div>
+        <hr>
+        <nav>
+            <span><a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a></span>
+            <span><a class="boton" href="EjercicioNo3.9.html">&larr; Anterior</a></span>
+            <span><a class="boton" href="EjercicioNo3.11.html">&rarr; Siguiente</a></span>
+        </nav>
+    </div>
+</body>
+
+</html>

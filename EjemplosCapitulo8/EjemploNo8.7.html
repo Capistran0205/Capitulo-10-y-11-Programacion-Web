@@ -1,0 +1,66 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+
+<!-- Fig. 8.7: PruebaSwitch.html -->
+<!-- Uso de la instrucción de selección múltiple switch. -->
+<html>
+<head>
+   <meta charset="utf-8">
+   <title>Ejemplo 8.7: Alternar entre formatos de lista de HTML5</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="/Estilos/Botones.css">
+   <script>
+      document.writeln("<h1>Ejemplo 8.7: Alternar entre formatos de lista de HTML5</h1>");
+      var seleccion; // la selección del usuario
+      var etiquetaInicial; // etiqueta de elemento de lista inicial
+      var etiquetaFinal; // etiqueta de elemento de lista final
+      var entradaValida = true; // true si la entrada es válida; false si no
+      var tipoLista; // tipo de lista como cadena
+
+      seleccion = window.prompt( "Seleccione un estilo de lista:\n" +
+         "1 (numerada), 2 (con letras), 3 (números romanos)", "1" );
+
+      switch ( seleccion )
+      {
+         case "1":
+            etiquetaInicial = "<ol>";
+            etiquetaFinal = "</ol>";
+            tipoLista = "<h1>Lista numerada</h1>";
+            break;
+         case "2":
+            etiquetaInicial = "<ol style = 'list-style-type: upper-alpha'>";
+            etiquetaFinal = "</ol>";
+            tipoLista = "<h1>Lista con letras</h1>";
+            break;
+         case "3":
+            etiquetaInicial = "<ol style = 'list-style-type: upper-roman'>";
+            etiquetaFinal = "</ol>";
+            tipoLista = "<h1>Lista con números romanos</h1>";
+            break;
+         default:
+            entradaValida = false;
+            break;
+      } // fin de switch
+
+      if ( entradaValida == true )
+      {
+         document.writeln( tipoLista + etiquetaInicial );
+
+         for ( var i = 1; i <= 10; ++i )
+            document.writeln( "<li>Elemento de lista " + i + "</li>" );
+
+         document.writeln( etiquetaFinal );
+      } // fin de if
+      else
+         document.writeln( "Selección inválida: " + seleccion );
+
+   </script>
+</head>
+<body>
+    <nav>
+        <a class ="boton" href="Index_Ejemplos.html">Men&uacute; principal</a>
+        <a class ="boton" href="EjemploNo8.6.html">&larr;Anterior</a>
+        <a class ="boton" href="EjemploNo8.9.html">Siguiente&rarr;</a>
+    </nav>
+</body>
+</html>

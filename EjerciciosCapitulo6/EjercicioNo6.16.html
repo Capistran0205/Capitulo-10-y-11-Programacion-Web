@@ -1,0 +1,59 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Ejercicio 6.16: Suma, producto, diferencia y cociente</title>
+   <link rel="stylesheet" href="/Estilos/Botones.css">
+   <style>
+      p {
+         color: royalblue;
+         size: 10px10;
+      }
+   </style>
+   <script>
+      var numero1;      // primer número
+      var numero2;      // segundo número
+      var suma;
+      var producto;
+      var diferencia;
+      var cociente;
+
+      // leer los datos del usuario
+      numero1 = parseFloat(window.prompt("Escriba el primer número:", "0"));
+      numero2 = parseFloat(window.prompt("Escriba el segundo número:", "0"));
+
+      // calcular
+      suma = numero1 + numero2;
+      producto = numero1 * numero2;
+      diferencia = numero1 - numero2;
+      cociente = numero1 / numero2;
+
+      // mostrar los resultados
+      document.writeln("<h1>Ejercicio 6.16: Suma, producto, diferencia y cociente </h1>");
+      document.writeln("<hr>");
+      document.writeln("<p>Escriba una secuencia de comandos que pida al usuario que escriba dos números, obtenga los dos números del usuario  produzca texto que muestre la suma, producto y cociente</p>");
+      document.writeln("<hr>");
+      document.writeln("<h2 color = red>Resultados</h2>");
+      document.writeln("<p>La suma de " + numero1 + " y " + numero2 +
+         " es " + suma + "</p>");
+      document.writeln("<p>El producto de " + numero1 + " y " + numero2 +
+         " es " + producto + "</p>");
+      document.writeln("<p>La diferencia de " + numero1 + " y " + numero2 +
+         " es " + diferencia + "</p>");
+      document.writeln("<p>El cociente de " + numero1 + " entre " + numero2 +
+         " es " + cociente + "</p>");
+   </script>
+</head>
+
+<body>
+   <nav>
+      <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+      <a class="boton" href="EjercicioNo6.15.html">&larr;Anterior</a>
+      <a class="boton" href="EjercicioNo6.17.html">Siguiente&rarr;</a>
+   </nav>
+</body>
+
+</html>

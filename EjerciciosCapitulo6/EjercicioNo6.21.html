@@ -1,0 +1,38 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Ejercicio 6.21: Número Par o Impar</title>
+   <link rel="stylesheet" href="/Estilos/Botones.css">
+   <script>
+      document.writeln("<h1>Ejercicio 6.21: Número Par o Impar</h1>");
+      document.writeln("<hr>");
+      document.writeln("<p>Escriba una secuencia de comandos que lea un entero, determine y produzca texto de HTML5 que muestre si es par o impar</p>");
+      document.writeln("<hr>");
+      // Variable
+      var n1;
+
+      n1 = parseInt(window.prompt("Escriba un entero:", "0"));
+
+      // Validando par o impar con operando módulo
+      if (n1 % 2 == 0)
+         document.writeln("<h1>" + n1 + " es par</h1>");
+
+      if (n1 % 2 != 0)
+         document.writeln("<h1>" + n1 + " es impar</h1>");
+
+   </script>
+</head>
+
+<body>
+   <nav>
+      <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+      <a class="boton" href="EjercicioNo6.20.html">&larr;Anterior</a>
+      <a class="boton" href="EjercicioNo6.22.html">Siguiente&rarr;</a>
+   </nav>
+</body>
+
+</html>

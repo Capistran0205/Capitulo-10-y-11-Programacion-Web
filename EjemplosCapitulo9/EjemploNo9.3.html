@@ -1,0 +1,48 @@
+<!-- Capistran Ortiz Diego -->
+ <!DOCTYPE html>
+
+<!-- Fig. 9.3: maximo.html -->
+<!-- Función máximo definida por el programador. -->
+<html>
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="/Estilos/Botones.css">
+   <title>Ejemplo 9.3: M&aacute;ximo de tres valores</title>
+   <style type="text/css">
+      p { margin: 0; }
+   </style>
+   <script>
+      document.writeln( "<h1>Ejemplo 9.3: Función máximo definida por el programador</h1>" );
+      document.writeln( "<hr>" );
+      var entrada1 = window.prompt( "Escriba el primer número", "0" );
+      var entrada2 = window.prompt( "Escriba el segundo número", "0" );
+      var entrada3 = window.prompt( "Escriba el tercer número", "0" );
+
+      var valor1 = parseFloat( entrada1 );
+      var valor2 = parseFloat( entrada2 );
+      var valor3 = parseFloat( entrada3 );
+
+      var valorMax = maximo( valor1, valor2, valor3 );
+      document.writeln( "<h2>Solución: </h2>" );
+      document.writeln( "<p>Primer n&uacute;mero: " + valor1 + "</p>" +
+         "<p>Segundo n&uacute;mero: " + valor2 + "</p>" +
+         "<p>Tercer n&uacute;mero: " + valor3 + "</p>" +
+         "<p>El m&aacute;ximo es: " + valorMax + "</p>" );
+
+      // definición de la función máximo (se llama desde la línea 22)
+      function maximo( x, y, z )
+      {
+         return Math.max( x, Math.max( y, z ) );
+      } // fin de la función máximo
+
+   </script>
+</head>
+<body>
+    <nav>
+        <span><a class="boton" href="Index_Ejemplos.html">Menú Principal</a></span>
+        <span><a class="boton" href="EjemploNo9.2.html">&larr; Anterior</a></span>
+        <span><a class="boton" href="EjemploNo9.4.html">Siguiente &rarr;</a></span>
+    </nav>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<html lang="en">
+<!-- Ejercicio 9.20: puntosCalidad.html -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <title>Ejercicio 9.20: Puntos de Calidad </title>
+    <script>
+        document.writeln("<h1>Ejercicio 9.20: Puntos de Calidad</h1>");
+        document.writeln("<hr>");
+        document.writeln(
+            "<p>Escriba una función llamada puntosCalidad que reciba el promedio de un estudiante y devuelva 4 si el promedio es de 90 a 100, 3 si es de 80 a 89, 2 si es de 70 a 79, 1 si es de 60 a 69 y 0 si es menos a 60. "+
+                "Incorpore la función en una secuencia de comandos que lea un valor del usuario.</p>.",
+        );
+        document.writeln("<hr>");
+        document.writeln("<h2>Solución:</h2>");
+        function iniciar() {
+            var boton = document.getElementById("botonCalcular");
+            boton.addEventListener("click", mostrarPuntos, false);
+        } 
+
+        function mostrarPuntos() {
+            var promedio = parseFloat(document.getElementById("campoPromedio").value);
+            var resultado = document.getElementById("resultado");
+
+            if (isNaN(promedio) || promedio < 0 || promedio > 100)
+                resultado.innerHTML = "Escriba un promedio entre 0 y 100.";
+            else
+                resultado.innerHTML = "Promedio " + promedio + ": " +
+                    puntosCalidad(promedio) + " punto(s) de calidad.";
+        } 
+
+        function puntosCalidad(promedio) {
+            if (promedio >= 90)
+                return 4;
+            else if (promedio >= 80)
+                return 3;
+            else if (promedio >= 70)
+                return 2;
+            else if (promedio >= 60)
+                return 1;
+            else
+                return 0;
+        } 
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+</head>
+
+<body>
+    <form action="#">
+        <p><label>Promedio: <input id="campoPromedio" type="number" step="any"></label>
+            <input id="botonCalcular" type="button" value="Calcular">
+        </p>
+    </form>
+    <p id="resultado"></p>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo9.19.html">&larr;Anterior</a>
+        <a class="boton" href="EjercicioNo9.21.html">Siguiente&rarr;</a>
+    </nav>
+</body>
+
+</html>

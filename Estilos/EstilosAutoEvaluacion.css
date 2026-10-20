@@ -1,0 +1,22 @@
+/* Estilos para preguntas de autoevaluación */
+h1          {padding: 0.5em;
+                  border-style: dashed;
+                  margin: 0.5em; }
+p, li            { text-align: justify; }
+p.respuesta { text-align: center; 
+                  color: transparent;
+                  font-family: sans-serif;}
+    p.respuesta:hover { text-align: justify; 
+                        color: royalblue;
+                        font-family: Lucida Sans;
+                        text-decoration: underline;}
+
+li               { font-family: "Lucida Sans", sans-serif;
+                   color: #ED2100; }
+
+span.respuesta   { color: transparent;
+                   font-family: sans-serif; }
+
+span.respuesta:hover { color: royalblue;
+                       font-family: "Lucida Sans", sans-serif;
+                       text-decoration: underline; }

@@ -1,0 +1,233 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<!-- Ejercicio 9.28: crapsApuestas.html -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <title>Ejercicio 9.28: Proyecto</title>
+    <style type="text/css">
+        p.rojo {
+            color: red
+        }
+
+        img {
+            width: 54px;
+            height: 54px;
+        }
+
+        div {
+            border: 5px ridge royalblue;
+            padding: 10px;
+            width: 120px;
+            margin-bottom: 10px;
+        }
+
+        .punto {
+            margin: 0px;
+        }
+    </style>
+    <script>
+        document.writeln("<h1>Ejercicio 9.28: Proyecto</h1>");
+        document.writeln("<hr>");
+        document.writeln("<p>Modificar el programa Craps de la figura 9.7 para permitir las apuestas. "+
+            "Inicializa saldoBanco en $1000. Pide una apuesta y revisa que sea menor o igual que saldoBanco; si no, el usuario debe volver a introducirla."+
+            " Con una apuesta válida, ejecuta un juego de Craps. Si gana, aumenta saldoBanco con la apuesta e imprime el nuevo saldo. Revisa si saldoBanco llegó a cero y, de ser así, imprime \"¡Lo siento. Está en bancarrota!\"."+
+            ": </p>",);
+        document.writeln("<hr>");
+        document.writeln("<h2>Solución:</h2>");
+        // elementos de la página
+        var puntoDado1Img;
+        var puntoDado2Img;
+        var tiroDado1Img;
+        var tiroDado2Img;
+        var mensajes;
+        var conversacion;
+        var parrafoSaldo;
+        var botonJugar;
+        var botonTirar;
+        var campoApuesta;
+
+        // estado del juego
+        var saldoBanco = 1000; // dinero disponible
+        var apuesta = 0;       // apuesta del juego actual
+        var miPunto;           // punto si no gana/pierde en el primer tiro
+        var valorDado1;
+        var valorDado2;
+
+        function iniciar() {
+            puntoDado1Img = document.getElementById("puntoDado1");
+            puntoDado2Img = document.getElementById("puntoDado2");
+            tiroDado1Img = document.getElementById("tiroDado1");
+            tiroDado2Img = document.getElementById("tiroDado2");
+            mensajes = document.getElementById("mensajes");
+            conversacion = document.getElementById("conversacion");
+            parrafoSaldo = document.getElementById("saldo");
+            botonJugar = document.getElementById("jugar");
+            botonTirar = document.getElementById("tirar");
+            campoApuesta = document.getElementById("campoApuesta");
+
+            botonJugar.addEventListener("click", iniciarJuego, false);
+            botonTirar.addEventListener("click", tirarDeNuevo, false);
+
+            botonTirar.disabled = true;
+            mostrarSaldo();
+        }
+
+        function mostrarSaldo() {
+            parrafoSaldo.innerHTML = "Saldo: $" + saldoBanco;
+        }
+
+        // valida la apuesta e inicia un nuevo juego
+        function iniciarJuego() {
+            var apuestaIngresada = parseInt(campoApuesta.value);
+
+            if (isNaN(apuestaIngresada) || apuestaIngresada <= 0 ||
+                apuestaIngresada > saldoBanco) {
+                mensajes.innerHTML = "Apuesta no v&aacute;lida: debe ser mayor que 0 y " +
+                    "no superar su saldo ($" + saldoBanco + "). Introduzca otra.";
+                return; // el usuario debe volver a introducir la apuesta
+            }
+
+            apuesta = apuestaIngresada;
+            campoApuesta.disabled = true; // no se cambia la apuesta durante el juego
+            botonTirar.disabled = true;
+            conversacion.innerHTML = "";
+
+            establecerImagen(puntoDado1Img); // restablecer imágenes
+            establecerImagen(puntoDado2Img);
+            establecerImagen(tiroDado1Img);
+            establecerImagen(tiroDado2Img);
+            miPunto = 0;
+
+            primerTiro();
+        } // fin de la función iniciarJuego
+
+        function primerTiro() {
+            var sumaDeDados = tirarDados();
+
+            switch (sumaDeDados) {
+                case 7: case 11: // gana en el primer tiro
+                    terminarJuego(true);
+                    break;
+                case 2: case 3: case 12: // pierde en el primer tiro
+                    terminarJuego(false);
+                    break;
+                default: // recordar punto
+                    miPunto = sumaDeDados;
+                    establecerImagen(puntoDado1Img, valorDado1);
+                    establecerImagen(puntoDado2Img, valorDado2);
+                    mensajes.innerHTML = "Tire de nuevo";
+                    botonTirar.disabled = false;
+                    botonJugar.disabled = true;
+                    break;
+            } 
+        }
+
+        function tirarDeNuevo() {
+            var sumaDeDados = tirarDados();
+
+            if (sumaDeDados === miPunto)
+                terminarJuego(true);
+            else if (sumaDeDados === 7)
+                terminarJuego(false);
+        }
+
+        // actualiza el saldo y decide si el juego continúa o hay bancarrota
+        function terminarJuego(gano) {
+            var texto;
+
+            if (gano) {
+                saldoBanco += apuesta;
+                texto = "&iexcl;Ha ganado $" + apuesta + "!";
+            } 
+            else {
+                saldoBanco -= apuesta;
+                texto = "Lo siento. Usted pierde $" + apuesta + ".";
+            }
+
+            botonTirar.disabled = true;
+            mostrarSaldo();
+
+            if (saldoBanco <= 0) {
+                texto += " &iexcl;Lo siento. Est&aacute; en bancarrota!";
+                botonJugar.disabled = true;
+                campoApuesta.disabled = true;
+                conversacion.innerHTML = "";
+            }
+            else {
+                texto += " Haga clic en Jugar para jugar de nuevo.";
+                botonJugar.disabled = false;
+                campoApuesta.disabled = false;
+                conversacion.innerHTML = mensajeConversacion();
+            }
+
+            mensajes.innerHTML = texto;
+        }
+
+        // elige al azar una frase de conversación
+        function mensajeConversacion() {
+            switch (Math.floor(1 + Math.random() * 4)) {
+                case 1:
+                    return "&iquest;As&iacute; que se va a quedar en bancarrota?";
+                case 2:
+                    return "&iexcl;Vamos, arri&eacute;sguese!";
+                case 3:
+                    return "&iexcl;Est&aacute; teniendo &eacute;xito!";
+                default:
+                    return "&iexcl;Ahora es momento de cambiar sus fichas!";
+            }
+        } 
+
+        // tira los dos dados, los muestra y devuelve la suma
+        function tirarDados() {
+            valorDado1 = Math.floor(1 + Math.random() * 6);
+            valorDado2 = Math.floor(1 + Math.random() * 6);
+
+            establecerImagen(tiroDado1Img, valorDado1);
+            establecerImagen(tiroDado2Img, valorDado2);
+
+            return valorDado1 + valorDado2;
+        }
+
+        // establece el origen de imagen de un dado (sin valor: imagen en blanco)
+        function establecerImagen(imgDado, valorDado) {
+            if (isFinite(valorDado))
+                imgDado.src = "/Resources/dado" + valorDado + ".png";
+            else
+                imgDado.src = "/Resources/blanco.jpg";
+        } 
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+</head>
+
+<body>
+    <p id="saldo"></p>
+    <div id="puntoDiv">
+        <p class="punto">El punto es:</p>
+        <img id="puntoDado1" src="/Resources/blanco.jpg" alt="Dado 1 de valor de punto">
+        <img id="puntoDado2" src="/Resources/blanco.jpg" alt="Dado 2 de valor de punto">
+    </div>
+    <div id="tiroDiv">
+        <img id="tiroDado1" src="/Resources/blanco.jpg" alt="Dado 1 de valor de tiro">
+        <img id="tiroDado2" src="/Resources/blanco.jpg" alt="Dado 2 de valor de tiro">
+    </div>
+    <form action="#">
+        <p><label>Apuesta: $<input id="campoApuesta" type="number" min="1" value="10"></label></p>
+        <p><input id="jugar" type="button" value="Jugar">
+            <input id="tirar" type="button" value="Tirar">
+        </p>
+    </form>
+    <p id="mensajes" class="rojo">Introduzca su apuesta y haga clic en Jugar</p>
+    <p id="conversacion"></p>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo9.27.html">&larr;Anterior</a>
+        <a class="boton" href="EjercicioNo9.29.html">Siguiente&rarr;</a>
+    </nav>
+</body>
+
+</html>

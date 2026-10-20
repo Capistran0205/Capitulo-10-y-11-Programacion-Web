@@ -1,0 +1,43 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<!-- Fig. 2.14 formulario.html -->
+<!-- Formulario con un campo de texto y campos ocultos. -->
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formularios</title>
+        <link rel="stylesheet" type = "text/css" href = "/Estilos/Botones.css">
+    </head>
+    <body>
+        <h1>Décimo segundo Ejemplo de HTML: Formularios</h1>
+        <hr>
+        <h1>Formulario de retroalimentaci&oacute;n</h1>
+        <p>Llene este formulario para ayudarnos a mejorar nuestro sitio
+        
+        <!-- esta etiqueta empieza el formulario, indica el método de enviar información y la ubicación de la secuencia de comandos de procesamiento del formulario -->
+        <form method = "post" action = "https://mail.google.com">
+            <!-- las entradas ocultas contienen información no visual que también se enviará -->
+            <input type = "hidden" name = "destinatario" value = "generacion2023@gmail.com">
+            <input type = "hidden" name = "asunto" value = "formulario de retroalimentaci&oacute;n">
+            <input type = "hidden" name = "redirigir" value = "Index.html">
+
+        <!-- <input type = "text"> inser un campo de texto -->
+            <p><label>Nombre:
+                <input name = "nombre" type = "text" size = "25" maxlength = "30">
+            </label></p>
+            <p>
+                <!-- los tipos de entrada "submit" y "reset" insertan botones para enviar y borrar el contenido del formulario, respectivamente-->
+                <input type = "submit" value = "Enviar">
+                <input type = "reset" value = "Borrar">
+            </p>
+            </p>
+       </form>
+       <hr>
+       <nav>
+            <span><a class = "boton" href = "Index_Ejemplos.html">Menú Principal</a></span>
+            <span><a class = "boton" href="EjemploNo2.13.html">&larr; Anterior</a></span>
+            <span><a class = "boton" href = "EjemploNo2.15.html">&rarr; Siguiente</a></span>
+       </nav>
+    </body>
+</html>

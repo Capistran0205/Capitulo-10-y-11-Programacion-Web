@@ -1,0 +1,60 @@
+/* Capítulo 8 · Ejercicios — Estilo Ultron
+   Paleta: gris metálico, acero oscuro y rojo de los ojos */
+
+body {
+   background-color: #D9DDE2;      /* gris metálico claro */
+   color: #1B1F24;                 /* texto casi negro */
+   font-family: 'Segoe UI', Tahoma, sans-serif;
+   margin: 0;
+   padding: 20px 40px;
+}
+
+h1 {
+   color: #F2F4F7;
+   background-color: #2B2F36;      /* acero oscuro */
+   border-bottom: 6px solid #E02B20; /* rojo de los ojos */
+   border-left: 12px solid #8A939E;  /* plata */
+   padding: 0.4em 0.6em;
+   text-transform: uppercase;
+   letter-spacing: 2px;
+}
+
+p {
+   color: #1B1F24;
+   line-height: 1.6;
+   max-width: 70ch;                /* líneas cómodas de leer */
+   border-left: 4px solid #E02B20;
+   padding-left: 0.8em;
+}
+
+a {
+   color: #B3170D;
+   font-weight: bold;
+}
+
+ul {
+   background-color: #3A4049;      /* gris acero */
+   border: 3px solid #E02B20;
+   padding: 1em 1em 1em 2.5em;
+   max-width: 60ch;
+}
+
+li {
+   color: #F2F4F7;
+   padding: 0.3em 0.5em;
+   border-bottom: 1px solid #565E69;
+   list-style-type: square;
+}
+
+li::marker {
+   color: #FF5A4D;                 /* viñeta roja brillante */
+}
+
+li:last-child {
+   border-bottom: none;
+}
+
+li:hover {
+   background-color: #E02B20;
+   color: #FFFFFF;
+}

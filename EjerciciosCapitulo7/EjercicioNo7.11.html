@@ -1,0 +1,66 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+
+<!-- Ejercicio 7.11: EjercicioNo7.11.html -->
+<!-- Kilómetros por litro de cada viaje y total acumulado. -->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7.11: Kilometraje por litro</title>
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <script>
+        document.writeln("<h1> Ejercicio 7.11: Kilometraje por litro</h1>");
+        document.writeln("<hr>");
+        document.writeln("<p> Un conductor registra los kilómetros conducidos y los litros usados en cada reabastecimiento. Calcular los kilómetros por litro de cada viaje y el total acumulado hasta ese punto. Usar diálogos prompt</p>");
+        document.writeln("<hr>");
+        var kilometros; // kilómetros conducidos en el viaje
+        var litros; // litros de gasolina usados en el viaje
+        var kmPorLitro; // kilómetros por litro del viaje
+        var totalKilometros = 0; // total de kilómetros hasta ahora
+        var totalLitros = 0; // total de litros hasta ahora
+
+        document.writeln("<h1>Kilometraje por litro</h1>");
+
+        // leer los kilómetros del primer viaje (-1 es el valor centinela)
+        kilometros = parseFloat(
+            window.prompt("Kilómetros conducidos (-1 para salir):", "0"));
+
+        while (kilometros != -1) {
+            litros = parseFloat(window.prompt("Litros usados:", "0"));
+
+            if (litros > 0) // evitar la división entre cero
+            {
+                kmPorLitro = kilometros / litros;
+                totalKilometros += kilometros;
+                totalLitros += litros;
+
+                document.writeln("<p>Este viaje: " + kmPorLitro + " km/l<br>" +
+                    "Total hasta este punto: " + totalKilometros / totalLitros +
+                    " km/l</p>");
+            } // fin de if
+            else
+                document.writeln(
+                    "<p>Los litros deben ser mayores que cero; se ignoró el viaje.</p>");
+
+            // leer los kilómetros del siguiente viaje
+            kilometros = parseFloat(
+                window.prompt("Kilómetros conducidos (-1 para salir):", "0"));
+        } // fin de while
+
+        if (totalLitros == 0)
+            document.writeln("<p>No se introdujeron viajes</p>");
+
+    </script>
+</head>
+
+<body>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo7.10.html">&larr;Anterior</a>
+        <a class="boton" href="EjercicioNo7.12.html">Siguiente&rarr;</a>
+    </nav>
+</body>
+
+</html>

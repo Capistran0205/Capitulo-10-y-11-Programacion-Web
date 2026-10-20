@@ -1,0 +1,76 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<!-- Ejercicio 7.23: EjercicioNo7.23.html -->
+<!-- Descifrado de un entero de cuatro dígitos cifrado con el ejercicio 7.22. -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <script>
+        document.writeln("<h1>Ejercicio 7.23: Descifrar un entero de cuatro dígitos cifrado del ejercicio 7.22.</h1>");
+        document.writeln("<p>Recibir un entero cifrado de cuatro dígitos (del ejercicio 7.22) y descifrarlo para obtener el número original.</p>");
+        document.writeln("<hr>");
+        document.write("<h2>Solución:</h2>");
+        var entrada; // cadena escrita por el usuario
+        var numero; // valor entero de la entrada
+        var valido = false; // indica si el número es de cuatro dígitos
+        var resto; // lo que queda del número al ir quitando dígitos
+        var digito1, digito2, digito3, digito4;
+        var temporal; // auxiliar para intercambiar dígitos
+        var original; // resultado como cadena de cuatro dígitos
+
+        // pedir el número cifrado hasta que esté entre 0000 y 9999
+        while (valido == false) {
+            entrada = window.prompt(
+                "Escriba el entero cifrado de cuatro dígitos:", "0");
+            numero = parseInt(entrada);
+
+            if (numero >= 1000 && numero <= 9999)
+                valido = true;
+
+            if (valido == false)
+                window.alert(
+                    "Escriba un entero de cuatro dígitos (0000 a 9999).");
+        } // fin de while
+
+        // separar los dígitos
+        digito4 = numero % 10;
+        resto = (numero - digito4) / 10;
+        digito3 = resto % 10;
+        resto = (resto - digito3) / 10;
+        digito2 = resto % 10;
+        resto = (resto - digito2) / 10;
+        digito1 = resto;
+
+        // deshacer los intercambios: primero con tercero y segundo con cuarto
+        temporal = digito1;
+        digito1 = digito3;
+        digito3 = temporal;
+
+        temporal = digito2;
+        digito2 = digito4;
+        digito4 = temporal;
+
+        // deshacer el reemplazo: (dígito + 3) módulo 10
+        digito1 = (digito1 + 3) % 10;
+        digito2 = (digito2 + 3) % 10;
+        digito3 = (digito3 + 3) % 10;
+        digito4 = (digito4 + 3) % 10;
+
+        original = "" + digito1 + digito2 + digito3 + digito4;
+
+        document.writeln("<h1>Entero cifrado: " + numero +" su versión original es: " + original + "</h1>");
+    </script>
+    <title>Ejercicio 7.23: Descifrado de un entero de cuatro digitos cifrado en el ejercicio 7.22</title>
+</head>
+
+<body>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo7.22.html">&larr;Anterior</a>
+    </nav>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<!-- Ejercicio 9.26: adivinarIntentos.html -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <title>Ejemplo 9.26: Adivinar el número con conteo de intenos</title>
+    <script>
+        document.writeln("<h1>Ejercicio 9.26: Adivinar el número con conteno de intentos</h1>");
+        document.writeln("<hr>");
+        document.writeln("<p>modifica el 9.25 para contar los intentos. Si el jugador necesita menos de 10, muestra"+
+            " \"¡Conoce el secreto o tuvo suerte!\"; si necesita exactamente 10, \"¡Entonces sí conoce el secreto!\";"+
+            "si necesita más de 10, \"¡Debería poder hacerlo mejor!\". Explica por qué es posible adivinar cualquier número del 1 al 100 en 10 intentos o menos.</p>",
+        );
+        document.writeln("<hr>");
+        document.writeln("<h2>Solución:</h2>");
+        var numeroSecreto;
+        var intentos = 0; // intentos del juego actual
+
+        function iniciar() {
+            var boton = document.getElementById("botonAdivinar");
+            boton.addEventListener("click", evaluarIntento, false);
+            nuevoJuego();
+        } // fin de la función iniciar
+
+        function nuevoJuego() {
+            numeroSecreto = Math.floor(1 + Math.random() * 100);
+            intentos = 0;
+        } // fin de la función nuevoJuego
+
+        function evaluarIntento() {
+            var campo = document.getElementById("campoIntento");
+            var intento = parseInt(campo.value);
+            var mensaje = document.getElementById("mensaje");
+
+            if (isNaN(intento) || intento < 1 || intento > 100) {
+                mensaje.innerHTML = "Escriba un entero entre 1 y 100.";
+                return; // un intento no válido no cuenta
+            } // fin de if
+
+            ++intentos;
+
+            if (intento > numeroSecreto)
+                mensaje.innerHTML = "Demasiado alto. Intente de nuevo.";
+            else if (intento < numeroSecreto)
+                mensaje.innerHTML = "Demasiado bajo. Intente de nuevo.";
+            else {
+                var texto = "Felicidades. &iexcl;Adivin&oacute; el n&uacute;mero en " +
+                    intentos + " intentos! ";
+
+                if (intentos < 10)
+                    texto += "&iexcl;Conoce el secreto o tuvo suerte!";
+                else if (intentos === 10)
+                    texto += "&iexcl;Entonces s&iacute; conoce el secreto!";
+                else
+                    texto += "&iexcl;Deber&iacute;a poder hacerlo mejor! Con cada intento " +
+                        "puede descartar la mitad de los n&uacute;meros posibles: " +
+                        "2<sup>10</sup> = 1024, as&iacute; que 10 intentos bastan.";
+
+                mensaje.innerHTML = texto;
+                nuevoJuego();
+            } // fin de else
+
+            campo.value = "";
+            campo.focus();
+        } // fin de la función evaluarIntento
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+</head>
+
+<body>
+   <form action="#">
+      <p>Adivine un n&uacute;mero entre 1 y 100:
+         <input id="campoIntento" type="number">
+         <input id="botonAdivinar" type="button" value="Adivinar"></p>
+   </form>
+   <p id="mensaje"></p>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo9.25.html">&larr;Anterior</a>
+        <a class="boton" href="EjercicioNo9.27.html">Siguiente&rarr;</a>
+    </nav>
+</body>
+
+</html>

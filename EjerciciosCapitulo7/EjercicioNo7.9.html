@@ -1,0 +1,78 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<html lang="en">
+<!-- Capítulo 7: Ejercicio 7.9 -->
+<!-- Solucion de Errores-->
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <link rel="stylesheet" href="/Estilos/Imagenes.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7.9: Corrección de errores</title>
+    <script>
+        document.writeln("<h1>Ejercicio 7.9: Corrección de errores</h1>");
+        document.writeln("<hr>");
+        document.writeln("<p>Identificar y corregir los errores de cuatro segmentos de código (puede haber más de un error por fragmento).</p>");
+        document.writeln("<hr>");
+        document.writeln("<ol type = 'a'> <li></li>");
+        document.writeln("<img class = 'imagen' src = \"/Resources/Error(a)7.9.png\">");
+        document.writeln("<p> El ; al final del if no evaluará la condición debido a un error de sintaxis</p>");
+        document.writeln("<li></li>");
+        document.writeln("<img class = 'imagen' src = \"/Resources/Error(b)7.9.png\">");
+        document.writeln("<p> Falta inicializar la variable total</p>");
+        document.writeln("<li></li>");
+        document.writeln("<img class = 'imagen' src = \"/Resources/Error(c)7.9.png\">");
+        document.writeln("<p> Faltan las llaves de apertura y cierre del while</p>");
+        document.writeln("<li></li>");
+        document.writeln("<img class = 'imagen' src = \"/Resources/Error(d)7.9.png\">");
+        document.writeln("<p> Falta la llave de cierre del while y el incremento se debe invertir por un decremento para que se cumpla la condición</p>");
+        document.writeln("<li></li>");
+        document.writeln("</ol>");
+        document.writeln("<h2> Soluciones: </h2>");
+        document.writeln("<ol type = 'a'> <li></li>");
+        var edad;
+        edad = 20;
+        if (edad >= 65)
+            document.writeln("Edad es mayor o igual que 65");
+        else
+            document.writeln("Edad es menor que 65");
+        document.writeln("<img class = 'imagen' src = \"/Resources/Solucion(a)7.9.png\">");
+        document.writeln("<li></li>");
+        var x = 1, total = 0;
+
+        while (x <= 10) {
+            total += x;
+            ++x;
+        }
+        document.writeln("<img class = 'imagen' src = \"/Resources/Solucion(b)7.9.png\">");
+        document.writeln("<p> Resultado de total:" + total + "</p>")
+        document.writeln("<li></li>");
+        x = 1;
+        total = 0;
+
+        while (x <= 100) {
+            total += x;
+            ++x;
+        }
+        document.writeln("<img class = 'imagen' src = \"/Resources/Solucion(c)7.9.png\">");
+        document.writeln("<p> Resultado de total. " + total + "</p>");
+        document.writeln("<li></li>");
+        var y = 5;
+
+        while (y > 0) {
+            document.writeln(y);
+            --y;
+        }
+        document.writeln("<img class = 'imagen' src = \"/Resources/Solucion(d)7.9.png\">");
+        document.writeln("</ol>");
+    </script>
+</head>
+<body>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo7.8.html">&larr;Anterior</a>
+        <a class="boton" href="EjercicioNo7.10.html">Siguiente&rarr;</a>
+    </nav>
+</body>
+
+</html>

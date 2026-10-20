@@ -1,0 +1,45 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="/Estilos/Botones.css">
+   <title>Ejercicio 6.22: Primer elemento es múltiplo del sdegundo</title>
+   <script>
+      var primero;
+      var segundo;
+
+      // Ingreso de números
+      primero = parseInt(window.prompt("Escriba el primer entero:", "0"));
+      segundo = parseInt(window.prompt("Escriba el segundo entero:", "0"));
+
+      document.writeln("<h1> Ejercicio 6.22: El primer elemento es múltiplo del segundo</h1>");
+      document.writeln("<hr>");
+      document.writeln("<p>Escriba una secuencia de comandos que lea dos enteros, determine y produzca texto de HTML5 que muestre si el primero es múltiplo del segundo.</p>");
+      document.writeln("<hr>");
+      if (segundo == 0)
+         document.writeln("<h2>El segundo entero no puede ser cero</h2>");
+
+      if (segundo != 0) {
+         if (primero % segundo == 0)
+            document.writeln("<h2>" + primero + " es múltiplo de " +
+               segundo + "</h2>");
+
+         if (primero % segundo != 0)
+            document.writeln("<h2>" + primero + " no es múltiplo de " +
+               segundo + "</h2>");
+      }
+   </script>
+</head>
+
+<body>
+   <nav>
+      <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+      <a class="boton" href="EjercicioNo6.21.html">&larr;Anterior</a>
+      <a class="boton" href="EjercicioNo6.23.html">Siguiente&rarr;</a>
+   </nav>
+</body>
+
+</html>

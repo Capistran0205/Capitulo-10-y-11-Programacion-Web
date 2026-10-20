@@ -1,0 +1,60 @@
+<!-- Capistran Ortiz Diego -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6.18: Sumar, promedio, producto, menor y mayor de tres números</title>
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <script>
+        document.writeln("<h1>Ejercicio 6.18: Sumar, promedio, producto, menor y mayor de tres números</h1>");
+        document.writeln("<hr>");
+        document.writeln("<p>Escriba una secuencia de comandos que reciba tres enteros del usuario y muestre la suma, promedio, producto, menor y mayor de los números en un diálogo alert.</p>");
+        document.writeln("<hr>");
+        // Variables para los tres números y guardar resultados de operaciones
+        var n1, n2, n3;
+        var suma, promedio, producto, menor, mayor;
+
+        // Ingreso de valores por teclado
+        n1 = parseFloat(window.prompt(" Ingrese un primer número"));    
+        n2 = parseFloat(window.prompt(" Ingrese un segundo número"));    
+        n3 = parseFloat(window.prompt(" Ingrese un tercer número"));
+        
+        // Aplicando operaciones
+        suma = n1 + n2 + n3;
+        producto = n1 * n2 * n3;
+        promedio = (n1 + n2 + n3)/3;
+
+        // Validando menor y mayor
+        // el menor: se parte del primero y se compara con los demás
+        menor = n1;
+        if ( n2 < menor )
+            menor = n2;
+        if ( n3 < menor )
+            menor = n3;
+
+        // el mayor
+        mayor = n1;
+        if ( n2 > mayor )
+            mayor = n2;
+        if ( n3 > mayor )
+            mayor = n3;
+
+        // Resultados        
+        document.writeln("<h2> Valores ingresados</h2>");
+        document.writeln("<p>N1 = " + n1 + " N2 =" + n2 + " N3 =" + n3 +"</p>");
+        document.writeln("<p>Resultados obtenidos:</p>");
+        document.writeln("<p>Suma: "+ suma +"</p>");
+        document.writeln("<p>Promedio: "+ promedio +"</p>");
+        document.writeln("<p>Menor: "+ menor +" \n Mayor: "+ mayor +"</p>");
+
+    </script>
+ </head>
+ <body>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo6.17.html">&larr;Anterior</a>        
+        <a class="boton" href="EjercicioNo6.19.html">Siguiente&rarr;</a>
+    </nav>
+ </body>
+ </html>

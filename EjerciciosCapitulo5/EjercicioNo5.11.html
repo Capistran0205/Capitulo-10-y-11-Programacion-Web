@@ -1,0 +1,108 @@
+<!-- Capistran Ortiz Diego-->
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5.11</title>
+    <link rel="stylesheet" type="text/css" href="/Estilos/Botones.css">
+    <style type="text/css">
+        #fotos {
+            position: relative;
+            width: 300px;
+            height: 200px;
+            margin: 0 auto;
+        }
+
+        #fotos img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            -webkit-transition-property: opacity;
+            -webkit-transition-duration: 3s;
+            -webkit-transition-timing-function: linear;
+            transition-property: opacity;
+            transition-duration: 3s;
+            transition-timing-function: linear;
+        }
+
+        /* orden de apilamiento: la imagen 1 queda arriba y la 5 abajo */
+        .foto1 {
+            z-index: 5;
+        }
+
+        .foto2 {
+            z-index: 4;
+        }
+
+        .foto3 {
+            z-index: 3;
+        }
+
+        .foto4 {
+            z-index: 2;
+        }
+
+        .foto5 {
+            z-index: 1;
+        }
+
+        /* al pasar el ratón, cada imagen se desvanece en su turno */
+        #fotos:hover .foto1 {
+            opacity: 0;
+        }
+
+        #fotos:hover .foto2 {
+            opacity: 0;
+            -webkit-transition-delay: 3s;
+            transition-delay: 3s;
+        }
+
+        #fotos:hover .foto3 {
+            opacity: 0;
+            -webkit-transition-delay: 6s;
+            transition-delay: 6s;
+        }
+
+        #fotos:hover .foto4 {
+            opacity: 0;
+            -webkit-transition-delay: 9s;
+            transition-delay: 9s;
+        }
+
+        footer {
+            clear: both;
+            margin-top: 40px;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Ejercicio 5.11</h1>
+    <hr>
+    <p><b>(Fusionar imágenes)</b> Modifique el ejemplo 5.14 utilizando cinco imágenes. 
+        Podría ser interesante probar con imágenes de usted o de un miembro de su familia en distintas edades o en un paisaje en distintos momentos.
+        Establezca el valor de transition-duration en 3s y de transition-timing-fuction en línear. Posicione el cursos encima del set de imágenes para visualizar cambios.
+    </p>
+    <hr>
+    <div id="fotos">
+        <img class="foto1" src="/Resources/Crecimiento(child).png" alt="Fotograf&iacute;a 1 de 5">
+        <img class="foto2" src="/Resources/Crecimiento(child-2).png" alt="Fotograf&iacute;a 2 de 5">
+        <img class="foto3" src="/Resources/Crecimiento(teen).png" alt="Fotograf&iacute;a 3 de 5">
+        <img class="foto4" src="/Resources/Crecimiento(young-adult).png" alt="Fotograf&iacute;a 4 de 5">
+        <img class="foto5" src= "/Resources/Crecimiento(adult).png" alt="Fotograf&iacute;a 5 de 5">
+    </div>
+    <div>
+    <footer>
+        <nav>
+            <a class="boton" href="Index_Ejercicios.html">Menú Principal</a>
+            <a class="boton" href="EjercicioNo5.10.html">&larr;Anterior</a>
+            <a class="boton" href="EjercicioNo5.12.html">&rarr;Siguiente</a>
+        </nav>
+    </footer>
+</body>
+
+</html>

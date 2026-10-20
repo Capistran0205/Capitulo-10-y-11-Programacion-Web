@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<!-- Fig. 5.14: fusionarimagenes.html -->
+<!-- Fusionar una imagen en otra mediante CSS3. -->
+<html>
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Ejemplo No 5.14: Fusionar im&aacute;genes</title>
+   <link rel="stylesheet" type="text/css" href="/Estilos/Botones.css">
+   <style type="text/css">
+      .galeria{
+         padding-bottom: 250px;
+      }
+      #cover {
+         position: relative;
+         margin: 0 auto;
+      }
+
+      #cover img {
+         position: absolute;
+         left: 0;
+         -webkit-transition: opacity 4s ease-in-out;
+         transition: opacity 4s ease-in-out;
+      }
+
+      #cover img.top:hover {
+         opacity: 0;
+      }
+   </style>
+</head>
+
+<body>
+   <h1>Ejemplo No 5.14: Fusionar im&aacute;genes</h1>
+   <hr>
+   <div id="cover" class = "galeria">
+      <img class="bottom" src="/Resources/jhtp.png" alt="Java 9e cover">
+      <img class="top" src="/Resources/jhtp8.png" alt="Java 8e cover">
+   </div>
+   <div>
+      <nav>
+         <a class = "boton" href="Index_Ejemplos.html">Menú Principal</a>
+         <a class = "boton" href="EjemploNo5.13.html">&larr;Anterior</a>
+         <a class = "boton" href="EjemploNo5.15.html">&rarr;Siguiente</a>
+      </nav>
+   </div>
+</body>
+
+</html>

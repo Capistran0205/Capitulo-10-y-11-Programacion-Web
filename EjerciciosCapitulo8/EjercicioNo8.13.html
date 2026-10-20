@@ -1,0 +1,34 @@
+<!-- Capistran Ortiz Diego -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <link rel="stylesheet" href="/Estilos/Imagenes.css">
+    <title>Ejercicio 8.13: Valores de x dependientes de k</title>
+    <script>
+        document.writeln( "<h1>Ejercicio 8.13: Valores de x dependientes de k</h1>" );
+        document.writeln( "<hr>" );
+        document.writeln( "<p>Dada la siguiente instrucción switch</p>" );
+        document.writeln( "<hr>" );
+        document.writeln( "<img class = 'imagen' src = \"/Resources/Codigo8.13.png\">" );
+        document.writeln( "<p>¿Qué valores se asignan a x cuando k tiene valores de 1,2,3, 4 y 10?</p>" );
+        document.writeln( "<h2>Solución:</h2>" );
+        document.writeln( "<details>" );
+        document.writeln( "<summary>Explicación</summary>" )
+        document.writeln( "<p>Cuando k &larr; 1, solo se ejecuta el break de case 1, k no cambia. Por lo tanto x &larr; 1</p>" );
+        document.writeln( "<p>Cuando k &larr; 2, case 2 no tiene break, pasa al case 3, suma 1 y se ejecuta e breaks, k ha cambiado a 3. Por lo tanto x &larr; 3</p>" );
+        document.writeln( "<p>Cuando k &larr; 3, se suma 1 y se ejecuta break, k ha cambiado a 4. Por lo tanto x &larr; 4</p>" );
+        document.writeln( "<p>Cuando k &larr; 4, se resta 1 y se ejecuta break, k ha cambiado. Por lo tanto x &larr; 3</p>" );
+        document.writeln( "<p>Cuando k &larr; 10, es el case por defecto, k ha cambiado a k &larr; 30 (k = 10 * 30). Por lo tanto x &larr; 30</p>" );
+        document.writeln( "</details>" );
+    </script>
+ </head>
+ <body>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo8.12.html">&larr;Anterior</a>
+    </nav>
+ </body>
+ </html>

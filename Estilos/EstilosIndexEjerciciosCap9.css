@@ -1,0 +1,60 @@
+/* Capítulo 9 · Ejercicios — Estilo Bruja Escarlata
+   Paleta: vino oscuro, carmesí, magenta de la magia del caos y rosa claro */
+
+body {
+   background-color: #1A0A10;      /* vino casi negro */
+   color: #F5E6EA;                 /* texto rosado claro */
+   font-family: Georgia, 'Times New Roman', serif;
+   margin: 0;
+   padding: 20px 40px;
+   border-top: 10px solid #E0245E; /* franja magenta superior */
+}
+
+h1 {
+   color: #FFFFFF;
+   background-color: #A3112B;      /* carmesí */
+   border: 3px solid #E0245E;
+   border-bottom: 8px solid #5C0A1B; /* vino oscuro */
+   padding: 0.4em 0.6em;
+   text-transform: uppercase;
+   letter-spacing: 2px;
+}
+
+p {
+   color: #F5E6EA;
+   line-height: 1.6;
+   max-width: 70ch;                /* líneas cómodas de leer */
+   border-left: 4px solid #E0245E;
+   padding-left: 0.8em;
+}
+
+a {
+   color: #FF7A9C;
+}
+
+ul {
+   background-color: #2E0F1B;
+   border: 3px solid #A3112B;
+   padding: 1em 1em 1em 2.5em;
+   max-width: 60ch;
+}
+
+li {
+   color: #F8EAEE;
+   padding: 0.3em 0.5em;
+   border-bottom: 1px solid #5A1C30;
+   list-style-type: circle;
+}
+
+li::marker {
+   color: #FF4D79;                 /* viñeta magenta */
+}
+
+li:last-child {
+   border-bottom: none;
+}
+
+li:hover {
+   background-color: #A3112B;
+   color: #FFFFFF;
+}

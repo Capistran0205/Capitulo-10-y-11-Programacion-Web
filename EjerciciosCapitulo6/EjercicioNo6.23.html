@@ -1,0 +1,63 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="/Estilos/Botones.css">
+   <title>Ejercicio 6.23: Positivos, Negativos y Ceros</title>
+   <script>
+      document.writeln("<h1>Ejercicio 6.23: Positivos, Negativos y Ceros</h1>");
+      document.writeln("<hr>");
+      document.writeln("<p>Escriba una secuencia de comandos que reciba tres números, determine y produzca marcado que muestre la cantidad de números negativos, positivos y ceros introducidos.</p>");
+      document.writeln("<hr>");
+      var numero1, numero2, numero3;
+      var negativos = 0;   // contadores
+      var positivos = 0;
+      var ceros = 0;
+
+      numero1 = parseFloat(window.prompt("Escriba el primer número:", "0"));
+      numero2 = parseFloat(window.prompt("Escriba el segundo número:", "0"));
+      numero3 = parseFloat(window.prompt("Escriba el tercer número:", "0"));
+
+      // primer número
+      if (numero1 < 0)
+         negativos = negativos + 1;
+      if (numero1 > 0)
+         positivos = positivos + 1;
+      if (numero1 == 0)
+         ceros = ceros + 1;
+
+      // segundo número
+      if (numero2 < 0)
+         negativos = negativos + 1;
+      if (numero2 > 0)
+         positivos = positivos + 1;
+      if (numero2 == 0)
+         ceros = ceros + 1;
+
+      // tercer número
+      if (numero3 < 0)
+         negativos = negativos + 1;
+      if (numero3 > 0)
+         positivos = positivos + 1;
+      if (numero3 == 0)
+         ceros = ceros + 1;
+
+      document.writeln("<h2>Resultados</h2>");
+      document.writeln("<p>La Cantidad Total de Negativos es: " + negativos + "</p>");
+      document.writeln("<p>La Cantidad Total de Positivos es: " + positivos + "</p>");
+      document.writeln("<p>La Cantidad Total Ceros: " + ceros + "</p>");
+   </script>
+</head>
+
+<body>
+   <nav>
+      <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+      <a class="boton" href="EjercicioNo6.22.html">&larr;Anterior</a>
+      <a class="boton" href="EjercicioNo6.24.html">Siguiente&rarr;</a>
+   </nav>
+</body>
+
+</html>

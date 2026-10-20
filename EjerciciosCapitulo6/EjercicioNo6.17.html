@@ -1,0 +1,42 @@
+<!-- Capistran Ortiz Diego -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6.17: El mayor de dos enteros</title>
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <script>
+         var numero1;
+         var numero2;
+
+         numero1 = parseInt( window.prompt( "Escriba el primer entero:", "0" ) );
+         numero2 = parseInt( window.prompt( "Escriba el segundo entero:", "0" ) );
+
+         document.writeln("<h1>Ejercicio 6.17: El mayor de dos enteros</h1>");
+         document.writeln("<hr>");
+         document.writeln("<p>Escriba una secuencia de comandos que pida al usuario que introduzca dos enteros, obtenga los números del usuario y produzca texto que muestre el número más grande seguido de las palabras \"es mayor que\""+
+                     " en un diálogo de alerta. Si los números son iguales, imprima texto de HTML5 que muestre el mensaje \"Estos números son iguales.\""+
+            "</p>");
+         document.writeln("<hr>");
+         if ( numero1 > numero2 ){
+            window.alert( numero1 + " es mayor que " + numero2 );
+            document.writeln("<h2 color = royalblue> El "+ numero1 + " 2'es mayor que "+ numero2 +"</h2>");
+         }
+         if ( numero2 > numero1 ){
+            window.alert( numero2 + " es mayor que " + numero1 );
+            document.writeln("<h2 color = royalblue> El "+ numero1 + " es mayor que "+ numero2 +"</h2>");
+         }
+         if ( numero1 == numero2 )
+            window.alert(" Los números ingresados son iguales ");
+            document.writeln( "<h2 color = royalblue>Estos números son iguales</h2>" );
+    </script>
+ </head>
+ <body>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo6.16.html">&larr;Anterior</a>        
+        <a class="boton" href="EjercicioNo6.18.html">Siguiente&rarr;</a>
+    </nav>
+ </body>
+ </html>

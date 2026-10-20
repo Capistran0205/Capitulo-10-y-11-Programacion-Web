@@ -1,0 +1,63 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset=" utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3.6</title>
+    <link rel="stylesheet" type="text/css" href="/Estilos/Botones.css">
+</head>
+
+<body>
+    <h1>Ejercicio 3.6: Formulario de resgistro Web con encuesta opcional</h1>
+    <hr>
+    <p>Cree un formulario de registro de un sitio Web para obtener el primer nombre, apellido y
+        dirección de correo eléctronico de un usuario. Incluya además una pregunta de encuesta
+        que pida el año en el que se encuentra el usuario del itsx (por ejemplo, primer año).
+        Coloque la pregunta encuesta opcional en el elemento <b>details</b> que el usuario pueda expandir para ver la
+        pregunta
+
+    </p>
+    <hr>
+    <form action="https://gaatx.itsx.edu.mx/auth/login" method="post">
+        <label for="nombre">Primer nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" required><br><br>
+
+        <label for="correo">Correo electrónico:</label>
+        <input type="email" id="correo" name="correo" required><br><br>
+
+        <details>
+            <summary>Encuesta opcional</summary>
+            <p>
+                <label for="anio">¿En qué año te encuentras en la universidad? (por ejemplo, primer año)</label><br>
+                <input type="text" id="anio" name="anio" list="listaanios"
+                    placeholder="Selecciona tu año actual en la universidad:">
+                <datalist id="listaanios">
+                    <option value="1er. año">
+                    <option value="2do. año">
+                    <option value="3er. año">
+                    <option value="4to. año">
+                    <option value="5to. año">
+                    <option value="6.to año">
+                </datalist>
+            </p>
+        </details>
+        <br>
+        <input type="submit" value="Registrarse">
+    </form>
+    <div>
+        <hr>
+        <nav>
+            <span><a class = "boton" href="Index_Ejercicios.html">Men&uacute; principal</a></span>
+            <span><a class = "boton" href="EjercicioNo3.5.html">&larr; Anterior</a></span>
+            <span><a class = "boton" href="EjercicioNo3.7.html">&rarr; Siguiente</a></span>
+        </nav>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<!-- Ejercicio 8.9: EjercicioNo8.9.html -->
+<!-- Gráfico de barras con asteriscos. -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <title>Ejercicio 8.9: Gráfico de barras con asteriscos.</title>
+    <style>
+        p {
+            font-family: monospace;
+            margin: 0.2em 0;
+        }
+    </style>
+    <script>
+        document.writeln( "<h1>Ejercicio 8.9: Gráfico de barras con asteriscos</h1>" );
+        document.writeln( "<hr>" );
+        document.writeln( "<p>Escriba una secuencia de comandos que lea cinco números entre 1 y 30."+
+            "Por cada número imprima texto en HTML5 que muestre una línea que contenga el mismo número de asteriscos adyacentes.</p>" );
+        document.writeln( "<hr>" );
+        document.writeln( "<h2>Solución:</h2>" );
+        var numero; // número leído
+        var barra;  // cadena de asteriscos
+
+        document.writeln("<h3>Gráfico de barras</h31>");
+
+        for (var i = 1; i <= 5; ++i) {
+            numero = parseInt(window.prompt(
+                "Número " + i + " de 5 (entre 1 y 30):", "1"));
+
+            if (numero >= 1 && numero <= 30) {
+                barra = "";
+
+                for (var j = 1; j <= numero; ++j)
+                    barra += "*";
+
+                document.writeln("<p>" + barra + " (" + numero + ")</p>");
+            } // fin de if
+            else
+                document.writeln("<p>" + numero + ": número fuera del rango 1 a 30</p>");
+        } // fin de for
+
+    </script>
+</head>
+
+<body>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo8.8.html">&larr;Anterior</a>
+        <a class="boton" href="EjercicioNo8.10.html">Siguiente&rarr;</a>
+    </nav>
+</body>
+
+</html>

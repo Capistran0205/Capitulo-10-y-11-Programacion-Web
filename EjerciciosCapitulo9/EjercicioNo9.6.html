@@ -1,0 +1,61 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+
+<!-- Ejercicio de Autoevaluación 9.6: volumen.html -->
+<html>
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Calcular vol&uacute;menes de esferas</title>
+   <link rel="stylesheet" type="text/css" href="/Estilos/Botones.css">
+   <script>
+      document.writeln( "<h1>Ejercicio de Autoevaluación 9.6: Volumen de una esfera</h1>" );
+      document.writeln( "<hr>" );
+      document.writeln( "<p>escriba un programa de JavaScript completo para pedir al usuario el radio de una esfera y luego llamar a la función volumenEsfera"+ 
+        "para calcular y mostrar el volumen de la esfera. Use la instrucción</p>" );
+      document.writeln( "<code>volumen = (4.0 / 3.0) * Math.PI * Math.pow(radio, 3); </code>" );
+      document.writeln( "<p> para calcular el volumen. El usuario debe introducir el radio en un elemento input de HTML de tipo 'number' dentro de un elemento form.</p>" );
+      document.writeln( "<p> Dé al elemento input el valor de id 'campoEntrada'. Puede usar este id con el método getElementById del objeto document para obtener el elemento a usar en la secuencia de comandos.</p>" );
+      document.writeln( "<p> Para acceder a la cadena en campoEntrada, use su propiedad value como en campoEntrada.value y luego convierta la cadena en número usando parseFloat.</p>" );
+      document.writeln( "<p> Use un elemento input de tipo 'button' en el elemento form para que el usuario pueda iniciar el cálculo.</p>" );
+      document.writeln( "<hr>" );
+      document.writeln( "<h2>Solución:</h2>" );
+      function iniciar()
+      {
+         var boton = document.getElementById( "botonCalcular" );
+         boton.addEventListener( "click", mostrarVolumen, false );
+      } // fin de la función iniciar
+
+      function mostrarVolumen()
+      {
+         var campoEntrada = document.getElementById( "campoEntrada" );
+         var radio = campoEntrada.valueAsNumber;
+         var resultado = document.getElementById( "resultado" );
+
+         resultado.innerHTML = "El volumen de la esfera es: " +
+            volumenEsfera( radio ) + " u³"; // La función toFixed(n) delimita el número de párametros
+      } // fin de la función mostrarVolumen
+
+      function volumenEsfera( radio )
+      {
+         volumen = ( 4.0 / 3.0 ) * Math.PI * Math.pow( radio, 3 );
+         return volumen.toFixed(4);
+      } // fin de la función volumenEsfera
+
+      window.addEventListener( "load", iniciar, false );
+   </script>
+</head>
+
+<body>
+   <form action="#">
+      <p><label>Radio: <input id="campoEntrada" type="number"></label>
+         <input id="botonCalcular" type="button" value="Calcular"></p>
+   </form>
+   <p id="resultado"></p>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo9.5.html">&larr;Anterior</a>
+        <a class="boton" href="EjercicioNo9.7.html">Siguiente&rarr;</a>
+    </nav>
+</body>
+</html>

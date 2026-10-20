@@ -1,0 +1,72 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <link rel="stylesheet" href="/Estilos/Imagenes.css">
+    <title>Ejercicio 9.30: ¿Qué hace la función?</title>
+    <script>
+        document.writeln("<h1>Ejercicio 9.30: ¿Qué hace la función?</h1>");
+        document.writeln("<hr>");
+        document.writeln("<p>¿Qué hace la siguiente función?</p>");
+        document.writeln("<hr>");
+        document.writeln("<img class = 'respuesta' src = \"/Resources/codigo9.30.png\">" );
+        document.writeln("<h2>Solución:</h2>");
+        document.writeln("<p>La función multiplica a por b mediante sumas repetidas: devuelve a + a + ... + a (b veces), es decir, a * b.</p>");
+        document.writeln("<details>");
+        document.writeln("<summary>Resultado</summary>" );
+        function misterio(a, b){
+            if ( b == 1){
+                return a;
+            }
+            else
+                return a + misterio(a, b - 1);
+        }
+        document.writeln( misterio(3, 6) );
+        document.writeln( "</details>");
+
+        // Formulario para probar la función con otros valores
+        document.writeln("<h2>Pru&eacute;balo:</h2>");
+        document.writeln("<form action='#'>");
+        document.writeln("<p><label>a: <input id='campoA' type='text' size='6'></label> ");
+        document.writeln("<label>b: <input id='campoB' type='text' size='6'></label> ");
+        document.writeln("<input id='botonCalcular' class='boton' type='button' value='Calcular'></p>");
+        document.writeln("</form>");
+        document.writeln("<p id='resultadoForm'></p>");
+
+        // registrar el manejador del botón cuando la página termina de cargar
+        function iniciar() {
+            var boton = document.getElementById("botonCalcular");
+            boton.addEventListener("click", mostrarMisterio, false);
+        } // fin de la función iniciar
+
+        // lee los dos campos, llama a misterio y muestra el resultado
+        function mostrarMisterio() {
+            var a = parseInt(document.getElementById("campoA").value);
+            var b = parseInt(document.getElementById("campoB").value);
+            var resultado = document.getElementById("resultadoForm");
+
+            // b debe ser un entero positivo; si no, la recursividad nunca termina
+            if (isNaN(a) || isNaN(b) || b < 1 || b > 1000)
+                resultado.innerHTML = "Escriba un entero en a y un entero entre 1 y 1000 en b.";
+            else
+                resultado.innerHTML = "misterio( " + a + ", " + b + " ) = " + misterio(a, b);
+        } // fin de la función mostrarMisterio
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+</head>
+
+
+
+<body>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo9.29.html">&larr;Anterior</a>
+    </nav>
+</body>
+
+</html>

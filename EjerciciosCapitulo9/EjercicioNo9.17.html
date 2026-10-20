@@ -1,0 +1,83 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<!-- Ejercicio 9.17: temperaturas.html -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <title>Ejercicio 9.17: Conversión de Temperaturas de Celsius a Fahrenheit y viceversa</title>
+    <script>
+        document.writeln("<h1>Ejercicio 9.17: Conversión de Celsius a Farenheit y viceversa</h1>");
+        document.writeln("<hr>");
+        document.writeln("<p>Implementa las siguientes funciones:</p>");
+        document.writeln("<ol type = 'a'>");
+        document.writeln("<li>La función Celsius devuelve el equivalente en Celsius de una temperatura en Fahrenheit, mediante el cálculo.</li>");
+        document.writeln("<code>C = 5.0  / 9.0 + (F - 32);</code>");
+        document.writeln("<li>La función Farenheit devuelve el equivalente en Fahrenheit de una temperatur en Celsius , mediante el cálculo</li>");
+        document.writeln("<code>F = 9.0 / 5.0 * C + 32; </code>");
+        document.writeln( "<li>Use estas funciones para escribir una secuencia de comandos que permita al usuario introducir una temperatura en Fahrenheit  Celsius y muestre el equivalente en Celsius o Farenheit.</li>" );
+        document.writeln("</ol>");
+        document.writeln("<hr>");
+        document.writeln("<h2>Solución:</h2>");
+        function iniciar() {
+            var botonFC = document.getElementById("botonFC");
+            botonFC.addEventListener("click", fahrenheitACelsius, false);
+
+            var botonCF = document.getElementById("botonCF");
+            botonCF.addEventListener("click", celsiusAFahrenheit, false);
+        } 
+
+        function fahrenheitACelsius() {
+            var temperatura = parseFloat(document.getElementById("campoTemperatura").value);
+            var resultado = document.getElementById("resultado");
+
+            if (isNaN(temperatura))
+                resultado.innerHTML = "Escriba una temperatura v&aacute;lida.";
+            else
+                resultado.innerHTML = temperatura + " &deg;F = " +
+                    celsius(temperatura).toFixed(2) + " &deg;C";
+        } 
+
+        function celsiusAFahrenheit() {
+            var temperatura = parseFloat(document.getElementById("campoTemperatura").value);
+            var resultado = document.getElementById("resultado");
+
+            if (isNaN(temperatura))
+                resultado.innerHTML = "Escriba una temperatura v&aacute;lida.";
+            else
+                resultado.innerHTML = temperatura + " &deg;C = " +
+                    fahrenheit(temperatura).toFixed(2) + " &deg;F";
+        } // fin de la función celsiusAFahrenheit
+
+        // equivalente en Celsius de una temperatura en Fahrenheit
+        function celsius(f) {
+            return 5.0 / 9.0 * (f - 32);
+        } // fin de la función celsius
+
+        // equivalente en Fahrenheit de una temperatura en Celsius
+        function fahrenheit(c) {
+            return 9.0 / 5.0 * c + 32;
+        } // fin de la función fahrenheit
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+</head>
+
+<body>
+    <form action="#">
+        <p><label>Temperatura: <input id="campoTemperatura" type="number" step="any"></label></p>
+        <p><input id="botonFC" type="button" value="Fahrenheit a Celsius">
+            <input id="botonCF" type="button" value="Celsius a Fahrenheit">
+        </p>
+    </form>
+    <p id="resultado"></p>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo9.16.html">&larr;Anterior</a>
+        <a class="boton" href="EjercicioNo9.18.html">Siguiente&rarr;</a>
+    </nav>
+</body>
+
+</html>

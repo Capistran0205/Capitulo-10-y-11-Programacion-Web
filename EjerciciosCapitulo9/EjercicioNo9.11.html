@@ -1,0 +1,58 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<!-- Ejercicio 9.11: instrucciónNumerosAleatoriosRangos.html -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <link rel="stylesheet" href="/Estilos/Imagenes.css">
+    <title>Ejercicio 9.11: Enteros aleatorios en distintos rangos</title>
+    <script>
+        document.writeln("<h1>Ejercicio 9.11: Enteros aleatorios en distintos rangos</h1>");
+        document.writeln("<hr>");
+        document.writeln("<p>Escriba instrucciones que asignen enteros aleatorios a la variable n en los siguientes rangos.</p>");
+        document.writeln("<hr>");
+        document.writeln("<ol type = 'a'>");
+        document.writeln("<li><code>1 <= n <= 2</code></li>");
+        document.writeln("<li><code>1 <= n <= 100</code></li>");
+        document.writeln("<li><code>0 <= n <= 9</code></li>");
+        document.writeln("<li><code>1000 <= n <= 1112</code></li>");
+        document.writeln("<li><code>-1 <= n <= 1</code></li>");
+        document.writeln("<li><code>-3 <= n <= 11</code></li>");
+        document.writeln("</ol");
+        document.writeln("<h2>Solución:</h2>");
+        var n;
+        document.writeln("<ol type = 'a'>");
+        n = Math.floor(1 + Math.random() * 2);
+        document.writeln("<li><code>n = Math.floor( 1 + Math.random() * 2 );</code></li>");
+        document.writeln("<p>Valor Actual de n:" + n + "<p>");
+        n = Math.floor(1 + Math.random() * 100);
+        document.writeln("<li><code>n = Math.floor( 1 + Math.random() * 100 );</code></li>");
+        document.writeln("<p>Valor Actual de n:" + n + "<p>");
+        n = Math.floor(Math.random() * 10);
+        document.writeln("<li><code>n = Math.floor(Math.random() * 10 );</code></li>");
+        document.writeln("<p>Valor Actual de n:" + n + "<p>");
+        n = Math.floor(1000 + Math.random() * 113);
+        document.writeln("<li><code>n = Math.floor( 1000 + Math.random() * 113 );</code></li>");
+        document.writeln("<p>Valor Actual de n:" + n + "<p>");
+        n = Math.floor(-1 + Math.random() * 3);
+        document.writeln("<li><code>n = Math.floor( -1 + Math.random() * 3 );</code></li>");
+        document.writeln("<p>Valor Actual de n:" + n + "<p>");
+        n = Math.floor(-3 + Math.random() * 15);
+        document.writeln("<li><code>n = Math.floor( -3 + Math.random() * 15 );</code></li>");
+        document.writeln("<p>Valor Actual de n:" + n + "<p>");
+        document.writeln("</ol");
+    </script>
+</head>
+
+<body>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo9.10.html">&larr;Anterior</a>
+        <a class="boton" href="EjercicioNo9.12.html">Siguiente&rarr;</a>
+    </nav>
+</body>
+
+</html>

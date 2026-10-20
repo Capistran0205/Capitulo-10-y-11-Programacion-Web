@@ -1,0 +1,76 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<!-- Ejercicio 7.17: EjercicioNo7.17.html -->
+<!-- Encontrar los dos números más grandes de 10 números de un solo dígito. -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <title>Ejercicio 7.17: Encontrar los dos números más grandes de 10 números de un solo dígito.</title>
+    <script>
+        document.writeln("<h1>Ejercicio 7.17: Tabla de valores generados</h1>");
+        document.writeln("<hr>");
+        document.writeln("<p>Con una metodología similar a la del 7.15, encontrar los dos valores más grandes de los 10 números introducidos. Cada número se puede introducir una sola vez.</p>");
+        document.writeln("<hr>");
+        document.writeln("<pre><code>"); // Etiqueta para indicarle al navegador que no debe formatear (acomodar el texto), debe dejarlo en su formato original
+        document.writeln("Inicio");
+        document.writeln("    Inicializar contador &larr; 1");
+        document.writeln("    Inicializar mayor &larr; -1");
+        document.writeln("    Inicializar segundo_mayor &larr; -1");
+        document.writeln("");
+        document.writeln("    Mientras contador &lt;= 10 Repetir");
+        document.writeln("        Leer(numero)    // siguiente número ingresado por el usuario");
+        document.writeln("");
+        document.writeln("        Si numero &gt; mayor Entonces");
+        document.writeln("            segundo_mayor &larr; numero");
+        document.writeln("            mayor &larr; numero");
+        document.writeln("        Fin Si");
+        document.writeln("        Sino");
+        document.writeln("            segundo_mayor &larr; numero");
+        document.writeln("");
+        document.writeln("        contador &larr; contador + 1");
+        document.writeln("    Fin Mientras");
+        document.writeln("");
+        document.writeln("    Imprimir \"El número más grande ingresado es \" + mayor");
+        document.writeln("Fin");
+        document.writeln("</code></pre>");
+        var contador = 1; // cuenta los números introducidos
+        var numero; // el número más reciente introducido por el usuario
+        var mayor = -1; // el número más grande hasta ahora
+        var segundoMayor = -1; // el segundo número más grande hasta ahora
+
+        while (contador <= 10) {
+            numero = parseInt(window.prompt(
+                "Escriba un número de un solo dígito (" + contador + " de 10):",
+                "0"));
+            if(numero > 10){
+                window.alert("Número no válido: "+numero);
+                continue;
+            }
+
+            if (numero > mayor) {
+                segundoMayor = mayor; // el mayor anterior pasa a ser el segundo
+                mayor = numero;
+            } // fin de if
+            else if (numero > segundoMayor)
+                segundoMayor = numero;
+
+            ++contador;
+        } // fin de while
+
+        document.writeln("<h1>Los dos números más grandes</h1>");
+        document.writeln("<p>El más grande: " + mayor + "</p>");
+        document.writeln("<p>El segundo más grande: " + segundoMayor + "</p>");
+    </script>
+</head>
+
+<body>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo7.16.html">&larr;Anterior</a>
+        <a class="boton" href="EjercicioNo7.18.html">Siguiente&rarr;</a>
+    </nav>
+</body>
+
+</html>

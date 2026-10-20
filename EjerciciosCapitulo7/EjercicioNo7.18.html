@@ -1,0 +1,52 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<!-- Capítulo 7: Ejercicio 7.18 -->
+<!-- Determinar resultado de código JavaScript-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <link rel="stylesheet" href="/Estilos/Imagenes.css">
+    <title>Ejercicio 7.18: Determinar el resultado de código JavaScript</title>
+    <script>
+        document.writeln("<h1>Ejercicio 7.18: Determinar el resultado de código JavaScript</h1>");
+        document.writeln("<hr>");
+        document.writeln("<p>Sin ejecutar la secuencia de comandos, determinar lo que imprime.</p>");
+        document.writeln("<hr>");
+        document.writeln("<img class = 'imagen' src = '/Resources/Codigo7.18.png'>");
+        document.writeln("<p>Las primeras variables dan pista de representar a una matriz por las filas y columnas" +
+            "Dentro del bucle principal se inicia un párrafo ('p') que determina el inicio de la fila. " +
+            "Dentro del bucle anidado, si la fila es par se imprime el símbolo '>' caso contrario se imprime el símbolo '<" +
+            "Se incrementa la columna hasta completar imprimir 10 elementos (condición del bucle anidado)" +
+            "Después se decrementar la fila y se cierra el párrafo (p)" +
+            "</p");
+        document.writeln("<h2>Resultado</h2>");
+        var fila = 10;
+        var columna;
+
+        while (fila >= 1) {
+            columna = 1;
+            document.writeln("<p>");
+
+            while (columna <= 10) {
+                document.write(fila % 2 == 1 ? "<" : ">");
+                ++columna;
+            } // fin del while interior
+
+            --fila;
+            document.writeln("</p>");
+        } // fin del while exterior
+    </script>
+</head>
+
+<body>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo7.17.html">&larr;Anterior</a>
+        <a class="boton" href="EjercicioNo7.19.html">Siguiente&rarr;</a>
+    </nav>
+</body>
+
+</html>

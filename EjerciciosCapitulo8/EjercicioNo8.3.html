@@ -1,0 +1,66 @@
+<!-- Capistran Ortiz Diego -->
+ <!DOCTYPE html>
+<!-- AutoEvaluacionNo8.3.html -->
+<!-- Capítulo 8: Ejercicio de autoevaluación 8.3 -->
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <link rel="stylesheet" href="/Estilos/Imagenes.css">
+    <title>Ejercicio de Autoevaluación 8.3</title>
+    <script>
+        document.writeln("<h1>Ejercicio de Autoevaluación 8.3</h1>");
+        document.writeln("<hr>");
+        document.writeln("<p>Identificar y corregir los errores de cuatro segmentos de código (puede haber más de un error por fragmento).</p>");
+        document.writeln("<hr>");
+        document.writeln("<ol type = 'a'> <li></li>");
+        document.writeln("<img class = 'imagen' src = \"/Resources/Error(a)8.3.png\">");
+        document.writeln("<p>El ; después del encabezado while provoca un ciclo infinito, y además falta la llave izquierda.</p>");
+        document.writeln("<li></li>");
+        document.writeln("<img class = 'imagen' src = \"/Resources/Error(b)8.3.png\">");
+        document.writeln("<p>Falta una instrucción break al final del primer case.</p>");
+        document.writeln("<li></li>");
+        document.writeln("<img class = 'imagen' src = \"/Resources/Error(c)8.3.png\">");
+        document.writeln("<p>Operador relacional inadecuado en la condición del while que debe imprimir los valores 1 al 10.</p>");
+        document.writeln("</ol>");
+        document.writeln("<h2> Soluciones: </h2>");
+        document.writeln("<ol type = 'a'> <li></li>");
+        var x = 0;
+        while (x <= 10 ){
+            ++x;
+        }
+        document.writeln("<p>Resultado:" + x + "</p>");
+        document.writeln("<img class = 'imagen' src = \"/Resources/Solucion(a)8.3.png\">");
+        document.writeln("<li></li>");
+        var n = 1;
+        switch ( n )
+        {
+            case 1:
+                document.writeln( "El n&uacute;mero es 1" );
+                break;
+            case 2:
+                document.writeln( "El n&uacute;mero es 2" );
+                break;
+            default:
+                document.writeln( "El n&uacute;mero no es 1 ni 2" );
+                break;
+        }
+        document.writeln("<img class = 'imagen' src = \"/Resources/Solucion(b)8.3.png\">");
+        document.writeln("<li></li>");
+        var n = 1;
+        while( n <= 10 )
+            document.writeln(n++);    
+        document.writeln("<img class = 'imagen' src = \"/Resources/Solucion(b)8.3.png\">");
+        document.writeln("<p>Resultado:" + n + "</p>");    
+        document.writeln("</ol>");
+    </script>
+ </head>
+ <body>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo8.2.html">&larr;Anterior</a>
+        <a class="boton" href="EjercicioNo8.4.html">Siguiente&rarr;</a>
+    </nav>
+ </body>
+ </html>

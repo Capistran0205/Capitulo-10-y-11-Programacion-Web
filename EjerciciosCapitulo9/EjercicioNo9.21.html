@@ -1,0 +1,68 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <title>Ejercicio 9.21: Lanzamiento de monedas</title>
+    <script>
+        document.writeln("<h1>Ejercicio 9.21: Lanzamiento de Monedas</h1>");
+        document.writeln("<hr>");
+        document.writeln("<p>Escriba una secuencia de comandos que simule el lanzamiento de monedas."+
+            " El programa debe llamar a una función aparte arrojar, sin argumentos, que devuelva false para cruz y true para cara. Cada lado debe aparecer aproximadamente la mitad del tiempo.</p>.",
+        );
+        document.writeln("<hr>");
+        document.writeln("<h2>Solución:</h2>");
+        var cuentaCara = 0;
+        var cuentaCruz = 0;
+
+        function iniciar() {
+            var boton = document.getElementById("botonLanzar");
+            boton.addEventListener("click", lanzar, false);
+        }
+
+        function lanzar() {
+            var lado;
+
+            if (arrojar()) {
+                ++cuentaCara;
+                lado = "Cara";
+            } 
+            else {
+                ++cuentaCruz;
+                lado = "Cruz";
+            } 
+
+            var total = cuentaCara + cuentaCruz;
+
+            document.getElementById("resultado").innerHTML =
+                "<p>Resultado: <strong>" + lado + "</strong></p>" +
+                "<p>Caras: " + cuentaCara + " (" + (cuentaCara / total * 100).toFixed(1) + "%)</p>" +
+                "<p>Cruces: " + cuentaCruz + " (" + (cuentaCruz / total * 100).toFixed(1) + "%)</p>" +
+                "<p>Total de lanzamientos: " + total + "</p>";
+        } 
+
+        // devuelve true para cara y false para cruz, con la misma probabilidad
+        function arrojar() {
+            return Math.floor(Math.random() * 2) === 1;
+        } 
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+</head>
+
+<body>
+    <form action="#">
+        <p><input id="botonLanzar" type="button" value="Lanzar"></p>
+    </form>
+    <div id="resultado"></div>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo9.20.html">&larr;Anterior</a>
+        <a class="boton" href="EjercicioNo9.22.html">Siguiente&rarr;</a>
+    </nav>
+</body>
+
+</html>

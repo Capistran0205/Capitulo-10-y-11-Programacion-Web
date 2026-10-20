@@ -1,0 +1,61 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<!-- Ejercicio 9.14: multiplo.html -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <title>Ejercicio 9.14: M&uacute;tiplos</title>
+    <script>
+        document.writeln( "<h1>Ejercicio 9.14: Múltiplos</h1>" );
+        document.writeln( "<hr>" );
+        document.writeln("<p>escribe una función multiplo que, para un par de enteros, devuelva true si el segundo es múltiplo del primero y false en caso contrario."+
+            " Debe leer una serie de pares (uno a la vez) con un formulario de dos campos de texto y un botón.</p>");
+        document.writeln( "<hr>" );
+        document.writeln( "<h2>Solución:</h2>" )
+        function iniciar() {
+            var boton = document.getElementById("botonVerificar");
+            boton.addEventListener("click", verificarPar, false);
+        } // fin de la función iniciar
+
+        function verificarPar() {
+            var primero = parseInt(document.getElementById("campoPrimero").value);
+            var segundo = parseInt(document.getElementById("campoSegundo").value);
+            var historial = document.getElementById("historial");
+
+            if (isNaN(primero) || isNaN(segundo))
+                historial.innerHTML += "<p>Escriba dos enteros.</p>";
+            else if (multiplo(primero, segundo))
+                historial.innerHTML += "<p>" + segundo + " es m&uacute;ltiplo de " + primero + "</p>";
+            else
+                historial.innerHTML += "<p>" + segundo + " NO es m&uacute;ltiplo de " + primero + "</p>";
+        } // fin de la función verificarPar
+
+        // devuelve true si segundo es múltiplo de primero
+        function multiplo(primero, segundo) {
+            if (primero === 0) // evita dividir entre cero
+                return false;
+
+            return segundo % primero === 0;
+        } // fin de la función multiplo
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+</head>
+
+<body>
+   <form action="#">
+      <p><label>Primer entero: <input id="campoPrimero" type="text" size="6"></label>
+         <label>Segundo entero: <input id="campoSegundo" type="text" size="6"></label>
+         <input id="botonVerificar" type="button" value="Verificar"></p>
+   </form>
+   <div id="historial"></div>
+</body>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo9.13.html">&larr;Anterior</a>
+        <a class="boton" href="EjercicioNo9.15.html">Siguiente&rarr;</a>
+    </nav>
+</html>

@@ -1,0 +1,37 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<!-- Ejercicio 8.7: EjercicioNo8.7.html -->
+<!-- Producto de los enteros impares del 1 al 15. -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <title>Ejercicio 8.7: Producto de los enteros impares del 1 al 15</title>
+    <script>
+        document.writeln("<h1>Ejercicio 8.7: Producto de los enteros impares del 1 al 15</h1>");
+        document.writeln( "<hr>" );
+        document.writeln("<p>Escriba una secuencia de comandos que calcule el producto de los enteros impares del 1 al 15 y después imprima texto de HTML5 que muestre los resultados.</p>");
+        document.writeln( "<hr>" );
+        document.writeln("<h2>Solución:</h2>");
+        var producto = 1; // el valor inicial debe ser 1, no 0
+
+        for (var impar = 1; impar <= 15; impar += 2)
+            producto *= impar;
+
+        document.writeln("<h1>Producto de los enteros impares</h1>");
+        document.writeln("<p>El producto de los enteros impares " +
+            "del 1 al 15 es " + producto + "</p>");
+    </script>
+</head>
+
+<body>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo8.6.html">&larr;Anterior</a>
+        <a class="boton" href="EjercicioNo8.8.html">Siguiente&rarr;</a>
+    </nav>
+</body>
+
+</html>

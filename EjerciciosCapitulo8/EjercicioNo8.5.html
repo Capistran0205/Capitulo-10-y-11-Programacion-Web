@@ -1,0 +1,39 @@
+<!-- Capistran Ortiz Diego -->
+ <!DOCTYPE html>
+<!-- Ejercicio 8.4: EjercicioNo8.5.html -->
+<!-- Entender que hace el código JavaScript. -->
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8.5: ¿Qué hace el programa de JavaScript?</title>
+    <script>
+        document.writeln( "<h1>Ejercicio 8.5: ¿Qué hace el programa de JavaScript</h1>" );
+        document.writeln( "<hr>" );
+        document.writeln( "<p>¿Qué hace el siguiente programa?</p>" );
+        document.writeln( "<hr>" );
+        document.writeln( "<img class = 'imagen' src = \"/Resources/Codigo8.5.png\">" );
+        document.writeln( "<p>El código se encarga de construir una tabla de HTML con dimensiones de 10x6 filas y columnas respectivamente de manera ciclica sin la necesidad de establecer línea por línea</p>");
+        document.writeln( "<h2>Resultado:</h2>" );
+        document.writeln("<table>");
+        for (var i = 1; i <= 10; i++) { // se puede usar let para únicamente establecer el for, ya que se define en ámbito de bloque.
+            document.writeln("<tr>");
+            
+            for (var j = 0; j <= 5 ; j++) {
+                document.writeln( "<td>(" + i + ", " + j + ") </td>");
+                
+            }
+            document.writeln("</tr>");
+        }
+        document.writeln("</table>");
+    </script>
+ </head>
+ <body>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo8.4.html">&larr;Anterior</a>
+        <a class="boton" href="EjercicioNo8.6.html">Siguiente&rarr;</a>
+    </nav>
+ </body>
+ </html>

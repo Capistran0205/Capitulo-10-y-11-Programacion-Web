@@ -1,0 +1,61 @@
+/* Capítulo 5 · Ejemplos — Estilo Pantera Negra
+   Paleta: negro vibranium, violeta, plata y lila claro */
+
+body {
+   background-color: #0E0B16;      /* fondo */
+   color: #1A1F2E;;                 /* texto principal */
+   font-family: Verdana, Arial, sans-serif;
+   margin: 0;
+   padding: 20px 40px;
+   border-top: 10px solid #7B4FD6; /* franja violeta superior */
+}
+
+h1 {
+   color: #D9D9E3;
+   background-color: #2A1A4A;
+   border: 3px solid #7B4FD6;
+   border-bottom: 8px solid #C0C0C0;
+   padding: 0.4em 0.6em;
+   text-transform: uppercase;
+   letter-spacing: 2px;
+}
+
+p {
+   color: #E8E4F0;
+   line-height: 1.6;
+   max-width: 70ch;                /* líneas cómodas de leer */
+   border-left: 4px solid #7B4FD6;
+   padding-left: 0.8em;
+}
+
+a {
+   color: #B9A0FF;
+   font-weight: bold;
+}
+
+ul {
+   background-color: #1B1330;
+   border: 3px solid #7B4FD6;
+   padding: 1em 1em 1em 2.5em;
+   max-width: 60ch;
+}
+
+li {
+   color: #EDE9F7;
+   padding: 0.3em 0.5em;
+   border-bottom: 1px solid #3A2A63;
+   list-style-type: disc;
+}
+
+li::marker {
+   color: #B9A0FF;
+}
+
+li:last-child {
+   border-bottom: none;
+}
+
+li:hover {
+   background-color: #7B4FD6;
+   color: #FFFFFF;
+}

@@ -1,0 +1,106 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<!-- Ejercicio 9.23: multiplicarVariado.html -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <title>Ejercicio 9.23: CAI con Respuestas Variadas</title>
+    <script>
+        document.writeln("<h1>Ejercicio 9.23: CAI con respuestas variadas</h1>");
+        document.writeln("<hr>");
+        document.writeln("<p>modifica el 9.22 para que imprima una variedad de mensajes y evitar la fatiga del estudiante. Respuestas correctas: '¡Muy bien!'', 'Excelente.'', 'Buen trabajo.'', 'Siga así.'."+
+            " Respuestas incorrectas: 'No. Intente de nuevo.", "Equivocado. Trate una vez más.'', 'No se dé por vencido.'', 'No. Siga intentando.''."+
+            " Usa un número aleatorio del 1 al 4 y una instrucción switch para elegir la respuesta.</p>");
+        document.writeln("<hr>");
+        document.writeln("<h2>Solución:</h2>");
+        var numero1;
+        var numero2;
+
+        function iniciar() {
+            var boton = document.getElementById("botonVerificar");
+            boton.addEventListener("click", verificarRespuesta, false);
+            generarPregunta();
+        } // fin de la función iniciar
+
+        function generarPregunta() {
+            var campo = document.getElementById("campoRespuesta");
+
+            numero1 = Math.floor(1 + Math.random() * 9);
+            numero2 = Math.floor(1 + Math.random() * 9);
+
+            document.getElementById("pregunta").innerHTML =
+                "&iquest;Cu&aacute;nto es " + numero1 + " por " + numero2 + "?";
+            campo.value = "";
+            campo.focus();
+        } // fin de la función generarPregunta
+
+        function verificarRespuesta() {
+            var campo = document.getElementById("campoRespuesta");
+            var respuesta = parseInt(campo.value);
+            var mensaje = document.getElementById("mensaje");
+
+            if (isNaN(respuesta))
+                mensaje.innerHTML = "Escriba un n&uacute;mero.";
+            else if (respuesta === numero1 * numero2) {
+                mensaje.innerHTML = respuestaCorrecta();
+                generarPregunta();
+            } // fin de else if
+            else {
+                mensaje.innerHTML = respuestaIncorrecta();
+                campo.value = "";
+                campo.focus();
+            } // fin de else
+        } // fin de la función verificarRespuesta
+
+        // elige al azar uno de cuatro mensajes para una respuesta correcta
+        function respuestaCorrecta() {
+            switch (Math.floor(1 + Math.random() * 4)) {
+                case 1:
+                    return "&iexcl;Muy bien!";
+                case 2:
+                    return "Excelente.";
+                case 3:
+                    return "Buen trabajo.";
+                default:
+                    return "Siga as&iacute;.";
+            } // fin de switch
+        } // fin de la función respuestaCorrecta
+
+        // elige al azar uno de cuatro mensajes para una respuesta incorrecta
+        function respuestaIncorrecta() {
+            switch (Math.floor(1 + Math.random() * 4)) {
+                case 1:
+                    return "No. Intente de nuevo.";
+                case 2:
+                    return "Equivocado. Trate una vez m&aacute;s.";
+                case 3:
+                    return "No se d&eacute; por vencido.";
+                default:
+                    return "No. Siga intentando.";
+            } // fin de switch
+        } // fin de la función respuestaIncorrecta
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+</head>
+
+<body>
+    <form action="#">
+        <p id="pregunta"></p>
+        <p><input id="campoRespuesta" type="text" size="6">
+            <input id="botonVerificar" type="button" value="Verificar">
+        </p>
+    </form>
+    <p id="mensaje"></p>
+
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo9.22.html">&larr;Anterior</a>
+        <a class="boton" href="EjercicioNo9.24.html">Siguiente&rarr;</a>
+    </nav>
+</body>
+
+</html>

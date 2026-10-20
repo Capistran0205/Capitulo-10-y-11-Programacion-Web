@@ -1,0 +1,41 @@
+<!-- Capistran Ortiz Diego-->
+<!DOCTYPE html>
+<!-- Fig 4.9: posicionamiento.html-->
+<!-- Posicionamiento absoluto de los elementos.-->
+ <html>
+    <head>
+        <meta charset = "utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Posicionamiento absoluto</title>
+        <!-- esto empieza la sección de la hoja de estilo -->
+         <style type = "text/css"> <!-- tipo MIME para describir el elemento style de CSS-->
+            .imagen_fondo   { position: absolute;
+                              top: 0px;
+                              left: 0px;
+                              z-index: 1;}
+            .imagen_primerplano  { position: absolute;
+                                   top: 25px;
+                                   left: 100px;
+                                   z-index: 2;}
+            .texto           { position: absolute;
+                               top: 25px;
+                               left: 100px;
+                               z-index: 3;
+                               font-size: 20pt;
+                               font-family: Tahoma, Geneva, sans-serif;}
+         </style>
+         <link rel="stylesheet" type = "text/css" href = "/Estilos/Botones.css">
+    </head>
+    <body>
+        <h1>Ejemplo 4.9: Posicionamiento absoluto</h1>
+        <hr>
+        <p><img src = "/Resources/ImagenFondo.png" class = "imagen_fondo" alt = "Recurso no encontrado, primera imagen posicionada"></p>
+        <p><img src = "/Resources/ImagenPrimerPlano.png" class = "imagen_primerplano" alt = "Recurso no encontrado, segunda imagen posicionada" height = "200" width = "200"></p>
+        <p class = "texto">Texto posicionado</p>
+        <nav>
+            <a class = "boton" href="Index_Ejemplos.html">Menú Principal</a>
+            <a class = "boton" href="EjemploNo4.8.html">&larr;Anterior</a> 
+            <a class = "boton" href="EjemploNo4.10.html">&rarr;Siguiente</a>
+         </nav>
+    </body>
+ </html>

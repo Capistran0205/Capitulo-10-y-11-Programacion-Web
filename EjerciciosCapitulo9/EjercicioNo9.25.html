@@ -1,0 +1,74 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<!-- Ejercicio 9.25: adivinar.html -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <title>Ejercicio 9.25: Adivinar el número</title>
+    <script>
+        document.writeln("<h1>Ejercicio 9.25: Adivinar el número</h1>");
+        document.writeln("<hr>");
+        document.writeln("<p>Escriba una secuencia de comandos que juegue a \"adivinar el número\" eligidiendo un entero aleatorio entre 1 a 10."+
+            " El jugador escribe su intento y hace clic en un botón. Si falla, muestra \"Demasiado alto. Intente de nuevo.\" o \"Demasiado bajo. Intente de nuevo.\" y borra el campo. Si acierta, muestra \"Felicidades. ¡Adivinó el número!\" y"+
+            " borra el campo para jugar otra vez.</p>",
+        );
+        document.writeln("<hr>");
+        document.writeln("<h2>Solución:</h2>");
+        var numeroSecreto; // número que el jugador debe adivinar
+
+        function iniciar() {
+            var boton = document.getElementById("botonAdivinar");
+            boton.addEventListener("click", evaluarIntento, false);
+            nuevoNumero();
+        } // fin de la función iniciar
+
+        // elige un entero aleatorio de 1 a 1000
+        function nuevoNumero() {
+            numeroSecreto = Math.floor(1 + Math.random() * 10);
+        } // fin de la función nuevoNumero
+
+        function evaluarIntento() {
+            var campo = document.getElementById("campoIntento");
+            var intento = parseInt(campo.value);
+            var mensaje = document.getElementById("mensaje");
+
+            if (isNaN(intento) || intento < 1 || intento > 10) {
+                mensaje.innerHTML = "Escriba un entero entre 1 y 10.";
+                return;
+            } // fin de if
+
+            if (intento > numeroSecreto)
+                mensaje.innerHTML = "Demasiado alto. Intente de nuevo.";
+            else if (intento < numeroSecreto)
+                mensaje.innerHTML = "Demasiado bajo. Intente de nuevo.";
+            else {
+                mensaje.innerHTML = "Felicidades. &iexcl;Adivin&oacute; el n&uacute;mero!";
+                nuevoNumero(); // listo para jugar otra vez
+            } // fin de else
+
+            campo.value = ""; // borra el campo
+            campo.focus();
+        } // fin de la función evaluarIntento
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+</head>
+
+<body>
+   <form action="#">
+      <p>Adivine un n&uacute;mero entre 1 y 10:
+         <input id="campoIntento" type="number">
+         <input id="botonAdivinar" type="button" value="Adivinar"></p>
+   </form>
+   <p id="mensaje"></p>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo9.24.html">&larr;Anterior</a>
+        <a class="boton" href="EjercicioNo9.26.html">Siguiente&rarr;</a>
+    </nav>
+</body>
+
+</html>

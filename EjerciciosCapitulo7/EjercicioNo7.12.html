@@ -1,0 +1,65 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<!-- Ejercicio 7.12: EjercicioNo7.12.html -->
+<!-- Verificación del límite de crédito de los clientes. -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <title>Ejercicio 7.12: Cliente excedió su límite de crédito</title>
+    <script>
+        document.writeln("<h1>Ejercicio 7.12: Cliente excedió su límite de crédito</h1>");
+        document.writeln("<hr>");
+        document.writeln("<p>Determinar si algún cliente de una tienda de departamentos excedió su límite de crédito." +
+            " Por cada cliente se recibe: número de cuenta, saldo al inicio del mes, total de cargos, total de créditos y límite de crédito." +
+            " El nuevo saldo es saldo inicial + cargos − créditos. </p>");
+        document.writeln("<hr>");
+        var cuenta; // número de cuenta
+        var saldoInicial; // saldo al inicio del mes
+        var cargos; // total de artículos cargados en el mes
+        var creditos; // total de créditos aplicados en el mes
+        var limiteCredito; // límite de crédito permitido
+        var nuevoSaldo; // saldo calculado
+
+        document.writeln("<h2>Estado de las cuentas</h2>");
+
+        // leer el número de cuenta (-1 es el valor centinela)
+        cuenta = parseInt(
+            window.prompt("Número de cuenta (-1 para salir):", "0"));
+
+        while (cuenta != -1) {
+            saldoInicial = parseInt(
+                window.prompt("Saldo al inicio del mes:", "0"));
+            cargos = parseInt(
+                window.prompt("Total de artículos cargados en el mes:", "0"));
+            creditos = parseInt(
+                window.prompt("Total de créditos aplicados en el mes:", "0"));
+            limiteCredito = parseInt(
+                window.prompt("Límite de crédito permitido:", "0"));
+
+            // calcular el nuevo saldo
+            nuevoSaldo = saldoInicial + cargos - creditos;
+
+            document.writeln("<p>Cuenta " + cuenta +
+                ": nuevo saldo $" + nuevoSaldo + "</p>");
+
+            if (nuevoSaldo > limiteCredito)
+                document.writeln("<p>Se excedió el límite de su crédito</p>");
+
+            // leer el siguiente número de cuenta
+            cuenta = parseInt(
+                window.prompt("Número de cuenta (-1 para salir):", "0"));
+        } // fin de while
+    </script>
+</head>
+
+<body>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo7.11.html">&larr;Anterior</a>
+        <a class="boton" href="EjercicioNo7.13.html">Siguiente&rarr;</a>
+    </nav>
+</body>
+
+</html>

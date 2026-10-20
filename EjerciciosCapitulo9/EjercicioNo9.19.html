@@ -1,0 +1,106 @@
+<!-- Capistran Ortiz Diego -->
+<!doctype html>
+<!-- Ejercicio 9.19: primos.html -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <title>Ejercicio 9.19: N&uacute;meros primos</title>
+    <script>
+        document.writeln("<h1>Ejercicio 9.19: Números Primos</h1>");
+        document.writeln("<hr>");
+        document.writeln(
+            "<p>Se dice que un entero es primo si es mayor que 1 y se puede dividir solo entre 1 y sí mismo.</p>.",
+        );
+        document.writeln("<ol type = 'a'>");
+        document.writeln(
+            "<li>Escriba una función que determine si un número es primo.</li>",
+        );
+        document.writeln(
+            "<li>Use esta función en una secuencia de comandos que determine e imprima todos los números primos entre 1 y 10,000. " +
+            "¿Cuántos de estos 10,000 números tiene que probar en realidad antes de asegurar que haya encontrado todos los primos? Mostra resultados en un textarea.</li>",
+        );
+        document.writeln(
+            "<li>Un número n solo necesita probarse hasta √n. ¿Por qué? Reescribe el programa con Math.sqrt, ejecútalo de las dos formas y estima la mejora de rendimiento.</li>",
+        );
+        document.writeln("</ol>");
+        document.writeln("<hr>");
+        document.writeln("<h2>Solución:</h2>");
+        var pruebasLento = 0; // divisiones probadas con la versión (a)/(b)
+        var pruebasRapido = 0; // divisiones probadas con la versión (c)
+
+        // versión (a)/(b): prueba divisores desde 2 hasta n - 1
+        function esPrimo(n) {
+            if (n < 2) return false;
+
+            for (var divisor = 2; divisor < n; ++divisor) {
+                ++pruebasLento;
+                if (n % divisor === 0) return false; // encontró un divisor: no es primo
+            } // fin del for
+
+            return true;
+        }
+
+        // versión (c): prueba divisores sólo hasta la raíz cuadrada de n
+        function esPrimoRapido(n) {
+            if (n < 2) return false;
+
+            var limite = Math.floor(Math.sqrt(n));
+
+            for (var divisor = 2; divisor <= limite; ++divisor) {
+                ++pruebasRapido;
+                if (n % divisor === 0) return false;
+            } // fin del for
+
+            return true;
+        }
+
+        function buscarPrimos() {
+            var lista = "";
+            var cantidad = 0;
+
+            for (var n = 1; n <= 10000; ++n) {
+                var primoLento = esPrimo(n);
+                var primoRapido = esPrimoRapido(n);
+
+                if (primoLento !== primoRapido)
+                    // ambas versiones deben coincidir
+                    lista += "[ERROR en " + n + "] ";
+
+                if (primoRapido) {
+                    lista += n + " ";
+                    ++cantidad;
+                }
+            }
+
+            document.getElementById("areaPrimos").value = lista;
+            document.getElementById("resumen").innerHTML =
+                "Primos encontrados entre 1 y 10000: " +
+                cantidad +
+                "<br>Divisiones probadas con la versi&oacute;n (a)/(b): " +
+                pruebasLento +
+                "<br>Divisiones probadas hasta la ra&iacute;z cuadrada: " +
+                pruebasRapido +
+                "<br>La versi&oacute;n (c) hace unas " +
+                (pruebasLento / pruebasRapido).toFixed(1) +
+                " veces menos pruebas.";
+        }
+
+        window.addEventListener("load", buscarPrimos, false);
+    </script>
+</head>
+
+<body>
+    <h1>Primos entre 1 y 10000</h1>
+    <textarea id="areaPrimos" rows="12" cols="70" readonly></textarea>
+    <p id="resumen"></p>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo9.18.html">&larr;Anterior</a>
+        <a class="boton" href="EjercicioNo9.20.html">Siguiente&rarr;</a>
+    </nav>
+</body>
+
+</html>

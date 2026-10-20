@@ -1,0 +1,33 @@
+<!-- Capistran Ortiz Diego -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6.9: Verdadero o falso</title>
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <link rel="stylesheet" href="/Estilos/EstilosAutoEvaluacion.css">
+    <script>
+        document.writeln("<h1>Ejercicio 6.9: Verdadero o Falso</h1>");
+        document.writeln( "<hr>");
+        document.writeln( "<p>Indique si cada uno de los siguientes enunciados es verdadero o falso. Si es falso, explieque por qué</p>");
+        document.writeln( "<hr>");
+        document.writeln("<ol type = 'a'><li>Los operadores de JavaScript se evalúan de izquierda a derecha.</li>");
+        document.write("<p><b>Falso.</b>  El orden depende de la precedencia: primero se aplican los operadores de mayor precedencia, ");
+        document.write("y solo entre operadores del mismo nivel se evalúa de izquierda a derecha (asociatividad). Además, algunos operadores, como el de asignación =, se asocian de derecha a izquierda</p>")
+        document.writeln("<li>Los siguientes son nombres de variables válidos. <b>_guión_bajo_</b>, <b>m928134</b>, <b>t5</b>, <b>j7</b>, <b>sus_ventas$</b>, <b>el_total_de_su_$cuenta</b>, <b>a</b>, <b>b$</b>, <b>c</b>, <b>z</b>, <b>z2</b>.</li>");
+        document.write("<p><b>Verdadero.</b>  Un identificador puede empezar con una letra, _ o $, y continuar con letras, dígitos, _ o $. Todos los nombres de la lista cumplen la regla.</p>");
+        document.writeln("<li>Una expresión aritmética válida de JavaScript sin paréntesis se evalúa de izquierda a derecha.</li>");
+        document.write("<p><b>Falso</b>. Se evalúa según la precedencia.  2 + 3 * 4 da 14, no 20, porque * se aplica antes que +. Solo los operadores del mismo nivel se evalúan de izquierda a derecha. </p>");
+        document.writeln("<li>Los siguientes nombre son nombres de variables inválidos:<b>3g</b>, <b>87</b>, <b>67h2</b>, <b>h22</b>, <b>2h</b></li>");
+        document.write("<p><b>Falso.</b> h22 sí es válido, porque empieza con una letra. Los demás (3g, 87, 67h2, 2h) son inválidos porque comienzan con un dígito.</p></ol>");
+    </script>
+ </head>
+ <body> 
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo6.8.html">&larr;Anterior</a>        
+        <a class="boton" href="EjercicioNo6.10.html">Siguiente&rarr;</a>
+    </nav>
+ </body>
+ </html>

@@ -1,0 +1,49 @@
+<!-- Capistran Ortiz Diego-->
+<!DOCTYPE html>
+<!-- Fig 4.6: avanzada.html-->
+<!-- Herencia en hojas de estilo.-->
+ <html>
+    <head>
+        <meta charset = "utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>M&aacute;s estilos</title>        
+        <!-- esto empieza la sección de la hoja de estilo -->
+         <style type = "text/css"> <!-- tipo MIME para describir el elemento style de CSS-->
+            body    { font-family: Arial, Helvetica, sans-serif;}
+            a.nodec { text-decoration:  none;}
+            a:hover { text-decoration: underline;}
+            li em   { font-weight: bold;}
+            h1, em  {text-decoration: underline;}
+            ul      {margin-left: 20px;}
+            ul ul   { font-size: .8em}
+         </style>
+         <link rel="stylesheet" type = "text/css" href = "/Estilos/Botones.css">
+    </head>
+    <body>
+        <h1>Ejemplo 4.6: avanzada</h1>
+        <hr>
+        <h1>Lista de compras para el lunes:</h1>
+        <ul>
+            <li>Leche</li>
+            <li>Pan
+                <ul>
+                    <li>Pan blanco</li>
+                    <li>Pan de centeno</li>
+                    <li>Pan de trigo entero</li>
+                </ul>
+            </li>
+            <li>Zanahoria</li>
+            <li>Yogurt</li>
+            <li>Pizza</li>
+        </ul>
+        <p><em>Ir a la</em>
+            <a class = "nodec" href = "https://www.bodegaaurrera.com.mx/inicio">
+                Tienda de abarrotes</a>.
+        </p>
+        <nav>
+            <a class = "boton" href="Index_Ejemplos.html">Menú Principal</a>
+            <a class = "boton" href="EjemploNo4.3.html">&larr;Anterior</a> 
+            <a class = "boton" href="EjemploNo4.8.html">&rarr;Siguiente</a>
+         </nav>
+    </body>
+ </html>

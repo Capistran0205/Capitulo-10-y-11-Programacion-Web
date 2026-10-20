@@ -1,0 +1,20 @@
+ol li {
+    display: list-item;
+    margin-bottom: 0.8em;
+}
+
+/* anula li {display: inline} del menú */
+span.respuesta {
+    border-bottom: 1px solid gray;
+    padding: 0 0.3em;
+}
+
+/* hace visible el espacio en blanco */
+p.respuesta {
+    border-bottom: 1px dotted gray;
+}
+
+/* hace visible dónde está la respuesta */
+nav {
+    margin-top: 2em;
+}

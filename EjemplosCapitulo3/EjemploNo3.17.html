@@ -1,0 +1,60 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<!-- Fig. 3.17: autocomplete.html -->
+<!-- El nuevo atributo autocomplete y el elemento datalist de formularios de HTML5. -->
+<html>
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>El nuevo atributo autocomplete y el elemento datalist de HTML5</title>
+   <link rel="stylesheet" type = "text/css" href = "/Estilos/Botones.css">
+</head>
+<body>
+   <h1>Ejemplo 3.17: Demo de autocomplete y datalist</h1>
+   <p>Este formulario demuestra el nuevo atributo autocomplete de HTML
+      y el elemento datalist.</p>
+
+   <!-- activar autocomplete -->
+   <form method="post" autocomplete="on">
+      <p><label>Primer nombre:
+         <input type="text" id="primerNombre"
+            placeholder="Primer nombre"/> (Primer nombre)
+      </label></p>
+      <p><label>Apellido:
+         <input type="text" id="apellido"
+            placeholder="Apellido" /> (Apellido)
+      </label></p>
+      <p><label>Email:
+         <input type="email" id="email"
+            placeholder="nombre@dominio.com" /> (nombre@dominio.com)
+      </label></p>
+      <p><label for="listaTexto">Mes de nacimiento:
+         <!-- Referecia a lista de meses, definida más adelante -->
+         <input type="text" id="listaTexto" 
+            placeholder="Seleccione un mes" list="meses" />
+         <datalist id="meses"> <!-- Lista de meses previamente referenciada -->
+            <option value="Enero">
+            <option value="Febrero">
+            <option value="Marzo">
+            <option value="Abril">
+            <option value="Mayo">
+            <option value="Junio">
+            <option value="Julio">
+            <option value="Agosto">
+            <option value="Septiembre">
+            <option value="Octubre">
+            <option value="Noviembre">
+            <option value="Diciembre">
+         </datalist>
+      </label></p>
+      <p><input type="submit" value="Enviar" />
+         <input type="reset" value="Borrar" /></p>
+   </form>
+   <hr>
+   <nav>
+      <span><a class = "boton" href = "Index_Ejemplos.html">Menú Principal</a></span>
+      <span><a class = "boton" href="EjemploNo3.1.html">&larr; Anterior</a></span>
+      <span><a class = "boton" href = "EjemploNo3.18.html">&rarr; Siguiente</a></span>
+   </nav>
+</body>
+</html>

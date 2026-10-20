@@ -1,0 +1,73 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<!-- Ejercicio 7.20: EjercicioNo7.20.html -->
+<!-- Determinar si un entero de cinco dígitos es un palíndromo. -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <title>Ejemplo 7.20: Determinar si un entero de cinco dígitos es un palíndromo.</title>
+    <script>
+        document.writeln("<h1>Ejercicio 7.20: Determinar si un entero de cinco dígitos es un palíndromo.</h1>");
+        document.writeln("<hr>");
+        document.writeln("<p>Leer un entero de cinco dígitos y determinar si es un palíndromo (por ejemplo 12321, 55555, 45554, 11611)."+
+            " Si el número no tiene cinco dígitos, mostrar un diálogo alert y permitir introducir un nuevo valor después de cerrarlo. Pista: usar división y residuo para obtener cada dígito.</p>");
+        document.writeln("<hr>");
+            document.write("<h2>Solución:</h2>");
+        var entrada; // cadena escrita por el usuario
+        var numero; // valor entero de la entrada
+        var valido = false; // indica si el número tiene cinco dígitos
+        var resto; // lo que queda del número al ir quitando dígitos
+        var digito1, digito2, digito3, digito4, digito5;
+        var esPalindromo;
+
+        // pedir el número hasta que tenga exactamente cinco dígitos
+        while (valido == false) {
+            entrada = window.prompt("Escriba un entero de cinco dígitos:", "0");
+            numero = parseInt(entrada);
+
+            if (numero >= 10000)
+                if (numero <= 99999)
+                    valido = true;
+
+            if (valido == false)
+                window.alert(
+                    "El número debe tener exactamente cinco dígitos. Intente de nuevo.");
+        } // fin de while
+
+        // separar los dígitos con residuo (%) y división
+        digito5 = numero % 10; // unidades
+        resto = (numero - digito5) / 10;
+        digito4 = resto % 10; // decenas
+        resto = (resto - digito4) / 10;
+        digito3 = resto % 10; // centenas
+        resto = (resto - digito3) / 10;
+        digito2 = resto % 10; // millares
+        resto = (resto - digito2) / 10;
+        digito1 = resto; // decenas de millar
+
+        // es palíndromo si el 1º igual al 5º y el 2º igual al 4º
+        esPalindromo = false;
+
+        if (digito1 == digito5)
+            if (digito2 == digito4)
+                esPalindromo = true;
+
+        if (esPalindromo == true)
+            document.writeln("<p>" + numero + " es un palíndromo</p>");
+        else
+            document.writeln("<p>" + numero + " no es un palíndromo</p>");
+    </script>
+</head>
+
+<body>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo7.19.html">&larr;Anterior</a>
+        <a class="boton" href="EjercicioNo7.21.html">Siguiente&rarr;</a>
+    </nav>
+</body>
+
+</html>

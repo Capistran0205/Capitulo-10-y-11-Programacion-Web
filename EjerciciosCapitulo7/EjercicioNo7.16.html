@@ -1,0 +1,71 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<!-- Ejercicio 7.16: EjercicioNo7.16.html -->
+<!-- Tabla de valores generada con ciclos. -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <title>Ejercicio 7.16: Tabla de valores generados</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            text-align: center;
+            padding: 4px 16px;
+        }
+    </style>
+    <script>
+        document.writeln("<h1>Ejercicio 7.16: Tabla de valores generados</h1>");
+        document.writeln("<hr>");
+        document.writeln("<p>Imprimir con ciclos una tabla de valores (N, 10*N, 100*N, 1000*N) en una tabla HTML5, usando CSS para centrar los datos de cada columna.</p>");
+        document.writeln("<hr>");
+        var ultimo = 6; // último valor de N
+        var n = 1; // valor de N de la fila actual
+        var columna; // número de columna dentro de la fila
+        var multiplicador; // 1, 10, 100 y 1000
+
+        document.writeln("<table>");
+        document.writeln("<thead><tr><th>N</th><th>10*N</th>" +
+            "<th>100*N</th><th>1000*N</th></tr></thead>");
+        document.writeln("<tbody>");
+
+        // ciclo exterior: una fila por cada valor de N
+        while (n <= ultimo) {
+            document.writeln("<tr>");
+
+            multiplicador = 1;
+            columna = 1;
+
+            // ciclo interior: cuatro columnas
+            while (columna <= 4) {
+                document.writeln("<td>" + n * multiplicador + "</td>");
+                multiplicador *= 10;
+                ++columna;
+            } // fin del while interior
+
+            document.writeln("</tr>");
+            ++n;
+        } // fin del while exterior
+
+        document.writeln("</tbody></table>");
+    </script>
+</head>
+
+<body>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo7.15.html">&larr;Anterior</a>
+        <a class="boton" href="EjercicioNo7.17.html">Siguiente&rarr;</a>
+    </nav>
+</body>
+
+</html>

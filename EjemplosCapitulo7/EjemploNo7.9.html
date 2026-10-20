@@ -1,0 +1,70 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+
+<!-- Fig. 7.9: promedio2.html -->
+<!-- Repetición controlada por centinela para calcular el promedio de una clase. -->
+<html>
+
+<head>
+   <meta charset="utf-8">
+   <link rel="stylesheet" href="/Estilos/Botones.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Ejemplo 7.9: Programa del promedio de una clase: repetición controlada por centinela</title>
+   <script>
+      document.writeln("<h1>Ejemplo 7.9: Programa del promedio de una clase: repetición controlada por centinela</h1>");
+      var total; // suma de calificaciones
+      var contadorCalificaciones; // número de calificaciones introducidas
+      var calificación; // calificación escrita por el usuario (como cadena)
+      var valorCalificacion; // valor de la calificación (convertido a entero)
+      var promedio; // promedio de todas las calificaciones
+
+      // Fase de inicialización
+      total = 0; // borrar total
+      contadorCalificaciones = 0; // preparar para iterar
+
+      // Fase de procesamiento
+      // pedir la entrada y leer la calificación del usuario
+      calificación = window.prompt(
+         "Escriba la calificación entera. -1 para salir:", "0");
+
+      // convertir calificación de cadena en entero
+      valorCalificacion = parseInt(calificación);
+
+      while (valorCalificacion != -1) {
+         // sumar valorCalificacion al total
+         total = total + valorCalificacion;
+
+         // sumar 1 a contadorCalificaciones
+         contadorCalificaciones = contadorCalificaciones + 1;
+
+         // pedir la entrada y leer calificación del usuario
+         calificación = window.prompt(
+            "Escriba la calificación entera No." + contadorCalificaciones +" o escriba -1 para salir:", "0");
+
+         // convertir calificación de cadena en entero
+         valorCalificacion = parseInt(calificación);
+      } // fin de while
+
+      // Fase de terminación
+      if (contadorCalificaciones != 0) {
+         promedio = total / contadorCalificaciones;
+
+         // muestra el promedio de las calificaciones de los exámenes
+         document.writeln(
+            "<h2>El promedio de la clase es " + promedio + "</h2>");
+      } // fin de if
+      else
+         document.writeln("<p>No se introdujeron calificaciones</p>");
+
+   </script>
+</head>
+
+<body>
+   <nav>
+      <a class="boton" href="Index_Ejemplos.html">Men&uacute; principal</a>      
+      <a class="boton" href="EjemploNo7.7.html">&larr;Anterior</a>
+      <a class="boton" href="EjemploNo7.11.html">Siguiente&rarr;</a>
+   </nav>
+</body>
+
+</html>

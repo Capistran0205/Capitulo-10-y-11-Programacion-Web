@@ -1,0 +1,49 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<!-- Ejercicio 8.6: EjercicioNo8.6.html -->
+<!-- Encontrar el menor de varios enteros no negativos. -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <title>Ejercicio 8.6: Menor de varios enteros no negativos</title>
+    <script>
+        document.writeln("<h1>Ejercicio 8.6: Menor de varios enteros no negativos</h1>");
+        document.writeln( "<hr>" );
+        document.writeln("<p>Escriba una secuencia de comandos que encuentre el menor de varios enteros no negativos</p>");
+        document.writeln( "<hr>" );
+        document.writeln("<h2>Solución:</h2>");
+        var cantidad; // cuántos enteros introducirá el usuario
+        var valor;    // valor leído en cada iteración
+        var menor;    // menor valor encontrado hasta el momento
+
+        cantidad = parseInt(window.prompt("¿Cuántos enteros va a introducir?", "5"));
+
+        if (cantidad >= 1) {
+            for (var i = 1; i <= cantidad; ++i) {
+                valor = parseInt(window.prompt(
+                    "Entero no negativo " + i + " de " + cantidad + ":", "0"));
+
+                // el primer valor es el menor hasta ese momento
+                if (i == 1 || valor < menor)
+                    menor = valor;
+            } // fin de for
+
+            document.writeln("<p>El menor de los " + cantidad +
+                " enteros es " + menor + "</p>");
+        } // fin de if
+        else
+            document.writeln("<p>La cantidad debe ser un entero mayor o igual a 1.</p>");
+    </script>
+</head>
+
+<body>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo8.5.html">&larr;Anterior</a>
+        <a class="boton" href="EjercicioNo8.7.html">Siguiente&rarr;</a>
+    </nav>
+</body>
+
+</html>

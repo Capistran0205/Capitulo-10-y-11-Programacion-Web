@@ -1,0 +1,8 @@
+/* Fig. 4.19: estilosusuarios.css */
+/* Una hoja de estilos de usuario */
+h1         { padding: 0.5em;
+                  border-style: dashed;
+                  margin: 0.5em; }
+body       { font-size: 20pt; 
+             color: yellow;
+             background-color: navy;}

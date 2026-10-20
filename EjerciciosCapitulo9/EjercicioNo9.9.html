@@ -1,0 +1,62 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<!-- Ejercicio 9.9: distancia.html -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9.9: Distancia entre dos puntos</title>
+    <script>
+        document.writeln("<h1> Ejercicio 9.9: Distancia entre dos puntos</h1>");
+        document.writeln("<hr>");
+        document.writeln("<p>Escriba una función llamada distancia, que calcule la distancia entre dos puntos (x1, y1) y (x2, y2) con valores de punto flotante." +
+            " Úsala en una secuencia de comandos con un formulario donde el usuario introduzca las coordenadas.</p>");
+        document.writeln("<hr>");
+        document.writeln("<h2>Solución:</h2>");
+        function iniciar() {
+            var boton = document.getElementById("botonCalcular");
+            boton.addEventListener("click", mostrarDistancia, false);
+        } // fin de la función iniciar
+
+        function mostrarDistancia() {
+            var x1 = parseFloat(document.getElementById("campoX1").value);
+            var y1 = parseFloat(document.getElementById("campoY1").value);
+            var x2 = parseFloat(document.getElementById("campoX2").value);
+            var y2 = parseFloat(document.getElementById("campoY2").value);
+            var resultado = document.getElementById("resultado");
+
+            if (isNaN(x1) || isNaN(y1) || isNaN(x2) || isNaN(y2))
+                resultado.innerHTML = "Escriba las cuatro coordenadas.";
+            else
+                resultado.innerHTML = "La distancia es: " + distancia(x1, y1, x2, y2);
+        } // fin de la función mostrarDistancia
+
+        function distancia(x1, y1, x2, y2) {
+            return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+        } // fin de la función distancia
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+</head>
+
+<body>
+    <form action="#">
+        <p>Punto 1:
+            x1 <input id="campoX1" type="number" step="any">
+            y1 <input id="campoY1" type="number" step="any"></p>
+        <p>Punto 2:
+            x2 <input id="campoX2" type="number" step="any">
+            y2 <input id="campoY2" type="number" step="any"></p>
+        <p><input id="botonCalcular" type="button" value="Calcular distancia"></p>
+    </form>
+    <p id="resultado"></p>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo9.8.html">&larr;Anterior</a>
+        <a class="boton" href="EjercicioNo9.10.html">Siguiente&rarr;</a>
+    </nav>
+</body>
+
+</html>

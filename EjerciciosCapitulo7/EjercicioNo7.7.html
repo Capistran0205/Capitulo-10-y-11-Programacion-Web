@@ -1,0 +1,57 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<!-- AutoEvaluacionNo7.7.html -->
+<!-- Capítulo 7: Ejercicio de autoevaluación 7.7 -->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/Estilos/Botones.css">
+  <link rel="stylesheet" href="/Estilos/Imagenes.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio de Autoevaluación 7.7</title>
+  <script>
+    document.writeln("<h1> Ejercicio de Autoevaluación 7.7 </h1>");
+    document.writeln("<hr>");
+    document.writeln("<p> Identifique y corrija los <em>errores</em> de cada uno de los siguientes segmentos de código:</p>");
+    document.writeln("<hr>");
+    document.writeln("<ol type = 'a'> <li></li>");
+    document.writeln("<img class = 'imagen' src = \"/Resources/Error(a)7.7.png\">");
+    document.writeln("<p> Falta la llave del cierre del while</p>");
+    document.writeln("<li></li>");
+    document.writeln("<img class = 'imagen' src = \"/Resources/Error(b)7.7.png\">")
+    document.writeln("<p>El ; después del else produce un error lógico</p>");
+    document.writeln("</ol>");
+    document.writeln("<h2> Soluciones: </h2>");
+    document.writeln("<ol type = 'a'> <li></li>");
+    var c, producto;
+    c = 1;
+    producto = 1;
+    while (c <= 5) {
+      producto *= c;
+      ++c;
+    }
+    document.writeln("<img class = 'imagen' src = \"/Resources/Solucion(a)7.7.png\">");
+    document.writeln("<li></li>");
+    document.writeln("<p>Total del producto: " + producto + "</p>");
+    document.writeln("<li></li>");
+    document.writeln("<img class = 'imagen' src = \"/Resources/Solucion(b)7.7.png\">");
+    var genero;
+    genero = 2;
+    if (genero == 1)
+      document.writeln("<p>Mujer</p>");
+    else
+      document.writeln("<p>Hombre</p>");
+    document.writeln("</ol>");
+  </script>
+</head>
+
+<body>
+  <nav>
+    <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+    <a class="boton" href="EjercicioNo7.6.html">&larr;Anterior</a>
+    <a class="boton" href="EjercicioNo7.8.html">Siguiente&rarr;</a>
+  </nav>
+</body>
+
+</html>

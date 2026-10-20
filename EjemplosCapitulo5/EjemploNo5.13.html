@@ -1,0 +1,110 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<!-- Fig. 5.13: inclinar.html -->
+<!-- Elementos de inclinicación y de transformación en CSS3. -->
+<html>
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Ejemplo No 5.13: Inclinar texto</title>
+   <link rel="stylesheet" type="text/css" href="/Estilos/Botones.css">
+   <style type="text/css">
+      .skew .textbox {
+         margin-left: 75px;
+         background: #305CDE;
+         height: 100px;
+         width: 200px;
+         padding: 25px 0;
+         text-align: center;
+         font-size: 250%;
+         border: 3px solid #000080;
+         border-radius: 15px;
+         -webkit-animation: skew 3s infinite linear;
+         -moz-animation: skew 3s infinite linear;
+         animation: skew 3s infinite linear;
+      }
+
+      @-webkit-keyframes skew {
+         from {
+            -webkit-transform: skewX(0deg);
+         }
+
+         25% {
+            -webkit-transform: skewX(45deg);
+         }
+
+         50% {
+            -webkit-transform: skewX(0);
+         }
+
+         75% {
+            -webkit-transform: skewX(-45deg);
+         }
+
+         to {
+            -webkit-transform: skewX(0);
+         }
+      }
+
+      @-moz-keyframes skew {
+         from {
+            -moz-transform: skewX(0deg);
+         }
+
+         25% {
+            -moz-transform: skewX(45deg);
+         }
+
+         50% {
+            -moz-transform: skewX(0);
+         }
+
+         75% {
+            -moz-transform: skewX(-45deg);
+         }
+
+         to {
+            -moz-transform: skewX(0);
+         }
+      }
+
+      @-keyframes skew {
+         from {
+            transform: skewX(0deg);
+         }
+
+         25% {
+            transform: skewX(45deg);
+         }
+
+         50% {
+            transform: skewX(0);
+         }
+
+         75% {
+            transform: skewX(-45deg);
+         }
+
+         to {
+            transform: skewX(0);
+         }
+      }
+   </style>
+</head>
+
+<body>
+   <h1>Ejemplo No 5.13: Inclinar texto</h1>
+   <hr>
+   <div class="box skew">
+      <div class="textbox">Inclinar texto</div>
+      <div>
+         <nav>
+            <a class="boton" href="Index_Ejemplos.html">Menú Principal</a>
+            <a class="boton" href="EjemploNo5.12.html">&larr;Anterior</a>
+            <a class="boton" href="EjemploNo5.14.html">&rarr;Siguiente</a>
+         </nav>
+      </div>
+</body>
+
+</html>

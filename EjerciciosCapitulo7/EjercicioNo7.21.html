@@ -1,0 +1,37 @@
+<!--Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<!-- Ejercicio 7.21: EjercicioNo7.21.html -->
+<!-- Ciclo infinito que muestra los múltiplos de 2. -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <script>
+        document.writeln("<h1>Ejercicio 7.21: Ciclo (infinito) que muestra los múltiplos de 2.</h1>");
+        document.writeln("<hr>");
+        document.writeln("<p>Leer un entero de cinco dígitos y determinar si es un palíndromo (por ejemplo 12321, 55555, 45554, 11611)."+
+            " Si el número no tiene cinco dígitos, mostrar un diálogo alert y permitir introducir un nuevo valor después de cerrarlo. Pista: usar división y residuo para obtener cada dígito.</p>");
+        document.writeln("<hr>");
+        document.write("<h2>Solución:</h2>");
+        var multiplo = 2;
+
+        while (multiplo <= 100000000) // la condición siempre es verdadera: ciclo infinito (sin embargo el resultado no se mostrára solo que se cambie la condición del bucle para poder visualizar los múltiplos)
+        {
+            document.writeln("<p>" + multiplo + "</p>");
+            multiplo = multiplo * 2;
+        } // fin de while
+    </script>
+    <title>Ejercicio 7.21: Múltiplos de 2 en un ciclo infinito</title>
+</head>
+
+<body>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo7.20.html">&larr;Anterior</a>
+        <a class="boton" href="EjercicioNo7.22.html">Siguiente&rarr;</a>
+    </nav>
+</body>
+
+</html>

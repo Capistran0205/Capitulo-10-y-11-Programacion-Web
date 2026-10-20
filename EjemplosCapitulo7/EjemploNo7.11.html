@@ -1,0 +1,52 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+
+<!-- Fig. 7.11: analisis.html -->
+<!-- Cálculo de los resultados de un examen. -->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo 7.11: An&aacute;lisis de los resultados de un examen</title>
+    <script>
+        document.writeln("<h1>Ejemplo 7.11: An&aacute;lisis de los resultados de un examen</h1>");
+        // inicializar variables en declaraciones
+        var aprobados = 0; // número de aprobados
+        var reprobados = 0; // número de reprobados
+        var estudiante = 1; // contador de estudiantes
+        var resultado; // el resultado de un examen
+
+        // procesar 10 estudiantes; ciclo controlado por contador
+        while (estudiante <= 10) {
+            resultado = window.prompt("Escriba el resultado (1=aprobado,2=reprobado) para el estudiante no." + estudiante, "0");
+
+            if (resultado == "1")
+                aprobados = aprobados + 1;
+            else
+                reprobados = reprobados + 1;
+
+            estudiante = estudiante + 1;
+        } // fin de while
+
+        // fase de terminación
+        document.writeln("<h1>Resultados del examen</h1>");
+        document.writeln("<p>Aprobados: " + aprobados +
+            "; Reprobados: " + reprobados + "</p>");
+
+        if (aprobados > 8)
+            document.writeln("<p>Bono para el instructor</p>");
+
+    </script>
+</head>
+
+<body>
+    <nav>
+        <a class="boton" href="Index_Ejemplos.html">Men&uacute; principal</a>        
+        <a class="boton" href="EjemploNo7.9.html">&larr;Anterior</a>
+        <a class="boton" href="EjemploNo7.14.html">Siguiente&rarr;</a>
+    </nav>
+</body>
+
+</html>

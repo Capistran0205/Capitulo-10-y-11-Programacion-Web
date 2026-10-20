@@ -1,0 +1,74 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<!-- Ejercicio 8.11: EjercicioNo8.11.html -->
+<!-- Ventas de cinco productos con ciclo controlado por centinela. -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <title>Ejercicio 8.11: Ventas de cinco productos con ciclo controlado por centinela.</title>
+    <script>
+        document.writeln( "<h1>Ejercicio 8.11: Ventas de cinco productos con ciclo controlado por centinela.</h1>" );
+        document.writeln( "<hr>" );
+        document.writeln( "<p>Un vendedor minorista en línea vende cinco productos distintos, cuyos precios de ventas son los siguientes:"+
+            " producto 1, $2.98; producto 2, $4.50; producto 3, $9.98; producto 4, $4.49; producto 5, $6.87. Escriba una secuencia de comandos que lea una serie de pares de números</p>" );
+        document.writeln( "<ol type = 'a'>" );
+        document.writeln( "<li>Número del producto;</li>" );
+        document.writeln( "<li>Cantidad vendida durante un día</li>" );
+        document.writeln( "</ol>" );
+        document.writeln( "<hr>" );
+        document.writeln( "<h2>Solución:</h2>" );
+        var SENTINELA = -1; // número de producto que indica el fin de los datos
+        var producto;       // número de producto leído
+        var cantidad;       // cantidad vendida
+        var precio;         // precio unitario del producto
+        var total = 0;      // valor total de las ventas
+
+        producto = parseInt(window.prompt(
+            "Número de producto (1 a 5).\nEscriba -1 para terminar:", "1"));
+
+        while (producto != SENTINELA) {
+            switch (producto) {
+                case 1: precio = 2.98; break;
+                case 2: precio = 4.50; break;
+                case 3: precio = 9.98; break;
+                case 4: precio = 4.49; break;
+                case 5: precio = 6.87; break;
+                default: precio = 0; // producto inexistente
+            } // fin de switch
+
+            if (precio == 0)
+                window.alert("Producto inválido: " + producto);
+            else {
+                cantidad = parseInt(window.prompt(
+                    "Cantidad vendida del producto " + producto + ":", "1"));
+
+                if (cantidad >= 0)
+                    total += precio * cantidad;
+                else
+                    window.alert("Cantidad inválida.");
+            } // fin de else
+
+            // leer el siguiente producto (o el centinela)
+            producto = parseInt(window.prompt(
+                "Número de producto (1 a 5).\nEscriba -1 para terminar:", "1"));
+        } // fin de while
+
+        document.writeln("<h1>Ventas de la semana pasada</h1>");
+        document.writeln("<p>Valor total de las ventas: $" +
+            total.toFixed(2) + "</p>");
+
+    </script>
+</head>
+
+<body>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo8.10.html">&larr;Anterior</a>
+        <a class="boton" href="EjercicioNo8.12.html">Siguiente&rarr;</a>
+    </nav>
+</body>
+
+</html>

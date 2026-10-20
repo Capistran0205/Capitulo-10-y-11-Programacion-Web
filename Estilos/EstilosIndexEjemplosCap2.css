@@ -1,0 +1,61 @@
+/* Capítulo 2 · Ejemplos — Estilo Batman
+   Paleta: negro noche, gris acero y amarillo del emblema */
+
+body {
+   background-color: #14161A;      /* fondo */
+   color: #1A1F2E;;                 /* texto principal */
+   font-family: Verdana, Arial, sans-serif;
+   margin: 0;
+   padding: 20px 40px;
+   border-top: 10px solid #F5C518; /* franja amarilla superior */
+}
+
+h1 {
+   color: #F5C518;
+   background-color: #000000;
+   border: 3px solid #F5C518;
+   border-bottom: 8px solid #3A3F47;
+   padding: 0.4em 0.6em;
+   text-transform: uppercase;
+   letter-spacing: 2px;
+}
+
+p {
+   color: #E6E6E6;
+   line-height: 1.6;
+   max-width: 70ch;                /* líneas cómodas de leer */
+   border-left: 4px solid #F5C518;
+   padding-left: 0.8em;
+}
+
+a {
+   color: #F5C518;
+   font-weight: bold;
+}
+
+ul {
+   background-color: #2B2F36;
+   border: 3px solid #F5C518;
+   padding: 1em 1em 1em 2.5em;
+   max-width: 60ch;
+}
+
+li {
+   color: #F0F0F0;
+   padding: 0.3em 0.5em;
+   border-bottom: 1px solid #444B55;
+   list-style-type: disc;
+}
+
+li::marker {
+   color: #F5C518;
+}
+
+li:last-child {
+   border-bottom: none;
+}
+
+li:hover {
+   background-color: #F5C518;
+   color: #14161A;
+}

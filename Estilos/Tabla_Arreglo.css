@@ -1,0 +1,56 @@
+table {
+  width: 200px;
+  border-collapse: collapse;
+  background-color: lightblue;
+}
+table,
+td,
+th {
+  border: 1px solid black;
+  padding: 4px;
+  margin-top: 20px;
+}
+th {
+  text-align: left;
+  color: white;
+  background-color: darkblue;
+}
+/* ArreglosP.css
+   Estilo para los arreglos que se muestran dentro de un <p>, como en los
+   ejemplos 10.14 y 10.16:  salida.innerHTML = encabezado + elArreglo.join( " " );  */
+
+p[id^="arreglo"],
+p[id^="elemento"],
+p[id^="enModificar"] {
+   display: block;
+   max-width: 40em;
+   margin: 0.6em 0;
+   padding: 0.6em 1em;
+   background: #f3f6fb;
+   border: 1px solid #c9d4e6;
+   border-left: 5px solid #3b6ea8;   /* franja de color a la izquierda */
+   border-radius: 4px;
+   font-family: Consolas, "Courier New", monospace;
+   font-size: 1.05em;
+   line-height: 1.6;
+   word-spacing: 0.5em;              /* separa los valores del join( " " ) */
+   overflow-wrap: anywhere;          /* los arreglos largos se parten en lugar de desbordar */
+}
+
+/* variantes según el id del párrafo */
+p#arregloOriginal,
+p#elementoOriginal {
+   border-left-color: #888;          /* antes de modificar: gris */
+}
+
+p#arregloModificado,
+p#arregloOrdenado,
+p#elementoModificado {
+   border-left-color: #2e8b57;       /* después de modificar u ordenar: verde */
+   background: #f1f8f4;
+}
+
+p#enModificarElemento {
+   border-left-color: #d98324;       /* valor dentro de la función: naranja */
+   background: #fdf6ec;
+}

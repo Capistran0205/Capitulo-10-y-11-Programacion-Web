@@ -1,0 +1,58 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<!-- AutoEvaluacionNo8.2.html -->
+<!-- Capítulo 8: Ejercicio de autoevaluación 8.2 -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio de Autoevaluación 8.2</title>
+    <script>
+        document.writeln("<h1>Ejercicio de Autoevaluación 8.2</h1>");
+        document.writeln("<hr>");
+        document.writeln("<p>Escriba una instrucción o un conjunto de instrucciones en JavaScript para realizar cada una de la siguientes tareas:</p>");
+        document.writeln("<hr>");
+        document.writeln("<ol type = 'a'>");
+        document.writeln("<li>Sumar los enteros impares entre 1 y 99. Utilice una instrucción for. Suponga que se han declarado las variables suma y cuenta.</li>");
+        document.writeln("<h2>Solución:</h2>");
+        var suma = 0;
+        for (cuenta = 1; cuenta <= 99; cuenta += 2)
+            suma += cuenta;
+        document.writeln("<p>Resultado:" + suma + "</p>");
+        document.writeln("<li>Calcular el valor de 2.5 elevado a la potencia de 3. Use el método pow.</li>");
+        document.writeln("<h2>Solución:</h2>");
+        document.writeln("<p> El cubo del 2.5 es: " + Math.pow(2.5, 3) + "</p>");
+        document.writeln("<li>Imprimir los enteros del 1 al 20 mediante el uso de un ciclo while y la variable contador x. Suponga que la variable x se ha declarado, pero no se ha inicializado. Imprima solamente cinco enteros por línea.</li>");
+        document.writeln("<h2>Solución:</h2>");
+        var x = 1;
+        document.writeln("<p>");
+
+        while (x <= 20) {
+            document.write(x + " ");
+
+            if (x % 5 == 0 && x < 20)
+                document.writeln("</p><p>"); // nuevo párrafo cada 5 enteros
+
+            ++x;
+        } // fin de while
+
+        document.writeln("</p>");
+        document.writeln("<p>Resultado:</p>");
+        document.writeln("<li>Repita el ejercicio 8.2 (c), pero ahora use una instrucción for.</li>");
+        document.writeln("</ol>")
+
+
+    </script>
+</head>
+
+<body>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo8.1.html">&larr;Anterior</a>
+        <a class="boton" href="EjercicioNo8.3.html">Siguiente&rarr;</a>
+    </nav>
+</body>
+
+</html>

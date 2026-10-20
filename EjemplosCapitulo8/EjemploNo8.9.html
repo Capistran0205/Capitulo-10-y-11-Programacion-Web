@@ -1,0 +1,33 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+
+<!-- Fig. 8.9: HacerMientras.html -->
+<!-- Uso de la instrucción de repetición do...while. -->
+<html>
+<head>
+   <meta charset="utf-8">
+   <title>Uso de la instrucción de repetición do...while</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="/Estilos/Botones.css">
+   <script>
+      document.writeln("<h1>Ejemplo 8.9: Uso de la instrucción de repetición do while</h1>");
+      var contador = 1;
+      // Do while para mostrar todas las etiquetas H#
+      do
+      {
+         document.writeln( "<h" + contador + ">Este es " +
+            "un encabezado de nivel h" + contador +
+            "</h" + contador + ">" );
+         ++contador;
+      } while ( contador <= 6 );
+
+   </script>
+</head>
+<body>
+    <nav>
+        <a class ="boton" href="Index_Ejemplos.html">Men&uacute; principal</a>
+        <a class ="boton" href="EjemploNo8.7.html">&larr;Anterior</a>
+        <a class ="boton" href="EjemploNo8.11.html">Siguiente&rarr;</a>
+    </nav>
+</body>
+</html>

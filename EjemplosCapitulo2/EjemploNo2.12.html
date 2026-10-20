@@ -1,0 +1,62 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<!-- Fig. 2.12 tabla1.html -->
+<!-- Creación de una tabla básica. -->
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Una tabla de HTML 5 simple</title>
+        <link rel="stylesheet" type = "text/css" href = "/Estilos/Botones.css">
+    </head>
+    <body>
+       <h1>Décimo Ejemplo de HTML: Una tabla de HTML 5 simple</h1>
+       <hr>
+       <!-- la etiqueta <table> abre una tabla -->
+       <table border = "1">
+        <!-- la etiqueta <caption> sintetiza el contenido la tabla (esto ayuda a las personas con discapacidad visual) -->
+        <caption><strong>Tabla de Tecnologías para Desarrollo Web-Frontend (1era Columna) y Desarollo Web-Backend (2da Columna)</strong></caption>
+        
+        <!-- la sección <thead> aparece primero en la tabla -->
+        <thead>
+            <tr> <!-- <tr> inserta una fila en la tabla -->
+                <th>Desarrollo Web-Fronted</th> <!-- inserta una celda de encabezado -->
+                <th>Desarrollo Web-Backend</th>
+            </tr>
+        </thead>
+        <!-- la sección <tfoot> aparece al último en la tabla da el formato al pie de tabla -->        
+        <tfoot>
+            <tr>
+                <th>
+                    Consultado de: <a href = "https://miguelgomezsa.com/blog/lenguajes-backend-y-frontend">haga click</a>
+                </th>
+                <th>
+                    Consultado de: <a href = "https://miguelgomezsa.com/blog/lenguajes-backend-y-frontend">haga click</a>
+                </th>
+            </tr>
+        </tfoot>
+        <!-- todo el contenido de la tabla está encerrado dentro del elemento <tbody> -->
+        <tbody>
+            <tr>
+                <td>HTML 5</td>
+                <td>Python</td>
+            </tr>
+            <!-- pendiente de agregar más lenguajes acordes-->
+            <tr>
+                <td>CSS 3</td>
+                <td>PHP</td>
+            </tr>
+            <tr>
+                <td>JavaScript</td>
+                <td>Java</td>
+            </tr>
+        </tbody>
+       </table>
+       <hr>
+       <nav>
+            <span><a class = "boton" href = "Index_Ejemplos.html">Menú Principal</a></span>
+            <span><a class = "boton" href="EjemploNo2.11.html">&larr; Anterior</a></span>
+            <span><a class = "boton" href = "EjemploNo2.13.html">&rarr; Siguiente</a></span>
+       </nav>
+    </body>
+</html>

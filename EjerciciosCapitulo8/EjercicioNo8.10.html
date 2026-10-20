@@ -1,0 +1,81 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<!-- Ejercicio 8.10: EjercicioNo8.10.html -->
+<!-- Los doce días de Navidad con ciclos for y switch. -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <title>Ejemplo 8.10 Los doce días de Navidad con ciclos for y switch</title>
+    <script>
+        document.writeln( "<h1>Ejemplo 8.10: Los doce días de Navidad con ciclos for y switch</h1>" );
+        document.writeln( "<hr>" );
+        document.writeln( "<p><em><b>Canción \"Los Doce Días de Navidad\"</b></em>. Escriba una secuencia de comandos que utilice estructuras de repetición y un switch para imprimir la canción"+
+            " \"Los Doce Días de Navidad\". "+
+            "</p>" );
+        document.writeln( "<hr>" );
+        document.writeln( "<h2>Solución:</h2>" );
+        var ordinal; // texto del día ("primer", "segundo", ...)
+        var regalo;  // texto del regalo
+
+        document.writeln("<h1>Los doce días de Navidad</h1>");
+
+        // un verso por cada día
+        for (var dia = 1; dia <= 12; ++dia) {
+            switch (dia) {
+                case 1: ordinal = "primer"; break;
+                case 2: ordinal = "segundo"; break;
+                case 3: ordinal = "tercer"; break;
+                case 4: ordinal = "cuarto"; break;
+                case 5: ordinal = "quinto"; break;
+                case 6: ordinal = "sexto"; break;
+                case 7: ordinal = "séptimo"; break;
+                case 8: ordinal = "octavo"; break;
+                case 9: ordinal = "noveno"; break;
+                case 10: ordinal = "décimo"; break;
+                case 11: ordinal = "undécimo"; break;
+                case 12: ordinal = "duodécimo"; break;
+            } // fin del switch de los días
+
+            document.writeln("<p>En el " + ordinal +
+                " día de Navidad<br>mi amor me regaló:<br>");
+
+            // los regalos, desde el del día actual hasta el primero (revirtiendo la secuencia como en la canción original)
+            for (var n = dia; n >= 1; --n) {
+                switch (n) {
+                    case 1:
+                        regalo = (dia > 1 ? "y " : "") + "una perdiz en un peral";
+                        break;
+                    case 2: regalo = "dos tórtolas"; break;
+                    case 3: regalo = "tres gallinas francesas"; break;
+                    case 4: regalo = "cuatro pájaros cantores"; break;
+                    case 5: regalo = "cinco anillos de oro"; break;
+                    case 6: regalo = "seis gansos poniendo huevos"; break;
+                    case 7: regalo = "siete cisnes nadando"; break;
+                    case 8: regalo = "ocho criadas ordeñando"; break;
+                    case 9: regalo = "nueve damas bailando"; break;
+                    case 10: regalo = "diez señores saltando"; break;
+                    case 11: regalo = "once gaiteros tocando"; break;
+                    case 12: regalo = "doce tamborileros tocando el tambor"; break;
+                } // fin del switch de los regalos
+
+                document.writeln(regalo + "<br>");
+            } // fin del for de los regalos
+
+            document.writeln("</p>");
+        } // fin del for de los días
+
+    </script>
+</head>
+
+<body>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo8.9.html">&larr;Anterior</a>
+        <a class="boton" href="EjercicioNo8.11.html">Siguiente&rarr;</a>
+    </nav>
+</body>
+
+</html>

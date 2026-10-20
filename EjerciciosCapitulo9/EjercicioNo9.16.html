@@ -1,0 +1,77 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<!-- Ejercicio 9.16: cociente, residuo y mostrarDigitos.html -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <title>Ejercicio 9.16: Cociente, Residuo y mostrarDigitos</title>
+    <script>
+        document.writeln("<h1>Ejercicio 9.16: Cociente, Residuo y mostrarDigitos</h1>");
+        document.writeln("<hr>");
+        document.writeln("<p>Escriba segmentos de programa que realicen cada una de las siguientes tareas:</p>");
+        document.writeln("<ol type = 'a'>");
+        document.writeln("<li>Calcule la parte entera del cociente cuando el entero a se divide entre el entero b</li>");
+        document.writeln("<li>Calcule el residuo entero cuando a se divide entre el entero b</li>");
+        document.writeln("<li>Use las piezas del programa que se desarrollaron en las partes (a) y (b) para escribir una función llamada mostrarDigitos que recibe un entero entre 1 y 99999" +
+            " para luego imprimirlo como una serie de dígitos, de los cuales cada par se separa mediantes dos espacios.</li>");
+        document.writeln("<li>Incorpore la función desarrollada en la aprte (c) en una secuencia de comandos que reciba un entero de un diálogo prompt e invoque mostrarDigitos para pasar a al función del entero introducido.</li>");
+        document.writeln("</ol>");
+        document.writeln("<hr>");
+        document.writeln("<h2>Solución:</h2>");
+        // a)
+        function cociente(a, b) {
+            return Math.floor(a / b);
+        }
+        // b)
+        function residuo(a, b) {
+            return a % b;
+        }
+
+        // devuelve los dígitos de numero separados por dos espacios
+      function mostrarDigitos( numero )
+      {
+         var divisor = 1;
+         var salida = "";
+
+         // buscar la potencia de 10 más grande que cabe en numero
+         while ( divisor * 10 <= numero )
+            divisor *= 10;
+
+         while ( divisor >= 1 )
+         {
+            salida += cociente( numero, divisor ); // el siguiente dígito
+            numero = residuo( numero, divisor );   // lo que falta por mostrar
+            divisor /= 10;
+
+            if ( divisor >= 1 )
+               salida += "&nbsp;&nbsp;"; // dos espacios entre dígitos
+         }
+
+         return salida;
+      }
+
+      var entrada = window.prompt( "Escriba un entero entre 1 y 99999", "0" );
+      var numero = parseInt( entrada );
+
+      if ( isNaN( numero ) || numero < 1 || numero > 99999 )
+         document.writeln( "<p>El n&uacute;mero debe ser un entero entre 1 y 99999.</p>" );
+      else
+         document.writeln( "<p>" + numero + " se imprime como:</p><p>" +
+            mostrarDigitos( numero ) + "</p>" );
+
+
+    </script>
+</head>
+
+<body>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo9.15.html">&larr;Anterior</a>
+        <a class="boton" href="EjercicioNo9.17.html">Siguiente&rarr;</a>
+    </nav>
+</body>
+
+</html>

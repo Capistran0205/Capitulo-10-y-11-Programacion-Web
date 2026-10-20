@@ -1,0 +1,63 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+
+<!-- Fig. 7.7: promedio.html -->
+<!-- Repetición controlada por contador para calcular el promedio de una clase. -->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo 7.7: Programa del promedio de una clase</title>
+    <script>
+        document.writeln("<h1>Ejemplo 7.7: Programa del promedio de una clase</h1>");
+        var total; // suma de calificaciones
+        var contadorCalificaciones; // número de calificaciones introducidas
+        var calificación; // calificación escrita por el usuario (como una cadena)
+        var valorCalificacion; // valor de la calificación (convertido en entero)
+        var promedio; // promedio de todas las calificaciones
+
+        // Fase de inicialización
+        total = 0; // borrar el total
+        contadorCalificaciones = 1; // preparar para iterar
+
+        // Fase de procesamiento
+        while (contadorCalificaciones <= 10) // iterar 10 veces
+        {
+            // pedir la entrada y leer la calificación del usuario
+            calificación = window.prompt("Escriba la calificación No."+ contadorCalificaciones +" entera:", "0");
+
+            // convertir calificación de cadena en entero
+            valorCalificacion = parseFloat(calificación);
+
+            if(valorCalificacion < 0){
+                window.alert( "Calificación no válida: "+valorCalificacion );
+                continue;
+            }
+
+            // sumar valorCalificacion al total
+            total = total + valorCalificacion;
+
+            // agregar 1 al contadorCalificaciones
+            contadorCalificaciones = contadorCalificaciones + 1;
+        } // fin de while
+
+        // Fase de terminación
+        promedio = total / 10; // calcular el promedio
+
+        // mostrar el promedio de las calificaciones de los exámenes
+        document.writeln(
+            "<h2>El promedio de la clase es " + promedio + "</h2>");
+
+    </script>
+</head>
+
+<body>
+    <nav>
+        <a class="boton" href="Index_Ejemplos.html">Men&uacute; principal</a>
+        <a class="boton" href="EjemploNo7.9.html">Siguiente&rarr;</a>
+    </nav>
+</body>
+
+</html>

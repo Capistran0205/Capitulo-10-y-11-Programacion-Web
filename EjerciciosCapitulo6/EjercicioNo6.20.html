@@ -1,0 +1,59 @@
+<!-- Capistran Ortiz Diego -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <title>Ejercicio 6.20: El menor y el mayor de cinco enteros</title>
+    <script>
+        var n1, n2, n3, n4, n5;
+         var menor, mayor;
+
+         n1 = parseInt( window.prompt( "Escriba el primer entero:", "0" ) );
+         n2 = parseInt( window.prompt( "Escriba el segundo entero:", "0" ) );
+         n3 = parseInt( window.prompt( "Escriba el tercer entero:", "0" ) );
+         n4 = parseInt( window.prompt( "Escriba el cuarto entero:", "0" ) );
+         n5 = parseInt( window.prompt( "Escriba el entero entero:", "0" ) );
+
+         // se parte del primer entero como menor y mayor
+         menor = n1;
+         mayor = n1;
+
+         if ( n2 < menor )
+            menor = n2;
+         if ( n2 > mayor )
+            mayor = n2;
+
+         if ( n3 < menor )
+            menor = n3;
+         if ( n3 > mayor )
+            mayor = n3;
+
+         if ( n4 < menor )
+            menor = n4;
+         if ( n4 > mayor )
+            mayor = n4;
+
+         if ( n5 < menor )
+            menor = n5;
+         if ( n5 > mayor )
+            mayor = n5;
+        // Muestra de resultados
+         document.writeln( "<h1>Ejericio 6.20: El menor y el mayor de 5 números</h1>" );
+         document.writeln("<hr>");
+         document.writeln("<p>Escriba una secuencia de comandos que lea cinco enteros, determine y produzca marcado que muestre los enteros menor y mayor en el grupo.</p>");
+         document.writeln("<hr>");
+         document.writeln( "<p>De los números ingresados:"+ n1 + "," + n2 + "," + n3 + ","+ n4 + " y " + n5 + "</p>");
+         document.writeln( "<p>El entero menor es " + menor + "</p>" );
+         document.writeln( "<p>El entero mayor es " + mayor + "</p>" );
+    </script>
+ </head>
+ <body>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo6.19.html">&larr;Anterior</a>        
+        <a class="boton" href="EjercicioNo6.21.html">Siguiente&rarr;</a>
+    </nav>
+ </body>
+ </html>

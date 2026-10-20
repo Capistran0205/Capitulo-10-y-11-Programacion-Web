@@ -1,0 +1,90 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2.16</title>
+    <link rel="stylesheet" type="text/css" href="/Estilos/Botones.css">
+</head>
+
+<body>
+    <h1>Ejercicio 2.16</h1>
+    <hr>
+    <p>
+        Una universidad local le pidió que creara un documento de HTML5 que permita a los futuros estudiantes
+        universitarios
+        proveer retroalimentación sobre su visita al campus. Su documento HTML5 debe contener un formulario con campos
+        de texto para un nombre
+        y un correo electrónico. Proporcione casillas de verificación debe incluir: campus, estudiantes, ubicación,
+        ambiente, dormitorios y deportes.
+        Proporcione además, botones de opción que pregunten a los futuros estudiantes cómo supieron sobre la
+        universidad. La ocpiones debe incluir:
+        amigos, televisión, internet y otro. Además, proporcione un área de texto para comentarios adicionales, un botón
+        para enviar y un botón para restablecer.
+        Use post para enviar la información en el formulario a http://www.itsx.edu.mx/
+        Aplica solamente html
+    </p>
+    <hr>
+    <h2>Formulario de Retroalimentación - Visita al Campus del ITSX</h2>
+    <p>Ayúdanos a mejorar la experiencia de los futuros estudiantes compartiendo tu opinión sobre tu visita.</p>
+
+    <form action="http://www.itsx.edu.mx/" method="post">
+
+        <h2>Datos personales</h2>
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre" name="nombre"><br><br>
+
+        <label for="correo">Correo electrónico:</label><br>
+        <input type="email" id="correo" name="correo"><br><br>
+
+        <h2>¿Qué aspectos de la visita te gustaron?</h2>
+        <input type="checkbox" id="campus" name="aspectos" value="campus">
+        <label for="campus">Campus</label><br>
+
+        <input type="checkbox" id="estudiantes" name="aspectos" value="estudiantes">
+        <label for="estudiantes">Estudiantes</label><br>
+
+        <input type="checkbox" id="ubicacion" name="aspectos" value="ubicacion">
+        <label for="ubicacion">Ubicación</label><br>
+
+        <input type="checkbox" id="ambiente" name="aspectos" value="ambiente">
+        <label for="ambiente">Ambiente</label><br>
+
+        <input type="checkbox" id="dormitorios" name="aspectos" value="dormitorios">
+        <label for="dormitorios">Dormitorios</label><br>
+
+        <input type="checkbox" id="deportes" name="aspectos" value="deportes">
+        <label for="deportes">Deportes</label><br><br>
+
+        <h2>¿Cómo supiste de la universidad?</h2>
+        <input type="radio" id="amigos" name="referencia" value="amigos">
+        <label for="amigos">Amigos</label><br>
+
+        <input type="radio" id="television" name="referencia" value="television">
+        <label for="television">Televisión</label><br>
+
+        <input type="radio" id="internet" name="referencia" value="internet">
+        <label for="internet">Internet</label><br>
+
+        <input type="radio" id="otro" name="referencia" value="otro">
+        <label for="otro">Otro</label><br><br>
+
+        <h2>Comentarios adicionales</h2>
+        <label for="comentarios">Escribe aquí tus comentarios:</label><br>
+        <textarea id="comentarios" name="comentarios" rows="6" cols="50"></textarea><br><br>
+
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Restablecer">
+
+    </form>
+    <hr>
+    <nav>
+        <span><a class = "boton" href="Index_Ejercicios.html">Menú Principal</a></span>
+        <span><a class = "boton" href="EjercicioNo2.15.html">&larr; Anterior</a></span>
+        <span><a class = "boton" href="EjercicioNo2.17.html">&rarr; Siguiente</a></span>
+    </nav>
+</body>
+
+</html>

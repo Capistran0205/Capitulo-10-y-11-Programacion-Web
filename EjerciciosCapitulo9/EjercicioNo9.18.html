@@ -1,0 +1,48 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<!-- Ejercicio 9.18: minimo3.html -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <title>Ejercicio 9.18:M&iacute;nimo de tres valores </title>
+    <link rel="stylesheet" href="/Estilos/Botones.css1">
+    <style type="text/css">
+        p {
+            margin: 0;
+        }
+    </style>
+    <script>
+        document.writeln("<h1>Ejercicio 9.18: Mínimo de tres valores</h1>");
+        document.writeln("<hr>");
+        document.writeln("<p>Escriba una función llamada minimo3 que devuelva el menor de tres números de punto flotante. Usa la función Math.min para implementar el minímo 3."+
+            " Incorpore la función en una secuencia de comandos que lea tres valores del usuario y determina el valor más pequeño.</p>");
+        document.writeln("<hr>");
+        document.writeln("<h2>Solución:</h2>");
+        var valor1 = parseFloat(window.prompt("Escriba el primer número", "0"));
+        var valor2 = parseFloat(window.prompt("Escriba el segundo número", "0"));
+        var valor3 = parseFloat(window.prompt("Escriba el tercer número", "0"));
+
+        document.writeln("<p>Primer n&uacute;mero: " + valor1 + "</p>" +
+            "<p>Segundo n&uacute;mero: " + valor2 + "</p>" +
+            "<p>Tercer n&uacute;mero: " + valor3 + "</p>" +
+            "<p>El m&iacute;nimo es: " + minimo3(valor1, valor2, valor3) + "</p>");
+
+        // devuelve el menor de tres valores
+        function minimo3(x, y, z) {
+            return Math.min(x, Math.min(y, z));
+        }
+    </script>
+</head>
+
+<body>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo9.17.html">&larr;Anterior</a>
+        <a class="boton" href="EjercicioNo9.19.html">Siguiente&rarr;</a>
+    </nav>
+</body>
+
+</html>

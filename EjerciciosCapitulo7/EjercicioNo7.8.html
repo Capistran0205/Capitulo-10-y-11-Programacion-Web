@@ -1,0 +1,42 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<html lang="en">
+<!-- Capítulo 7: Ejercicio 7.8 -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <link rel="stylesheet" href="/Estilos/Imagenes.css">
+    <title>Ejercicio de Autoevaluación 7.8</title>
+    <script>
+        document.writeln("<h1> Ejercicio de Autoevaluación 7.8</h1>");
+        document.writeln("<hr>");
+        document.writeln("<p> ¿Qué está mal en la siguiente instrucción de repetición while?</p>");
+        document.writeln("<hr>");
+        document.writeln("<ol type = 'a'> <li></li>");
+        document.writeln("<img class = 'imagen' src = \"/Resources/Error7.8.png\">");
+        document.writeln("<p> Falta la condición de fin del while para evitar un bucle infinito</p>");
+        document.writeln("</ol>");
+        document.writeln("<h2> Solución: </h2>")
+        document.writeln("<ol type = 'a'> <li></li>");
+        var z, suma;
+        var z = 10;
+        suma = 0;
+        while (z >= 0) {
+            suma += z;
+            --z;
+        }
+        document.writeln("<img class = 'imagen' src = \"/Resources/Solución7.8.png\">");
+        document.writeln("<p> Resultado de la variable suma: " + suma + "</p>");
+        document.writeln("</ol>");
+    </script>
+</head>
+<body>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo7.7.html">&larr;Anterior</a>
+        <a class="boton" href="EjercicioNo7.9.html">Siguiente&rarr;</a>
+    </nav>
+</body>
+
+</html>

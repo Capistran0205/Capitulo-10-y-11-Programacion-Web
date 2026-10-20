@@ -1,0 +1,20 @@
+img.imagen {
+            margin: 30px;
+            -webkit-transition: -webkit-transform 0.4s;
+            -moz-transition: -moz-transform 0.4s;
+            -o-transition: -o-transform 0.4s;
+            transition: transform 0.4s;
+        }
+
+        img:hover {
+            -webkit-transform: scale(1.2, 1.2);
+            -moz-transform: scale(1.2, 1.2);
+            -o-transform: scale(1.2, 1.2);
+            transform: scale(1.2, 1.2);
+        }
+
+        footer {
+            clear: both;
+            margin-top: 40px;
+            font-family: sans-serif;
+        }

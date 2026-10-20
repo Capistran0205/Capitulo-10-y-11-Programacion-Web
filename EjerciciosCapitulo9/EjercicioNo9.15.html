@@ -1,0 +1,54 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<!-- Ejercicio 9.15: esPar.html -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <title>Ejercicio 9.15: EsPar con ciclo controlado</title>
+    <style type="text/css">
+        p {
+            margin: 0;
+        }
+    </style>
+    <script>
+        document.writeln( "<h1>Ejercicio 9.15: EsPar con ciclo controlado</h1>" );
+        document.writeln( "<hr>" );
+        document.writeln( "<p>escribe una secuencia de comandos que reciba enteros (uno a la vez) y los pase a la función esPar, que usa el operador módulo para determinar si un entero es par."+
+            " La función devuelve true si es par y false en caso contrario. Usa un ciclo controlado por centinela y un diálogo prompt.</p>" );
+        document.writeln( "<hr>" );
+        document.writeln( "<h2>Solución:</h2>" )
+        var entrada = window.prompt('Escriba un entero (o "fin" para terminar)', "0");
+
+        // ciclo controlado por centinela: "fin" o el botón Cancelar (null)
+        while (entrada !== null && entrada !== "fin") {
+            var numero = parseInt(entrada);
+
+            if (isNaN(numero))
+                document.writeln("<p>" + entrada + " no es un entero v&aacute;lido</p>");
+            else if (esPar(numero))
+                document.writeln("<p>" + numero + " es par</p>");
+            else
+                document.writeln("<p>" + numero + " es impar</p>");
+
+            entrada = window.prompt('Escriba un entero (o "fin" para terminar)', "0");
+        } // fin del while
+
+        // devuelve true si el entero es par
+        function esPar(entero) {
+            return entero % 2 === 0;
+        } // fin de la función esPar
+    </script>
+</head>
+
+<body>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo9.14.html">&larr;Anterior</a>
+        <a class="boton" href="EjercicioNo9.16.html">Siguiente&rarr;</a>
+    </nav>
+</body>
+
+</html>

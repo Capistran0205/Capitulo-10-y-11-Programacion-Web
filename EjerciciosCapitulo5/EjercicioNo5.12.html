@@ -1,0 +1,97 @@
+<!-- Capistran Ortiz Diego-->
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5.12</title>
+    <link rel="stylesheet" type="text/css" href="/Estilos/Botones.css">
+    <style type="text/css">
+        header {
+            text-align: center;
+        }
+
+        .autor {
+            font-style: italic;
+            color: dimgray;
+        }
+
+        p {
+            margin: 0.9em 0em;
+        }
+
+        .multicolumna {
+            /* dos columnas */
+            -webkit-column-count: 2;
+            -moz-column-count: 2;
+            column-count: 2;
+            /* espacio entre columnas */
+            -webkit-column-gap: 40px;
+            -moz-column-gap: 40px;
+            column-gap: 40px;
+            /* línea entre columnas más gruesa y de color */
+            -webkit-column-rule: 5px solid crimson;
+            -moz-column-rule: 5px solid crimson;
+            column-rule: 5px solid crimson;
+        }
+
+        .multicolumna img {
+            float: left;
+            /* el texto rodea la imagen */
+            margin: 0 15px 10px 0;
+            border: 2px solid crimson;
+        }
+
+        footer {
+            clear: both;
+            margin-top: 40px;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Ejercicio 5.12</h1>
+    <hr>
+    <p><b>(Texto multicolumna)</b> Cambie el formato del ejemplo 5.17 a dos columnas, agregue un subtítulo y un nombre
+        de autor, e incremente el color y el grosor de la regla column-rule.
+        Agregue una imagen y haga que el texto flote alrededor de la imagen.
+    </p>
+    <hr>
+    <header>
+        <h1>Computadoras, hardware y software</h1>
+        <h2>Un vistazo a los dispositivos que nos rodean</h2>
+        <p class="autor">Por: <em><b>Capistran Ortiz Diego</b></em></p>
+    </header>
+    <div class="multicolumna">
+        <img src="/Resources/Fig5.12.png" width="150" height="100" alt="Recurso no encontrado de Imagen de ejemplo del art&iacute;culo">
+        <p>Una computadora es un dispositivo que puede realizar c&aacute;lculos y tomar decisiones l&oacute;gicas con
+            mucha m&aacute;s rapidez que los humanos. Muchas de las computadoras personales de la actualidad pueden
+            realizar miles de millones de c&aacute;lculos en un segundo&mdash;m&aacute;s de lo que un humano puede
+            realizar durante toda su vida. Las supercomputadoras ya se encuentran realizando miles de billones
+            (trillones) de instrucciones por segundo.</p>
+        <p>Las computadoras procesan datos bajo el control de conjuntos de instrucciones llamadas programas de
+            computadora. Estos programas gu&iacute;an a la computadora por conjuntos ordenados de acciones especificadas
+            por personas llamadas programadores de computadora. Los programas que se ejecutan en una computadora se
+            conocen como software.</p>
+        <p>Una computadora consiste de diversos dispositivos conocidos como hardware (por ejemplo: el teclado, pantalla,
+            rat&oacute;n, discos duros, memoria, DVD y unidades de procesamiento). Los costos de las computadoras
+            disminuyen en forma dram&aacute;tica, debido a los r&aacute;pidos desarrollos en las tecnolog&iacute;as de
+            hardware y software.</p>
+        <p>Los chips de computadora (microprocesadores) controlan innumerables dispositivos. Estos sistemas incrustados
+            incluyen frenos antibloqueo en los autos, sistemas de navegaci&oacute;n, electrodom&eacute;sticos
+            inteligentes, sistemas de seguridad en el hogar, tel&eacute;fonos celulares y Smartphones, robots,
+            intersecciones de tr&aacute;fico inteligentes y controladores de videojuegos.</p>
+    </div>
+    <footer>
+        <nav>
+            <a class = "boton" href="Index_Ejercicios.html">Menú Principal</a>
+            <a class = "boton" href="EjercicioNo5.11.html">&larr;Anterior</a>
+            <a class = "boton" href="EjercicioNo5.13.html">&rarr; Siguiente</a>
+        </nav>
+    </footer>
+</body>
+
+</html>

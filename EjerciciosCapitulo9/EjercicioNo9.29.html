@@ -1,0 +1,62 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<!-- Ejercicio 9.29: potenciaRecursiva.html -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <title>Ejercicio 9.29: Potencia Recursiva</title>
+    <script>
+        document.writeln("<h1>Ejercicio 9.29: Proyecto</h1>");
+        document.writeln("<hr>");
+        document.writeln("<p>.escribe una función recursiva potencia( base, exponente ) que devuelva baseᵉˣᵖᵒⁿᵉⁿᵗᵉ (por ejemplo, potencia( 3, 4 ) = 3·3·3·3). Supón que exponente es un entero mayor o igual que 1. "+
+            "El paso de recursividad usa la relación base^exponente = base · base^(exponente − 1), y la condición de terminación ocurre cuando exponente es 1, porque base¹ = base. Incorpórala en una secuencia de comandos que permita introducir la base y el exponente.</p>" ,);
+        document.writeln("<hr>");
+        document.writeln("<h2>Solución:</h2>");
+        function iniciar() {
+            var boton = document.getElementById("botonCalcular");
+            boton.addEventListener("click", mostrarPotencia, false);
+        } // fin de la función iniciar
+
+        function mostrarPotencia() {
+            var base = parseFloat(document.getElementById("campoBase").value);
+            var exponente = parseInt(document.getElementById("campoExponente").value);
+            var resultado = document.getElementById("resultado");
+
+            if (isNaN(base) || isNaN(exponente) || exponente < 1)
+                resultado.innerHTML = "Escriba una base y un exponente entero mayor o igual que 1.";
+            else
+                resultado.innerHTML = base + "<sup>" + exponente + "</sup> = " +
+                    potencia(base, exponente);
+        } // fin de la función mostrarPotencia
+
+        // definición recursiva de la función potencia
+        function potencia(base, exponente) {
+            if (exponente === 1) // caso base
+                return base;
+            else                   // paso recursivo
+                return base * potencia(base, exponente - 1);
+        } // fin de la función potencia
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+</head>
+
+<body>
+    <form action="#">
+        <p><label>Base: <input id="campoBase" type="number" step="any"></label>
+            <label>Exponente: <input id="campoExponente" type="number" min="1" step="1"></label>
+            <input id="botonCalcular" type="button" value="Calcular">
+        </p>
+    </form>
+    <p id="resultado"></p>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo9.28.html">&larr;Anterior</a>
+        <a class="boton" href="EjercicioNo9.30.html">Siguiente&rarr;</a>
+    </nav>
+</body>
+
+</html>

@@ -1,0 +1,110 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+
+<html>
+
+<head>
+     <meta charset=" utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Ejercicio 3.5</title>
+     <link rel="stylesheet" type="text/css" href="/Estilos/Botones.css">
+</head>
+
+<body>
+     <h1>Ejercicio 3.5</h1>
+     <hr>
+     <p>Escriba un elemento (o elementos) de HTML5 para realizar cada una de las siguientes tareas:</p>
+     <hr>
+     <ol type="a">
+          <li>
+               Se pidió a los estudiantes que clasificaran los alimentos en la cafetería, en una escala del 1 al 10. Use
+               un elemento
+               <b>meter</b> con texto a su izquierda y a su derecha para indicar que la calificación promedio fue 7 de
+               10.
+          </li>
+          <p>
+               Calificación promedio:
+               <meter min="0" max="10" value="7" low="4" high="7" optimum="10">7 de 10</meter>
+               7 de 10
+          </p>
+          <li>
+               Cree un elemento <b>details</b> que muestre el texto <b>Resultados de la encuesta</b> en el elemento
+               <b>summary</b>
+               para la parte (a). Cuando el usuario haga clic en la flecha enseguida del texto de summary, deberá
+               aparecer un párrafo que explique sobre la encuesta.
+          </li>
+          <p>
+          <details>
+               <summary>Resultados de la encuesta</summary>
+               ¿<p>
+                    La encuesta fue realizada entre los estudiantes de la cafetería para conocer
+                    su opinión sobre la calidad de los alimentos ofrecidos. En total participaron
+                    150 estudiantes, y la calificación promedio obtenida fue de 7 de 10 puntos.
+               </p>
+          </details>
+          </p>
+          <li>
+               Cree un elemento input text para el primer nombre. El elemento deberá recibir el enfoque de manera
+               automática al momento de desplegar el formulario de un navegador.
+          </li>
+          <p>
+               <label for="primer nombre">Primer nombre:</label>
+               <input type="text" id="nombre" name=nombre autofocus>
+          </p>
+          <li>
+               Modifique la parte (c) de modo que se elimine el elemento labely use texto en un elemento placeholder en
+               el elemento input.
+          </li>
+          <p>
+               <input type="text" id="nombre" name=nombre autofocus placeholder="Ingresa tu primer nombre:">
+          </p>
+          <li>
+               Use un elemento <b>datalist</b> para proveer una lista autocomplete para cinco estados.
+          </li>
+          <p>
+               <label for="listaEstados">Seleeciona un estado:
+                    <input type="text" id="listaEstados" placeholder="Selecciona tu estado de origen" list="estados" />
+                    <datalist id="estados">
+                         <option value="Chihuahua">
+                         <option value="Jalisco">
+                         <option value="Nuevo León">
+                         <option value="Oaxaca">
+                         <option value="Veracruz">
+                    </datalist>
+               </label>
+          </p>
+          <li>
+               Cree un documento input range que permita al usuario seleccionar un número del 1 al 100.
+          </li>
+          <p>
+               <label>Qué porcentaje de aprobación le daría a la comida de la cafetería
+                    <input type="range" min="1" max="100" value="1" id="numero" name="numero">
+               </label>
+          </p>
+          <li>
+               Específique que no debe permitirse el atributo autocomplete en un formulario. Muestre sólo la etiqueta de
+               apertura del formulario.
+          </li>
+          <p>
+          <form action="https://gaatx.itsx.edu.mx/auth/login" method="post" autocomplete="off">
+
+               </p>
+               <li>
+                    Use un elemnto mark para resaltar el segundo enunciado del siguiente párrafo:
+                    <p>Se pidio a los estudiantes que calificaran los alimentos en la cafetería.
+                         <mark>En una escala del 1 al 10.</mark> El resultado promedio fue 7.
+                    </p>
+               </li>
+     </ol>
+     <hr>
+     <div>
+          <hr>
+          <nav>
+               <span><a class = "boton" href="Index_Ejercicios.html">Men&uacute; principal</a></span>
+               <span><a class = "boton" href="EjercicioNo3.4.html">&larr; Anterior</a></span>
+               <span><a class = "boton" href="EjercicioNo3.6.html">&rarr; Siguiente</a></span>
+          </nav>
+     </div>
+</body>
+
+</html>

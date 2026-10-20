@@ -1,0 +1,28 @@
+/* Estilos para el menú principal*/
+      body { font-family: arial, sans-serif; }
+
+      ul   { list-style-type: none; padding: 0; }
+
+      li   { display: inline; }   /* botones en fila, como en el libro */
+
+      a.boton {
+         display: inline-block;       /* permite usar padding y border */
+         padding: 10px 20px;
+         margin: 5px;
+         border: 2px solid navy;
+         background-color: white;
+         color: navy;
+         text-decoration: none;
+         font-weight: bold;
+         cursor: pointer;
+      }
+
+      a.boton:hover {
+         background-color: navy;      /* cambia al pasar el ratón */
+         color: white;
+      }
+
+      a.boton:active {
+         background-color: gray;      /* mientras se hace clic */
+         border-color: gray;
+      }

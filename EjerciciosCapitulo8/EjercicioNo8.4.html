@@ -1,0 +1,87 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<!-- Ejercicio 8.4: EjercicioNo8.4.html -->
+<!-- Encontrar el error de los segmentos de código JavaScript. -->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <link rel="stylesheet" href="/Estilos/Imagenes.css">
+    <title>Ejercicio 8.4: Encontrar el error</title>
+</head>
+<body>
+    <script>
+        document.writeln( "<h1>Ejercicio 8.4: Encontrar el error.</h1>" );
+        document.writeln( "<hr>" );
+        document.writeln( "<p>Encuentra el error en cada uno de los siguientes segmentos de código.</p>" );
+        document.writeln( "<hr>" );
+
+        // ---------- Errores ----------
+        document.writeln( "<ol type = 'a'>" );
+
+        document.writeln( "<li></li>" );
+        document.writeln( "<img class = 'imagen' src = \"/Resources/Error(a)8.4.png\">" );
+        document.writeln( "<p>La palabra reservada for está con la primera mayúscula 'F'or. Otro error son las comas en lugar de las comillas.</p>" );
+
+        document.writeln( "<li></li>" );
+        document.writeln( "<img class = 'imagen' src = \"/Resources/Error(b)8.4.png\">" );
+        document.writeln( "<p>Faltan los break en cada case.</p>" );
+
+        document.writeln( "<li></li>");
+        document.writeln( "<img class = 'imagen' src = \"/Resources/Error(c)8.4.png\">" );
+        document.writeln( "<p>Está mal el paso: en lugar de decrementar incrementa y causa un bucle infinito.</p>" );
+
+        document.writeln( "<li></li>" );
+        document.writeln( "<img class = 'imagen' src = \"/Resources/Error(d)8.4.png\">" );
+        document.writeln( "<p>La palabra reservada while está con la primera mayúscula 'W'hile.</p>" );
+
+        document.writeln( "</ol>" );
+
+        // ---------- Soluciones ----------
+        document.writeln( "<h2>Soluciones:</h2>" );
+        document.writeln( "<ol type = 'a'>" );
+
+        document.writeln( "<li></li>" );
+        var x = 0;
+        for ( x = 100; x >= 1; --x )
+            document.writeln( x );
+        document.writeln( "<p>Resultado: " + x + "</p>" );
+        document.writeln( "<br><img class = 'imagen' src = \"/Resources/Solucion(a)8.4.png\">" );
+
+        document.writeln( "<li></li>" );
+        var valor = 20;
+        switch ( valor % 2 )
+        {
+            case 0:
+                document.writeln( "Entero par" );
+                break;
+            case 1:
+                document.writeln( "Entero impar" );
+                break;
+        }
+        document.writeln( "<br><img class = 'imagen' src = \"/Resources/Solucion(b)8.4.png\">" );
+
+        document.writeln( "<li></li>" );
+        for ( x = 19; x >= 1; x -= 2 )
+            document.writeln( x );
+        document.writeln( "<br><img class = 'imagen' src = \"/Resources/Solucion(c)8.4.png\">" );
+
+        document.writeln( "<li></li>" );
+        var contador = 0;
+        do {
+            document.writeln( contador );
+            contador += 2;
+        } while ( contador < 100 );
+        document.writeln( "<br><img class = 'imagen' src = \"/Resources/Solucion(d)8.4.png\">" );
+
+        document.writeln( "</ol>" );
+    </script>
+
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo8.3.html">&larr;Anterior</a>
+        <a class="boton" href="EjercicioNo8.5.html">Siguiente&rarr;</a>
+    </nav>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<!-- Fig. 5.8: multiplesfondos.html -->
+<!-- Múltiples imágenes de fondo en CSS3. -->
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Multiple Backgrounds</title>
+      <link rel="stylesheet" type="text/css" href="/Estilos/Botones.css">
+      <style type = "text/css">
+         div.background
+         {
+            background-image: url(/Resources/logo.png), url(/Resources/ocean.png);
+            background-position: bottom right, 100% center;
+            background-origin: border-box, content-box;
+            background-repeat: no-repeat, repeat;
+         }     
+         div.content
+         {
+            padding: 10px 15px;
+            color: white;
+            font-size: 150%;
+         }
+      </style>
+   </head>
+   <body>
+      <h1>Ejemplo No 5.8: M&uacute;ltiples fondos</h1>
+      <hr>
+      <div class = "background">
+      <div class = "content">
+         <p>Deitel & Associates, Inc., es una empresa reconocida a nivel mundial,
+            dedicada al entrenamiento corporativo y la creaci&oacute;n de contenido.
+            La empresa ofrece cursos impartidos por instrucciones en los sitios de los clientes
+            en todo el mundo sobre lenguajes de programaci&oacute;n y otros temas
+            de software como C++, Visual C++<sup>&reg;</sup>, C, Java&trade;, 
+            C#<sup>&reg;</sup>, Visual Basic<sup>&reg;</sup>, 
+            Objective-C<sup>&reg;</sup>, XML<sup>&reg;</sup>, 
+            Python<sup>&reg;</sup>, JavaScript, tecnolog&iacute; de objetos,
+            programaci&oacute;n en Internet y Web, desarrollo de aplicaciones para Android y iPhone.</p>
+      </div></div>
+      <nav>
+         <a class = "boton" href = "Index_Ejemplos.html">Menú Principal</a>
+         <a class = "boton" href = "EjemploNo5.7.html">&larr;Anterior</a>
+         <a class = "boton" href = "EjemploNo5.9.html">&rarr;Siguiente</a>
+      </nav>
+   </body>
+</html>

@@ -1,0 +1,57 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<!-- Fig. 5.11: animación.html -->
+<!-- Animación en CSS3. -->
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Ejemplo No 5.11: Animación en CSS3</title>
+      <link rel="stylesheet" type="text/css" href="/Estilos/Botones.css">
+      <style type = "text/css">
+         img
+         {
+            position: relative;
+            -webkit-animation: movingimage linear 10s 1s 2 alternate;
+            -moz-animation: movingimage linear 10s 1s 2 alternate;
+            animation: movingimage linear 10s 1s 2 alternate;
+         }
+         @-webkit-keyframes movingimage 
+         {
+            0%   {opacity: 0; left: 50px; top: 0px;}
+            25%  {opacity: 1; left: 0px; top: 50px;}
+            50%  {opacity: 0; left: 50px; top: 100px;}
+            75%  {opacity: 1; left: 100px; top: 50px;}
+            100% {opacity: 0; left: 50px; top: 0px;}
+         }
+         @-moz-keyframes movingimage 
+         {
+            0%   {opacity: 0; left: 50px; top: 0px;}
+            25%  {opacity: 1; left: 0px; top: 50px;}
+            50%  {opacity: 0; left: 50px; top: 100px;}
+            75%  {opacity: 1; left: 100px; top: 50px;}
+            100% {opacity: 0; left: 50px; top: 0px;}
+         }
+         @keyframes movingimage
+         {
+            0%   {opacity: 0; left: 50px; top: 0px;}
+            25%  {opacity: 1; left: 0px; top: 50px;}
+            50%  {opacity: 0; left: 50px; top: 100px;}
+            75%  {opacity: 1; left: 100px; top: 50px;}
+            100% {opacity: 0; left: 50px; top: 0px;}
+         }
+      </style>
+   </head>
+   <body>
+      <h1>Ejemplo No 5.11: Animación en CSS3</h1>
+      <hr>
+      <img src = "/Resources/jhtp.png" width = "138" height = "180"
+         alt = "Java How to Program book cover">
+      <div></div>
+      <nav>
+         <a class="boton" href = "Index_Ejemplos.html">Menú Principal</a>
+         <a class="boton" href = "EjemploNo5.10.html">&larr;Anterior</a>
+         <a class="boton" href = "EjemploNo5.12.html">&rarr;Siguiente</a>
+      </nav>
+   </body>
+</html>

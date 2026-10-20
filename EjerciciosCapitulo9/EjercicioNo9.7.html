@@ -1,0 +1,56 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<!-- Ejercicio 9.7: areaCirculo.html -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9.7: &Aacute;rea de un c&iacute;rculo</title>
+    <script>
+        document.writeln( "<h1>Ejercicio 9.7: Área de un círculo</h1>" );
+        document.writeln( "<hr>" );
+        document.writeln( "<p>Escribe una secuencia de comandos con un formulario que obtenga el radio de un círculo, llame a la función areaCirculo y muestre el resultado en un párrafo.</p>" );
+        document.writeln( "<hr>" );
+        document.writeln( "<h2>Solución:</h2>" );
+        function iniciar() {
+            var boton = document.getElementById("botonCalcular");
+            boton.addEventListener("click", mostrarArea, false);
+        } // fin de la función iniciar
+
+        function mostrarArea() {
+            var radio = parseFloat(document.getElementById("campoRadio").value);
+            var resultado = document.getElementById("resultado");
+
+            if (isNaN(radio) || radio < 0)
+                resultado.innerHTML = "Escriba un radio v&aacute;lido (n&uacute;mero mayor o igual que 0).";
+            else
+                resultado.innerHTML = "El &aacute;rea del c&iacute;rculo es: " +
+                    areaCirculo(radio).toFixed(4) + " u²";
+        } // fin de la función mostrarArea
+
+        function areaCirculo(radio) {
+            return Math.PI * Math.pow(radio, 2);
+        } // fin de la función areaCirculo
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+
+</head>
+
+<body>
+    <form action="#">
+        <p><label>Radio: <input id="campoRadio" type="number"></label>
+            <input id="botonCalcular" type="button" value="Calcular">
+        </p>
+    </form>
+    <p id="resultado"></p>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo9.6.html">&larr;Anterior</a>
+        <a class="boton" href="EjercicioNo9.8.html">Siguiente&rarr;</a>
+    </nav>
+</body>
+
+</html>

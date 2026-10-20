@@ -1,0 +1,27 @@
+/* EjercicioNo4.9.css */
+/* Hoja de estilo externa para el botón de navegación */
+/* Autor: Diego Capistran Ortiz */
+
+div.botonNav {
+   width: 200px;
+   border: 3px solid navy;
+   background-color: lightblue;
+   text-align: center;
+}
+
+div.botonNav a {
+   display: block;              /* todo el botón es clicable */
+   padding: 10px;
+   color: navy;
+   font-weight: bold;
+   text-decoration: none;
+}
+
+div.botonNav:hover {
+   border-color: darkorange;
+   background-color: navy;
+}
+
+div.botonNav:hover a {
+   color: yellow;
+}

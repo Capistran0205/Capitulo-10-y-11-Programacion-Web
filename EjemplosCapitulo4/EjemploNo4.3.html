@@ -1,0 +1,41 @@
+<!-- Capistran Ortiz Diego-->
+<!DOCTYPE html>
+<!-- Fig 4.3: incrustada.html-->
+<!-- Hojas de estilo incrustada.-->
+ <html>
+    <head>
+        <meta charset = "utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hoja de estio incrustada</title>        
+        <!-- esto empieza la sección de la hoja de estilo -->
+         <style type = "text/css"> <!-- tipo MIME para describir el elemento style de CSS-->
+            em { font-weight: bold; color: black}
+            h1 {font-family: Tahoma, Helvetica, sans-serif;}
+            p  { font-size: 12pt; font-family: Arial, sans-serif;}
+            .especial {color: purple;}
+         </style>
+         <link rel="stylesheet" type = "text/css" href = "/Estilos/Botones.css">
+    </head>
+    <body>
+        <h1>Ejemplo 4.3: Hoja de estilo incrustada</h1>
+        <hr>
+        <!-- este atributo aplica a la calse estilo .especial-->
+        <h1 class = "especial">Microsoft.Inc</h1>
+
+        <p> Microsoft es una empresa dedica a la creación de software y equipos electrónicos.
+            Fundada en el año 1975 por Bill Gates y Paul Allen. Su nombre viene de las palabras 
+            en inglés <em>microcomputer</em> y <em>software</em>.
+        </p>
+
+        <h1>Productos de Software</h1>
+        <p class = "especial">Los principales productos de software de Microsoft se dividen en sistemas operativos
+            suites de productividad, herramientas de desarrollo y soluciones sistemas operativos, suites de productividad, 
+            herramientas de desarrollo y soluciones empresariales en la nube como Azure.
+        </p>
+        <nav>
+            <a class = "boton" href="Index_Ejemplos.html">Menú Principal</a>
+            <a class = "boton" href="EjemploNo4.1.html">&larr;Anterior</a> 
+            <a class = "boton" href="EjemploNo4.6.html">&rarr;Siguiente</a>
+         </nav>
+    </body>
+ </html>

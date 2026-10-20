@@ -1,0 +1,36 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+
+<!-- Fig. 8.11: PruebaBreak.html -->
+<!-- Uso de la instrucción break en una instrucción for. -->
+<html>
+<head>
+   <meta charset="utf-8">
+   <title>Ejemplo 8.11: Uso de la instrucción break en una instrucción for</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="/Estilos/Botones.css">
+   <script>
+      document.writeln("<h1>Ejemplo 8.11: Uso de la instrucción break en una instrucción for</h1>");
+      var cuenta;
+
+      for ( cuenta = 1; cuenta <= 10; ++cuenta )
+      {
+         if ( cuenta == 5 )
+            break; // interrumpe el ciclo sólo si cuenta == 5
+
+         document.writeln( cuenta + " " );
+      } // fin de for
+
+      document.writeln(
+         "<p>Se interrumpió el ciclo en cuenta = " + cuenta + "</p>" );
+
+   </script>
+</head>
+<body>
+    <nav>
+        <a class ="boton" href="Index_Ejemplos.html">Men&uacute; principal</a>
+        <a class ="boton" href="EjemploNo8.9.html">&larr;Anterior</a>
+        <a class ="boton" href="EjemploNo8.12.html">Siguiente&rarr;</a>
+    </nav>
+</body>
+</html>

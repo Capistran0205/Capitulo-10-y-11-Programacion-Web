@@ -1,0 +1,59 @@
+/* Paleta inspirada en los colores de la armadura de Iron Man:
+   rojo intenso, rojo oscuro, dorado y negro metálico */
+
+body {
+   background-color: #EDEDED;      /* negro metálico */
+   color: #EDEDED;                 /* texto claro para buen contraste */
+   font-family: Verdana, Arial, sans-serif;
+   margin: 0;
+   padding: 20px 40px;
+}
+
+h1 {
+   color: #E8B923;                /* dorado */
+   background-color: #9E1B22;      /* rojo armadura */
+   border-bottom: 4px solid #E8B923;
+   border-left: 12px solid #5C0E13; /* rojo oscuro */
+   padding: 0.4em 0.6em;
+   text-transform: uppercase;
+   letter-spacing: 2px;
+}
+
+p {
+   color: #EDEDED;
+   line-height: 1.6;
+   max-width: 70ch;                /* líneas cómodas de leer */
+}
+
+a  {
+    color: black;
+    font-weight: bold;
+}
+
+ul {
+   background-color: #E8B923;      /* gris muy oscuro */
+   border: 3px solid #000000;
+   border-left: 5px solid #9E1B22;
+   padding: 1em 1em 1em 2.5em;
+   max-width: 60ch;
+}
+
+li {
+   color: #EDEDED;
+   padding: 0.3em 0.5em;
+   border-bottom: 1px solid #5C0E13;
+   list-style-type: square;
+}
+
+li::marker {
+   color: #9E1B22;                 /* viñeta dorada */
+}
+
+li:last-child {
+   border-bottom: none;
+}
+
+li:hover {
+   background-color: #9E1B22;
+   color: #E8B923;
+}

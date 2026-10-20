@@ -1,0 +1,53 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<!-- Ejercicio 7.14: EjercicioNo7.14.html -->
+<!-- Sueldo bruto de tres empleados con pago de horas extra. -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <title>Ejercicio 7.14: Calcular sueldo bruto de tres empleados con pago de horas extra</title>
+    <script>
+        document.writeln("<h1> Ejercicio 7.14: Calcular sueldo bruto de tres empleados con pago de horas extra</h1>");
+        document.writeln("<hr>");
+        document.writeln("<p>Determinar el sueldo bruto de tres empleados. Se paga la cuota normal en las primeras 40 horas y cuota y media en las horas que excedan de 40. Recibir horas trabajadas y tarifa por hora de cada empleado.</p>");
+        document.writeln("<hr>");
+        var empleado = 1; // contador de empleados
+        var horas; // horas trabajadas la semana pasada
+        var tarifa; // tarifa por hora
+        var sueldoBruto; // sueldo bruto calculado
+
+        document.writeln("<h1>Sueldo bruto de los empleados</h1>");
+
+        // ciclo controlado por contador: tres empleados
+        while (empleado <= 3) {
+            horas = Math.abs(parseFloat(window.prompt(
+                "Horas trabajadas por el empleado " + empleado + ":", "0")));
+            tarifa = Math.abs(parseFloat(window.prompt(
+                "Tarifa por hora del empleado " + empleado + ":", "0")));
+
+            if (horas <= 40)
+                sueldoBruto = horas * tarifa;
+            else
+                sueldoBruto = 40 * tarifa + (horas - 40) * tarifa * 1.5;
+
+            document.writeln("<p>Empleado " + empleado +
+                ": sueldo bruto $" + sueldoBruto + "</p>");
+
+            ++empleado;
+        } // fin de while
+
+    </script>
+</head>
+
+<body>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo7.13.html">&larr;Anterior</a>
+        <a class="boton" href="EjercicioNo7.15.html">Siguiente&rarr;</a>
+    </nav>
+</body>
+
+</html>

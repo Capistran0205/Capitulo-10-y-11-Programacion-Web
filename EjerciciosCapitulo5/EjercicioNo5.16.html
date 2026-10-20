@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ejercicio 5.16</title>
+    <link rel="stylesheet" type="text/css" href="/Estilos/Botones.css">
+    <style type="text/css">
+        body {
+            font-family: Georgia, serif;
+        }
+
+        p {
+            margin: 0.9em 0em;
+        }
+
+        /* estilo base: tres columnas (pantallas de 1025px o más) */
+        .multicolumna {
+            -webkit-column-count: 3;
+            column-count: 3;
+            -webkit-column-gap: 30px;
+            column-gap: 30px;
+            -webkit-column-rule: 1px solid black;
+            column-rule: 1px solid black;
+        }
+
+        /* dispositivos de 481px a 1024px: dos columnas */
+        @media only screen and (min-width: 481px) and (max-width: 1024px) {
+            .multicolumna {
+                -webkit-column-count: 2;
+                column-count: 2;
+            }
+        }
+
+        /* smartphones de 480px o menos: una sola columna, sin línea */
+        @media only screen and (max-width: 480px) {
+            .multicolumna {
+                -webkit-column-count: 1;
+                column-count: 1;
+                -webkit-column-rule: none;
+                column-rule: none;
+            }
+        }
+
+        footer {
+            clear: both;
+            margin-top: 40px;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Ejercicio 5.16</h1>
+    <hr>
+    <p><b>(Consulta de medios)</b> Cree su propia página Web multicolumna y use consultas de medios para ajustar el formato y usar una columna
+        para dispositivos móviles que tengan una anchura máxima de 480px.
+    </p>
+    <hr>
+    <header>
+        <h1>Dise&ntilde;o adaptable con CSS3</h1>
+    </header>
+    <div class="multicolumna">
+        <p>El dise&ntilde;o adaptable permite que una misma p&aacute;gina Web se vea bien en distintos dispositivos,
+            desde un tel&eacute;fono hasta un monitor de escritorio. En lugar de crear una versi&oacute;n distinta para
+            cada pantalla, se define un solo documento HTML5 y se deja que las hojas de estilo ajusten la
+            presentaci&oacute;n.</p>
+        <p>Las consultas de medios de CSS3 examinan las caracter&iacute;sticas del dispositivo, como la anchura de la
+            ventana, y aplican estilos s&oacute;lo cuando la condici&oacute;n se cumple. As&iacute; es posible mostrar
+            tres columnas en una pantalla amplia, dos en una tableta y una sola en un tel&eacute;fono.</p>
+        <p>Un texto dividido en varias columnas es m&aacute;s f&aacute;cil de leer cuando las l&iacute;neas son cortas,
+            pero si las columnas se vuelven demasiado angostas el texto pierde legibilidad. Por eso conviene reducir el
+            n&uacute;mero de columnas a medida que disminuye el espacio disponible.</p>
+        <p>Para probar la p&aacute;gina no hace falta tener todos los dispositivos: basta con cambiar el tama&ntilde;o
+            de la ventana del navegador y observar c&oacute;mo el n&uacute;mero de columnas cambia cuando se cruzan los
+            l&iacute;mites de 480px y de 1024px de anchura.</p>
+        <p>Adem&aacute;s de la anchura, las consultas de medios pueden revisar la altura, la orientaci&oacute;n del
+            dispositivo o la resoluci&oacute;n de la pantalla, lo que da un control muy fino sobre la forma en que se
+            presenta el contenido.</p>
+    </div>
+    <footer>
+        <nav>            
+            <a class = "boton" href="Index_Ejercicios.html">Menú Principal</a>
+            <a class = "boton" href="EjercicioNo5.15.html">&larr;Anterior</a>
+        </nav>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!-- Capistran Ortiz Diego -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6.11: ¿Qué aparece en los Dialogos de Alerta?</title>
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <link rel="stylesheet" href="/Estilos/EstilosAutoEvaluacion.css">
+    <link rel="stylesheet" href="/Estilos/Imagenes.css">
+    <script>
+         // Variables x & y
+         var x = 2;
+         var y = 3;
+         // Cuadro de diálogo
+         window.alert( "x = " + x);
+         window.alert( "El valor de x + x es " + (x + x) );
+         window.alert( "x = ");
+         window.alert( (x + y) + " = " + (y + x));
+         // Mostra resultados
+         document.writeln( "<h1>Ejercicio 6.11: ¿Qué aparece en el diálogo de alerta?</h1>" );   
+         document.writeln( "<hr>");
+         document.writeln( "<p>¿Qué aparece en el diálogo de alerta cuando se ejecuta cada una de las siguientes instrucciones de JavaScript? Asuma que x = 2 & y = 3</p>");      
+         document.writeln( "<hr>");      
+         document.writeln( "<ol type = 'a'> <li>window.alert( \"x =\" + x ); </li>");
+         document.write("<img class = \"imagen\" src = \"/Resources/alerta1.png\" alt = 'Concatenación'>" );         
+         document.writeln( "<li>window.alert(\"El valor de x + x es \"+ (x + x));</li>" );
+         document.write("<img class = \"imagen\" src = \"/Resources/alerta2.png\" alt = 'Suma entre paréntesis del lado izquierda'>" );         
+         document.writeln( "<li>window.alert(\"x =\");</li>" );
+         document.write("<img class = \"imagen\" src = \"/Resources/alerta3.png\" alt = 'Cadena simple no representa asignación'>" );         
+         document.writeln( "<li>window.alert((x + y) + \" = \" + (y + x)); </li>" );
+         document.write("<img class = \"imagen\" src = \"/Resources/alerta4.png\" alt = 'Suma entre paréntesis de ambos lados de la igualdad'></ol>" );
+    </script>
+ </head>
+ <body>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo6.10.html">&larr;Anterior</a>        
+        <a class="boton" href="EjercicioNo6.12.html">Siguiente&rarr;</a>
+    </nav>
+ </body>
+ </html>

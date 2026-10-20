@@ -1,0 +1,198 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<html lang="en">
+<!-- Ejercicio 9.27: cai.html -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <title>Ejercicio 9.27: (Proyecto)</title>
+    <script>
+        document.writeln("<h1>Ejercicio 9.27: Proyecto</h1>");
+        document.writeln("<hr>");
+        document.writeln("<p>Mejora del programa de los ejercicios 9.22 a 9.24: </p>",);
+        document.writeln("<ol type = 'a'>",);
+        document.writeln("<li> Modifique de programa para que permita al usuario introducir b capacidad de nivd de grado."+
+            " Un nivel de grado de 1 significa que usa dígitos de un solo número en los problemas, un nivel de grado de 2 significa que usa nú­meros de hasta dos dígitos, y así en lo sucesivo</li>");
+        document.writeln("<li>Modifique el programa para permitir al usuario elegir d tipo de problemas aritméticos que desea estudiar."+
+            " Una opción de 1 significa sólo problemas de suma, 2 significa sólo problemas de testa, 3 significa sólo problemas de multiplicación,"+
+            " 4 significa sólo problemas de división y 5 significa entremezclar al azar problemas de todos estos tipos.</li>");
+        document.writeln("</ol>",);
+        document.writeln("<hr>");
+        document.writeln("<h2>Solución:</h2>");
+        var respuestaEsperada; // resultado correcto de la pregunta actual
+        var correctas = 0;
+        var incorrectas = 0;
+
+        function iniciar() {
+            var botonVerificar = document.getElementById("botonVerificar");
+            botonVerificar.addEventListener("click", verificarRespuesta, false);
+
+            var botonComenzar = document.getElementById("botonComenzar");
+            botonComenzar.addEventListener("click", comenzar, false);
+
+            comenzar();
+        }
+
+        // reinicia el cuestionario con el nivel y tipo elegidos
+        function comenzar() {
+            correctas = 0;
+            incorrectas = 0;
+            document.getElementById("mensaje").innerHTML = "";
+            generarPregunta();
+        }
+
+        // genera una pregunta según el nivel de grado y el tipo de operación
+        function generarPregunta() {
+            var campo = document.getElementById("campoRespuesta");
+            var nivel = parseInt(document.getElementById("campoNivel").value);
+            var tipo = parseInt(document.getElementById("campoTipo").value);
+
+            if (isNaN(nivel) || nivel < 1)
+                nivel = 1;
+            if (nivel > 4)
+                nivel = 4;
+
+            var maximo = Math.pow(10, nivel) - 1; // 9, 99, 999, 9999
+            var a = Math.floor(1 + Math.random() * maximo);
+            var b = Math.floor(1 + Math.random() * maximo);
+            var operacion = tipo;
+            var palabra;
+
+            if (tipo === 5) // mezcla al azar de las cuatro operaciones
+                operacion = Math.floor(1 + Math.random() * 4);
+
+            switch (operacion) {
+                case 1:
+                    palabra = "m&aacute;s";
+                    respuestaEsperada = a + b;
+                    break;
+                case 2:
+                    if (b > a) // evita resultados negativos
+                    {
+                        var auxiliar = a;
+                        a = b;
+                        b = auxiliar;
+                    } // fin de if
+                    palabra = "menos";
+                    respuestaEsperada = a - b;
+                    break;
+                case 3:
+                    palabra = "por";
+                    respuestaEsperada = a * b;
+                    break;
+                default: // 4: división exacta, se arma a partir del cociente
+                    palabra = "entre";
+                    respuestaEsperada = a;
+                    a = a * b;
+                    break;
+            }
+
+            document.getElementById("pregunta").innerHTML =
+                "&iquest;Cu&aacute;nto es " + a + " " + palabra + " " + b + "?";
+            campo.value = "";
+            campo.focus();
+        }
+
+        function verificarRespuesta() {
+            var campo = document.getElementById("campoRespuesta");
+            var respuesta = parseInt(campo.value);
+            var mensaje = document.getElementById("mensaje");
+            var texto;
+
+            if (isNaN(respuesta)) {
+                mensaje.innerHTML = "Escriba un n&uacute;mero.";
+                return;
+            }
+
+            if (respuesta === respuestaEsperada) {
+                ++correctas;
+                texto = respuestaCorrecta();
+                generarPregunta();
+            }
+            else {
+                ++incorrectas;
+                texto = respuestaIncorrecta();
+                campo.value = "";
+                campo.focus();
+            }
+
+            if (correctas + incorrectas === 10)
+                texto += "<br>" + evaluarCuestionario();
+
+            mensaje.innerHTML = texto;
+        }
+
+        function evaluarCuestionario() {
+            var porcentaje = correctas * 100 / 10;
+            var resumen = "Respuestas correctas: " + correctas + " de 10 (" +
+                porcentaje + "%). ";
+
+            if (porcentaje < 75)
+                resumen += "Pida ayuda adicional a su instructor.";
+            else
+                resumen += "&iexcl;Buen resultado!";
+
+            correctas = 0;
+            incorrectas = 0;
+            generarPregunta();
+
+            return resumen;
+        }
+
+        function respuestaCorrecta() {
+            switch (Math.floor(1 + Math.random() * 4)) {
+                case 1:
+                    return "&iexcl;Muy bien!";
+                case 2:
+                    return "Excelente.";
+                case 3:
+                    return "Buen trabajo.";
+                default:
+                    return "Siga as&iacute;.";
+            } 
+        }
+
+        function respuestaIncorrecta() {
+            switch (Math.floor(1 + Math.random() * 4)) {
+                case 1:
+                    return "No. Intente de nuevo.";
+                case 2:
+                    return "Equivocado. Trate una vez m&aacute;s.";
+                case 3:
+                    return "No se d&eacute; por vencido.";
+                default:
+                    return "No. Siga intentando.";
+            }
+        }
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+</head>
+
+<body>
+   <form action="#">
+      <p><label>Nivel de grado (1 a 4):
+            <input id="campoNivel" type="number" min="1" max="4" value="1"></label>
+         <label>Tipo de problema:
+            <select id="campoTipo">
+               <option value="1">1 - Sumas</option>
+               <option value="2">2 - Restas</option>
+               <option value="3" selected>3 - Multiplicaciones</option>
+               <option value="4">4 - Divisiones</option>
+               <option value="5">5 - Mezcla al azar</option>
+            </select></label>
+         <input id="botonComenzar" type="button" value="Comenzar"></p>
+      <p id="pregunta"></p>
+      <p><input id="campoRespuesta" type="text" size="10">
+         <input id="botonVerificar" type="button" value="Verificar"></p>
+   </form>
+   <p id="mensaje"></p>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo9.26.html">&larr;Anterior</a>
+        <a class="boton" href="EjercicioNo9.28.html">Siguiente&rarr;</a>
+    </nav>
+</body>
+
+</html>

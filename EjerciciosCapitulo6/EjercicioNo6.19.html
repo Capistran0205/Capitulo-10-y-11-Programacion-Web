@@ -1,0 +1,43 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <title>Ejercicio 6.19: Diámetro, circuferencia y área de un círculo.</title>
+    <script>
+        const PI = Math.PI; // Definición de constante PI de la Math
+        var radio;
+        var diametro;
+        var circunferencia;
+        var area;
+
+         radio = parseFloat( window.prompt( "Escriba el radio del círculo:", "0" ) );
+
+         diametro = 2 * radio;
+         circunferencia = 2 * PI * radio;
+         area = PI * Math.pow(radio, 2);
+        
+         // Resultados
+         document.writeln( "<h1>Ejercicio 6.19: Diámetro, circuferencia y área de un círculo.</h1>" );
+         document.writeln("<hr>");
+         document.writeln("<p>Escriba una secuencia de comandos que obtenga del usuario el radio de un círculo y produzca texto de HTML5 que muestre"+
+                "el diámetro, la circunferencia y el área de ese círculo."+
+            "</p>");
+         document.writeln("<hr>");
+         document.writeln( "<h2>Círculo de radio establecido por el usuario: " + radio + "</h2>" );
+         document.writeln( "<p>Diámetro: " + diametro + "</p>" );
+         document.writeln( "<p>Circunferencia: " + circunferencia + "</p>" );
+         document.writeln( "<p>Área: " + area + "</p>" );
+
+    </script>
+</head>
+<body>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo6.18.html">&larr;Anterior</a>        
+        <a class="boton" href="EjercicioNo6.20.html">Siguiente&rarr;</a>
+    </nav>
+</body>
+</html>

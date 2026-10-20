@@ -1,0 +1,45 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<!-- AutoEvaluacionNo7.3.html -->
+<!-- Capítulo 7: Ejercicio de autoevaluación 7.3 -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <title>Ejercicio de Autoevaluación 7.3</title>
+    <script>
+        document.writeln( "<h1> Ejercicio de Autoevaluación 7.3 </h1>" );
+        document.writeln( "<p> Escribir instrucciones en JavaScript para realizar cada una de las siguientes tareas </p>" )
+        document.writeln( "<ol type = 'a'><li> Asignar la suma de x, & y a z e incrementar el valor de x en 1 después del cálculo. Usar solo una instrucción. </li>" );
+            var x = 2, y = 1, z;
+            z = x++ + y;
+            document.writeln( "<code>Resultado obtenido. "+ z +"</code>" );
+        document.writeln( "<li> Evaluar si el valor de la variable cuenta es mayor que 10. De ser así, imprimir cuenta mayor que 10. </li>" );
+            var cuenta = 20;
+            if (cuenta > 10)
+                document.writeln( "<code>Cuenta es mayor que 10</code>" );
+            else
+                document.writeln( "<code>Cuenta es menor o igual que 10</code>" );
+        document.writeln( "<li> Decrementar la variable x en 1 y luego restarla a la variable total. Usar una sola instrucción</li>" );
+            var total = 2;
+            total -= --x;
+            document.writeln( "<code>Resultado: " + total + "</code>" );
+        document.writeln( "<li> Calcular el residuo después de dividir q entre divisor y asignar el resultado a q. Escribir una instrucción de dos maneras distintas. </li>" );
+            var divisor = 3, q1 = 10, q2 = 12;
+            q1 %= divisor;
+            q2 = q2 % divisor; 
+            document.writeln( "<code>Resultado q1: " + q1 + " Resultado q2:"+ q2 +"</code>" );
+    </script>
+</head>
+
+<body>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo7.2.html">&larr;Anterior</a>
+        <a class="boton" href="EjercicioNo7.4.html">Siguiente&rarr;</a>
+    </nav>
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<!-- Ejercicio 9.8: cargosEstacionamiento.html -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <title>Ejercicio 9.8: Cargos de estacionamiento</title>
+    <style type="text/css">
+        table {
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 4px 10px;
+        }
+
+        th {
+            background-color: lightblue;
+        }
+    </style>
+    <script>
+        document.writeln("<h1>Ejercicio 9.8: Cargos de estacionamiento</h1>");
+        document.writeln("<hr>");
+        document.writeln("<p>Un estacionamiento cobra un mínimo de $2.00 por hasta tres horas y $0.50 adicionales por cada hora que exceda las tres. " +
+            "El cargo máximo por 24 horas es $10.00. Con un formulario que reciba las horas de cada cliente, muestra el cargo del cliente actual y el total corriente de los recibos de ayer. " +
+            "Usa la función calcularCargos.</p>");
+        document.writeln("<h2>Solución:</h2>");
+        var totalRecibos = 0;   // total corriente de los recibos
+        var numeroClientes = 0; // clientes atendidos
+        var filasTabla = "";    // filas acumuladas de la tabla
+
+        function iniciar() {
+            var boton = document.getElementById("botonCalcular");
+            boton.addEventListener("click", registrarCliente, false);
+        } // fin de la función iniciar
+
+        function registrarCliente() {
+            var horas = parseFloat(document.getElementById("campoHoras").value);
+            var mensaje = document.getElementById("mensaje");
+
+            if (isNaN(horas) || horas <= 0 || horas > 24) {
+                mensaje.innerHTML = "Escriba un n&uacute;mero de horas mayor que 0 y hasta 24.";
+                return;
+            } // fin de if
+
+            var cargo = calcularCargos(horas);
+            ++numeroClientes;
+            totalRecibos += cargo;
+
+            mensaje.innerHTML = "Cargo para el cliente actual: $" + cargo.toFixed(2);
+
+            filasTabla += "<tr><td>" + numeroClientes + "</td><td>" + horas +
+                "</td><td>$" + cargo.toFixed(2) + "</td></tr>";
+
+            document.getElementById("divTabla").innerHTML =
+                "<table><thead><tr><th>Cliente</th><th>Horas</th><th>Cargo</th></tr></thead>" +
+                "<tbody>" + filasTabla + "</tbody>" +
+                "<tfoot><tr><th colspan='2'>Total de recibos</th><th>$" +
+                totalRecibos.toFixed(2) + "</th></tr></tfoot></table>";
+        } // fin de la función registrarCliente
+
+        // calcula el cargo de un cliente según las horas estacionadas
+        function calcularCargos(horas) {
+            if (horas <= 3)
+                return 2.00; // cuota mínima
+
+            // $0.50 por cada hora (o fracción) que excede las tres horas
+            var cargo = 2.00 + 0.50 * Math.ceil(horas - 3);
+
+            if (cargo > 10.00) // cargo máximo por 24 horas
+                cargo = 10.00;
+
+            return cargo;
+        } // fin de la función calcularCargos
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+</head>
+
+<body>
+    <form action="#">
+        <p><label>Horas estacionadas: <input id="campoHoras" type="number" step="any"></label>
+            <input id="botonCalcular" type="button" value="Calcular cargo">
+        </p>
+    </form>
+    <p id="mensaje"></p>
+    <div id="divTabla"></div>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo9.7.html">&larr;Anterior</a>
+        <a class="boton" href="EjercicioNo9.9.html">Siguiente&rarr;</a>
+    </nav>
+</body>
+
+</html>

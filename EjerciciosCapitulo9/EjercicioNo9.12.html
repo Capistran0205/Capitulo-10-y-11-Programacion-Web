@@ -1,0 +1,37 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<!-- Ejercicio 9.12: elegirNumeroAzar.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <title>Ejercicio 9.12: Elegir al azar de un conjunto de números</title>
+    <script>
+        document.writeln( "<h1>Ejercicio 9.12: Elegir al azar de un conjunto de números</h1>" );
+        document.writeln( "<hr>" );
+        document.writeln( "<p>Para cada uno de los siguientes conjuntos, escribe una sola instrucción que imprima un número al azar del conjunto.</p>" );
+        document.writeln( "<ol type = 'a'>" );
+        document.writeln( "<li>2, 4, 6, 8, 10</li>" ); 
+        document.writeln( "<li>3, 5, 7, 9, 11</li>" ); 
+        document.writeln( "<li>6, 10, 14, 18, 22</li>" );
+        document.writeln( "</ol>" );
+        document.writeln( "<h2> Solución: </h2>" );
+        document.writeln( "<ol type = 'a'>" );
+        document.writeln( "<li><code>2 * Math.floor( 1 + Math.random() * 5);</code></li>" );
+        document.writeln( "<p>Resultado</p>" ); document.writeln( 2 * Math.floor( 1 + Math.random() * 5 ) );
+        document.writeln( "<li><code>2 * Math.floor( 1 + Math.random() * 5 ) + 1);</code></li>" );
+        document.writeln( "<p>Resultado</p>" ); document.writeln( 2 * Math.floor( 1 + Math.random() * 5 ) + 1 );
+        document.writeln( "<li><code>4 * Math.floor( 1 + Math.random() * 5 ) + 2);</code></li>" );
+        document.writeln( "<p>Resultado</p>" ); document.writeln( 4 * Math.floor( 1 + Math.random() * 5 ) + 2 );
+        document.writeln( "</ol>" );
+    </script>
+</head>
+<body>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo9.11.html">&larr;Anterior</a>
+        <a class="boton" href="EjercicioNo9.13.html">Siguiente&rarr;</a>
+    </nav>
+</body>
+</html>

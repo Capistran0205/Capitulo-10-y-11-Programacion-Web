@@ -1,0 +1,117 @@
+<!-- Capistran Ortiz Diego-->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Ejercicio 5.10</title>
+   <link rel="stylesheet" type="text/css" href="/Estilos/Botones.css">
+   <style type="text/css">
+      .skew .textbox {
+         margin: 40px 0 0 75px;
+         background: lightgreen;
+         height: 100px;
+         width: 200px;
+         padding: 25px 0;
+         text-align: center;
+         font-size: 250%;
+         border: 3px solid DarkGreen;
+         border-radius: 15px;
+         -webkit-animation: inclinar 6s infinite linear;
+         -moz-animation: inclinar 6s infinite linear;
+         animation: inclinar 6s infinite linear;
+      }
+
+      @-webkit-keyframes inclinar {
+         0% {
+            -webkit-transform: skew(0deg, 0deg);
+         }
+
+         25% {
+            -webkit-transform: skew(0deg, 30deg);
+         }
+
+         50% {
+            -webkit-transform: skew(0deg, 0deg);
+         }
+
+         75% {
+            -webkit-transform: skew(30deg, 0deg);
+         }
+
+         100% {
+            -webkit-transform: skew(0deg, 0deg);
+         }
+      }
+
+      @-moz-keyframes inclinar {
+         0% {
+            -moz-transform: skew(0deg, 0deg);
+         }
+
+         25% {
+            -moz-transform: skew(0deg, 30deg);
+         }
+
+         50% {
+            -moz-transform: skew(0deg, 0deg);
+         }
+
+         75% {
+            -moz-transform: skew(30deg, 0deg);
+         }
+
+         100% {
+            -moz-transform: skew(0deg, 0deg);
+         }
+      }
+
+      @keyframes inclinar {
+         0% {
+            transform: skew(0deg, 0deg);
+         }
+
+         25% {
+            transform: skew(0deg, 30deg);
+         }
+
+         50% {
+            transform: skew(0deg, 0deg);
+         }
+
+         75% {
+            transform: skew(30deg, 0deg);
+         }
+
+         100% {
+            transform: skew(0deg, 0deg);
+         }
+      }
+
+      footer {
+         clear: both;
+         margin-top: 40px;
+         font-family: sans-serif;
+      }
+   </style>
+</head>
+
+<body>
+   <h1>Ejercicio 5.10</h1>
+   <hr>
+   <p><b>(Inclinación)</b> Modifique el ejemplo de inclinación del ejemplo 5.13 para inclinar el elemento de arriba hacia abajo 30deg, después de izquierda a derecha 30deg, alternando de manera indefinida.</p>
+   <hr>
+   <div class="box skew">
+      <div class="textbox">Inclinar texto</div>
+   </div>
+   <footer>
+      <nav>
+         <a class="boton" href="Index_Ejercicios.html">Menú Principal</a>
+         <a class="boton" href="EjercicioNo5.9.html">&larr;Anterior</a>
+         <a class="boton" href="EjercicioNo5.11.html">&rarr;Siguiente</a>
+      </nav>
+   </footer>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<!-- Ejercicio 7.13: EjercicioNo7.13.html -->
+<!-- Ingresos semanales de un vendedor por comisión. -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <title>Ejercicio 7.13: Ingresos mensuales de un vendedor</title>
+    <script>
+        document.writeln("<h1> Ejercicio 7.13: Ingresos semanales de un vendedor de comisión</h1>");
+        document.writeln("<hr>");
+        document.writeln("<p>Un vendedor gana $200 por semana más el 9% de sus ventas brutas. Los artículos valen: 1 → $239.99, 2 → $129.75, 3 → $99.95, 4 → $350.89. Recibir los artículos vendidos en la semana, calcular los ingresos y mostrarlos.</p>");
+        document.writeln("<hr>");
+        var articulo; // número del artículo vendido
+        var ventasBrutas = 0; // suma de los valores de los artículos vendidos
+        var ingresos; // ingresos de la semana
+
+        // leer el primer artículo (-1 es el valor centinela)
+        articulo = parseInt(window.prompt(
+            "Número del artículo vendido (1 a 4). -1 para terminar:", "0"));
+
+        while (articulo != -1) {
+            if (articulo == 1)
+                ventasBrutas += 239.99;
+            else if (articulo == 2)
+                ventasBrutas += 129.75;
+            else if (articulo == 3)
+                ventasBrutas += 99.95;
+            else if (articulo == 4)
+                ventasBrutas += 350.89;
+            else
+                window.alert("Artículo inválido. Escriba 1, 2, 3 o 4.");
+
+            // leer el siguiente artículo
+            articulo = parseInt(window.prompt(
+                "Número del artículo vendido (1 a 4). -1 para terminar:", "0"));
+        } // fin de while
+
+        // $200 por semana más el 9 por ciento de las ventas brutas
+        ingresos = 200 + 0.09 * ventasBrutas;
+
+        document.writeln("<h1>Ingresos del vendedor</h1>");
+        document.writeln("<p>Ventas brutas: $" + ventasBrutas + "</p>");
+        document.writeln("<p>Ingresos de la semana: $" + ingresos + "</p>");
+
+    </script>
+</head>
+
+<body>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo7.12.html">&larr;Anterior</a>
+        <a class="boton" href="EjercicioNo7.14.html">Siguiente&rarr;</a>
+    </nav>
+</body>
+
+</html>
