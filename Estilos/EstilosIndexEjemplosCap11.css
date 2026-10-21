@@ -1,0 +1,61 @@
+/* Capítulo 11 · Ejemplos — Estilo Silver Surfer
+   Paleta: negro espacial, plata cromada y celeste cósmico */
+
+body {
+   background-color: #0B0F1A;      /* fondo */
+   color: #E4E9F0;                 /* texto principal */
+   font-family: Verdana, Arial, sans-serif;
+   margin: 0;
+   padding: 20px 40px;
+   border-top: 10px solid #C9D1DA; /* franja plateada superior */
+}
+
+h1 {
+   color: #0B0F1A;
+   background-color: #C9D1DA;
+   border: 3px solid #5CC8FF;
+   border-bottom: 8px solid #5CC8FF;
+   padding: 0.4em 0.6em;
+   text-transform: uppercase;
+   letter-spacing: 2px;
+}
+
+p {
+   color: #E4E9F0;
+   line-height: 1.6;
+   max-width: 70ch;                /* líneas cómodas de leer */
+   border-left: 4px solid #C9D1DA;
+   padding-left: 0.8em;
+}
+
+a {
+   color: #7FD6FF;
+   font-weight: bold;
+}
+
+ul {
+   background-color: #1A2235;
+   border: 3px solid #C9D1DA;
+   padding: 1em 1em 1em 2.5em;
+   max-width: 60ch;
+}
+
+li {
+   color: #EEF2F7;
+   padding: 0.3em 0.5em;
+   border-bottom: 1px solid #34405A;
+   list-style-type: circle;
+}
+
+li::marker {
+   color: #5CC8FF;
+}
+
+li:last-child {
+   border-bottom: none;
+}
+
+li:hover {
+   background-color: #C9D1DA;
+   color: #0B0F1A;
+}

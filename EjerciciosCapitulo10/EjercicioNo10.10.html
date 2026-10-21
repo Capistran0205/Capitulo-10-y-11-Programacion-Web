@@ -1,0 +1,127 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+
+<!-- Ejercicio 10.10: Comisiones de ventas con un arreglo de contadores -->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio 10.10: Comisiones de ventas</title>
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <style>
+        table {
+            border-collapse: collapse;
+            margin-top: 1em;
+        }
+
+        th,
+        td {
+            border: 1px solid #888;
+            padding: 4px 12px;
+            text-align: right;
+        }
+
+        th:first-child,
+        td:first-child {
+            text-align: left;
+        }
+    </style>
+    <script>
+        document.writeln("<h1>Ejercicio 10.10: Comisiones de ventas</h1>");
+        document.writeln("<hr>");
+        document.writeln("<p>Use un arreglo unidimensional para resolver el siguiente problema: una empresa paga a su personal de ventas con base en comisiones."
+            + " El personal de ventas recibe $200 por semana más el 9% de sus ventas brutas para esa semana. Por ejemplo, un vendedor con ventas brutas de $5000 en una semana"
+            + " recibe $200 más el 9% de $5000, o un total de $650. Escriba una secuencia de comandos para obtener las ventas brutas para cada empleado por medio de un formulario"
+            + " y determine cuántos vendedores obtuvieron salarios en cada uno de los siguientes rangos:"
+            + "</p>");
+        document.writeln("<ol type = 'a'>");
+        document.writeln("<li>$200 a 299</li>");
+        document.writeln("<li>$300 a 399</li>");
+        document.writeln("<li>$400 a 499</li>");
+        document.writeln("<li>$500 a 599</li>");
+        document.writeln("<li>$600 a 699</li>");
+        document.writeln("<li>$700 a 799</li>");
+        document.writeln("<li>$800 a 899</li>");
+        document.writeln("<li>$900 a 999</li>");
+        document.writeln("<li>$1000 y más</li>");
+        document.writeln("</ol>");
+        document.writeln("<hr>");
+        document.writeln("<h2>Solución:</h2>");
+        // contadores[ i ]: vendedores con salario entre i*100 y i*100 + 99
+        // (índice 10 = $1000 o más). Los índices 0 y 1 no se usan.
+        var contadores = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+        var totalVendedores = 0;
+
+        function registrarVendedor() {
+            var campo = document.getElementById("ventas");
+            var ventas = parseFloat(campo.value);
+
+            if (isNaN(ventas) || ventas < 0) {
+                alert("Introduzca unas ventas brutas válidas (0 o más).");
+                return;
+            } // fin de if
+
+            // $200 por semana + 9 % de las ventas brutas, truncado a entero
+            var salario = Math.floor(200 + ventas * 9 / 100);
+
+            var indice = Math.floor(salario / 100);
+
+            if (indice > 10)
+                indice = 10; // $1000 y más
+
+            ++contadores[indice];
+            ++totalVendedores;
+
+            document.getElementById("ultimo").innerHTML =
+                "Último vendedor: salario de $" + salario;
+            mostrarTabla();
+
+            campo.value = "";
+            campo.focus();
+        } // fin de la función registrarVendedor
+
+        function mostrarTabla() {
+            var tabla = "<table><thead><tr><th>Rango de salario</th>" +
+                "<th>Vendedores</th></tr></thead><tbody>";
+
+            for (var i = 2; i <= 9; ++i) {
+                tabla += "<tr><td>$" + (i * 100) + " a $" +
+                    (i * 100 + 99) + "</td><td>" + contadores[i] +
+                    "</td></tr>";
+            } // fin de for
+
+            tabla += "<tr><td>$1000 y más</td><td>" + contadores[10] +
+                "</td></tr></tbody></table>" +
+                "<p>Total de vendedores: " + totalVendedores + "</p>";
+
+            document.getElementById("resultados").innerHTML = tabla;
+        } // fin de la función mostrarTabla
+
+        function iniciar() {
+            document.getElementById("botonRegistrar").addEventListener(
+                "click", registrarVendedor, false);
+            mostrarTabla();
+        } // fin de la función iniciar
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+</head>
+
+<body>
+    <h1>Comisiones de ventas</h1>
+    <form action="#">
+        <p><label>Ventas brutas de la semana ($):
+                <input id="ventas" type="number" min="0" step="any"></label>
+            <input id="botonRegistrar" type="button" value="Registrar vendedor">
+        </p>
+    </form>
+    <p id="ultimo"></p>
+    <div id="resultados"></div>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo10.9.html">&larr;Anterior</a>
+        <a class="boton" href="EjercicioNo10.11.html">Siguiente&rarr;</a>
+    </nav>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- AutoEvaluacionNo10.4.html -->
+<!-- Capítulo 10: Ejercicio de autoevaluación 10.4 -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <link rel="stylesheet" href="/Estilos/EstilosAutoEvaluacion.css">
+    <link rel="stylesheet" href="/Estilos/Lista_Matriz.css">
+    <title>Ejercicio de Autoevaluación 10.4</title>
+    <script>
+        document.writeln("<h1>Ejercicio de Autoevaluación 10.4</h1>")
+        document.writeln("<hr>");
+        document.writeln("<p>Escriba instrucciones de JavaScript (con respecto al arreglo tabla) para realizar cada una de las siguientes tareas:</p>");
+        document.writeln("<hr>");
+        document.writeln("<ul type='a'>");
+        document.writeln("<li>Declarar y crear un arreglo con tres filas y tres columnas.</li>");
+        document.writeln("<li>Almacenar el número total de elementos en la variable totalElementos.</li>");
+        document.writeln("<li>Usar una instrucción for ... in para inicializar cada elemento del arreglo con la suma de sus índices de fila y de columna. Suponga que las variables x & y se declaran como variabes de control.</li>");
+        document.writeln("</ol>");
+        document.writeln("<h2>Solución:</h2>");
+        // a)
+        var tabla = new Array( new Array( 3 ), new Array( 3 ), new Array( 3 ) );
+        // b)
+        var resultado = "<div>";
+        for ( var x in tabla ){
+            resultado += "<ol>";
+            for( var y in tabla ){                
+                tabla[x][y] = parseInt(x) + parseInt(y); // Se hace la conversión de los valores a enteros porque por defecto se recibe como una cadena.
+                resultado += "<li>" + tabla[x][y] +"</li>"; 
+            }
+            resultado += "</ol>";
+        }
+        resultado += "</div>";
+        document.writeln(resultado);
+
+    </script>
+</head>
+
+<body>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo10.3.html">&larr;Anterior</a>
+        <a class="boton" href="EjercicioNo10.5.html">Siguiente&rarr;</a>
+    </nav>
+</body>
+
+</html>

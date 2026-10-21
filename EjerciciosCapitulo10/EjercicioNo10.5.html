@@ -1,0 +1,49 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+
+<!-- AutoEvaluacionNo10.5.html -->
+<!-- Capítulo 10: Ejercicio de autoevaluación 10.5 -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <link rel="stylesheet" href="/Estilos/Imagenes.css">
+    <title>Ejercicio de Autoevaluación 10.5</title>
+    <script>
+        document.writeln( "<h1>Ejercicio de Autoevaluación 10.5</h1>" );
+        document.writeln( "<hr>" );
+        document.writeln( "<p>Ecuentra el o los errores en cada uno de los siguientes segmentos de programa y corrijalos.</p>" );
+        document.writeln( "<ol type = 'a'>" );
+        document.writeln( "<li></li>" );
+        document.writeln( "<img src = \"/Resources/Error(a)10.5.png\">" );
+        document.writeln( "<p>La condición provocaría un desborde de los límites de un arreglo debido al índice al llegar al final del recorrido del arreglo, lo correcto es definir la condición <code>i < longitud;</code></p>" )
+        document.writeln( "<li></li>" );
+        document.writeln( "<img src = \"/Resources/Error(b)10.5.png\">" );
+        document.writeln( "<p>El error se encuenctra en la definición del indice bidimensional, este se escribe con dos pares de corchetes (en este caso se utilizo solo 1 separando dos valores por comas)</p>" );
+        document.writeln( "</ol>" );
+        document.writeln( "<h2>Solución:</h2>" );
+        var b = new Array( 10 );
+        var longitud = b.length;
+        document.writeln( "<ol type = 'a'>" );
+        for (var i = 0; i < longitud; i++){
+            b[i] = 1;
+        }
+        document.writeln( "<li></li>" );
+        var a = [[1,2], [3,4]];
+        a[1][1] = 5;  
+        document.writeln( "<img src = \"/Resources/Solucion(a)10.5.png\">" );
+        document.writeln( "<li></li>" );
+        document.writeln( "<img src = \"/Resources/Solucion(b)10.5.png\">" );
+        document.writeln( "</ol>" );
+    </script>
+</head>
+<body>
+    <body>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo10.4.html">&larr;Anterior</a>
+        <a class="boton" href="EjercicioNo10.6.html">Siguiente&rarr;</a>
+    </nav>
+</body>
+</html>

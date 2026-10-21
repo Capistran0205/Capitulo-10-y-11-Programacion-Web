@@ -1,0 +1,77 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <title>Ejercicio 10.16: Criba de Eratóstenes</title>
+    <script>
+        document.writeln("<h1>Ejercicio 10.16: Criba de Eratóstenes</h1>");
+        document.writeln("<hr>");
+        document.writeln("<p>Un número primo es cualquier entero que 1, divisible sólo por sí mismo y por el número 1. La Criba de Eratóstenes es un método para encontrar números primos.</p>");
+        document.writeln("<ol type = 'a'>");
+        document.writeln("<li>Cree un arreglo con todos los elementos inicializados en 1(true). Los elementos del arreglo con índices primos permanecerán como 1. Cualquier otro elemento del arreglo eventualmente cambiará a 0.</li>");
+        document.writeln("<li>Establezca los primeros dos elementos en cero, ya que 0 y 1 no son primos. Empezando con el índice 2 del arreglo, cada vez que encuentre un elemento del arreglo cuyo valor sea 1, itere a través del resto del arreglo " +
+            "y asigne cero a todo elemento cuyo índice sea múltiplo del índice del elemento que tiene valor 1. Para el índice 2 del arreglo, todos los elementos más allá del elemento 2 en el arreglo que sea múltiplos de 2 se establecerán en cero; " +
+            "para el índice 3 del arreglo, todos los elementos más allá del elemento 3 en el arreglo que sean múltiplos de 3 se establecerán en cero, y así sucesivamente." +
+            "</li>");
+        document.writeln("</ol>");
+        document.writeln("<hr>");
+        document.writeln("<h2>Solución:</h2>");
+        function iniciar() {
+            var TAMANO = 100000;
+            var primos = new Array(TAMANO);
+
+            // a) todos los elementos empiezan en 1 (verdadero)
+            for (var i = 0; i < TAMANO; ++i) {
+                primos[i] = 1;
+            } // fin de for
+
+            // b) 0 y 1 no son primos
+            primos[0] = 0;
+            primos[1] = 0;
+
+            // para cada índice que siga en 1, poner en 0 sus múltiplos posteriores
+            for (var i = 2; i < TAMANO; ++i) {
+                if (primos[i] === 1) {
+                    for (var j = i + 1; j < TAMANO; ++j) {
+                        if (j % i === 0)
+                            primos[j] = 0;
+                    } // fin de for interno
+                } // fin de if
+            } // fin de for externo
+
+            // los índices que quedaron en 1 son primos
+            var lista = [];
+            var cantidad = 0;
+
+            for (var i = 1; i < TAMANO; ++i) // se ignora el elemento 0
+            {
+                if (primos[i] === 1) {
+                    lista[cantidad] = i;
+                    ++cantidad;
+                } // fin de if
+            } // fin de for
+
+            document.getElementById("salida").innerHTML =
+                "<p>Hay " + cantidad + " números primos entre 1 y 999:</p><p>" +
+                lista.join(", ") + "</p>";
+        } // fin de la función iniciar
+
+        window.addEventListener("load", iniciar, false); 
+    </script>
+</head>
+
+<body>
+    <h1>Números primos entre 1 y 99999</h1>
+    <div id="salida"></div>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo10.15.html">&larr;Anterior</a>
+        <a class="boton" href="EjercicioNo10.17.html">Siguiente&rarr;</a>
+    </nav>
+</body>
+
+</html>

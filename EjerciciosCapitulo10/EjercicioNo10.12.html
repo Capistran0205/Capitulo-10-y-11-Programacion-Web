@@ -1,0 +1,103 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <title>Ejercicio 10.12: Números Enteros sin Duplicados</title>
+      <script>
+         document.writeln( "<h1>Ejercicio 10.12: Números Enteros sin Duplicados</h1>" );
+         document.writeln( "<hr>" );
+         document.writeln( "<p>Recibir 10 número de entrada, cada uno de los cuales debe estar entre 10 y 100. A medida que se ingrese cada número, imprímalo"+
+            " sólo si no es duplicado de un número que ya se haya recibido de entrada. En el peor de los casos, los 10 números serán diferentes.</p>" );
+         document.writeln( "<hr>" );
+         document.writeln( "<h2>Solución:</h2>");
+         var unicos = new Array( 10 ); // el arreglo más pequeño posible (peor caso: 10 distintos)
+         var cantidadUnicos = 0;       // cuántos elementos de unicos están en uso
+         var numerosLeidos = 0;        // cuántos números ha introducido el usuario
+
+         // determina si n ya está entre los números guardados
+         function estaDuplicado( n )
+         {
+            for ( var i = 0; i < cantidadUnicos; ++i )
+            {
+               if ( unicos[ i ] === n )
+                  return true;
+            }
+
+            return false;
+         }
+
+         function recibirNumero()
+         {
+            if ( numerosLeidos >= 10 )
+               return; // ya se recibieron los 10 números
+
+            var campo = document.getElementById( "numero" );
+            var n = parseInt( campo.value );
+
+            if ( isNaN( n ) || n < 10 || n > 100 )
+            {
+               alert( "Introduzca un entero entre 10 y 100." );
+               return;
+            }
+
+            ++numerosLeidos;
+            var estado;
+
+            if ( estaDuplicado( n ) )
+            {
+               estado = n + " es un duplicado: no se imprime .";
+            }
+            else
+            {
+               unicos[ cantidadUnicos ] = n;
+               ++cantidadUnicos;
+               estado = n + " no estaba repetido: se imprime.";
+               document.getElementById( "impresos" ).innerHTML =
+                  "Números distintos hasta ahora: " +
+                  unicos.slice( 0, cantidadUnicos ).join( ", " );
+            }
+
+            document.getElementById( "estado" ).innerHTML =
+               "Número " + numerosLeidos + " de 10. " + estado;
+
+            campo.value = "";
+            campo.focus();
+
+            if ( numerosLeidos === 10 )
+            {
+               document.getElementById( "botonEnviar" ).disabled = true;
+               campo.disabled = true;
+               document.getElementById( "estado" ).innerHTML +=
+                  "<br>Se recibieron los 10 números.";
+            }
+         }
+
+         function iniciar()
+         {
+            document.getElementById( "botonEnviar" ).addEventListener(
+               "click", recibirNumero, false );
+         } // fin de la función iniciar
+
+         window.addEventListener( "load", iniciar, false );
+      </script>
+   </head>
+   <body>
+      <h1>Números sin duplicados</h1>
+      <form action = "#">
+         <p><label>Introduzca un número entre 10 y 100:
+            <input id = "numero" type = "number" min = "10" max = "100"></label>
+            <input id = "botonEnviar" type = "button" value = "Enviar">
+         </p>
+      </form>
+      <p id = "estado"></p>
+      <p id = "impresos"></p>
+      <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo10.11.html">&larr;Anterior</a>
+        <a class="boton" href="EjercicioNo10.13.html">Siguiente&rarr;</a>
+      </nav>
+   </body>
+</html>

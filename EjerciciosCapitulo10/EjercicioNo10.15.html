@@ -1,0 +1,156 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <link rel="stylesheet" href="/Estilos/Imagenes.css">
+    <title>Ejercicio 10.15: Gráficos de tortuga</title>
+    <style>
+        pre {
+            font-size: 1.1em;
+            line-height: 1.05;
+        }
+    </style>
+    <script>
+        document.writeln( "<h1>Ejercicio 10.15: Gráficos de tortuga</h1>" );
+        document.writeln( "<hr>" );
+        document.writeln( "<p>Imagine una tortuga mecánica que camina alrededor del cuarto bajo el control de un programa de JS. La tortuga sostiene un pluma en una de dos posiciones, arriba o abajo."+
+            " Cuando la pluma está abajo, la tortuga traza figuras a medida que se desplaza; cuando la pluma está arriba la tortuga se mueve libremente sin escribir nada. En este programa se simulará la operación"+
+            " operación de la tortuga y creará un bloc de dibujo computarizado."+
+            " Use un arreglo de 20 por 20 llamdo piso que esté inicilizado en ceros. Lea os comandos de un arreglo que los contenga. Rastree la posición actual de la tortuga en todo momento y si la pluma está arriba o abajo en un momento dado."+
+            " Suponga que la tortuga siempre comienza en la posición 0,0 del piso, con su pluma arriba.</p>" );
+        document.writeln( "<img class = 'imagen' src = \"/Resources/ComandoTortuga.png\"");
+        document.writeln( "<hr>" );
+        var TAMANO = 20;
+        var piso; // arreglo de 20 x 20
+
+        function limpiarPiso() {
+            piso = new Array(TAMANO);
+
+            for (var f = 0; f < TAMANO; ++f) {
+                piso[f] = new Array(TAMANO);
+
+                for (var c = 0; c < TAMANO; ++c) {
+                    piso[f][c] = 0;
+                } // fin de for interno
+            } // fin de for externo
+        } // fin de la función limpiarPiso
+
+        // devuelve el piso como texto: * donde hay un 1 y espacio donde hay un 0
+        function imprimirPiso() {
+            var texto = "";
+
+            for (var f = 0; f < TAMANO; ++f) {
+                for (var c = 0; c < TAMANO; ++c) {
+                    texto += (piso[f][c] === 1) ? "* " : "  ";
+                } // fin de for interno
+
+                texto += "\n";
+            } // fin de for externo
+
+            return texto;
+        } // fin de la función imprimirPiso
+
+        // ejecuta un programa de comandos y devuelve lo que imprimió
+        function ejecutar(comandos) {
+            limpiarPiso();
+
+            var fila = 0, columna = 0;      // posición de la tortuga
+            var plumaAbajo = false;         // la pluma empieza arriba
+            var direccion = 0;              // 0 derecha, 1 abajo, 2 izquierda, 3 arriba
+            var deltaFila = [0, 1, 0, -1];
+            var deltaColumna = [1, 0, -1, 0];
+            var salida = "";
+            var i = 0;
+
+            while (i < comandos.length) {
+                var comando = comandos[i++];
+
+                switch (comando) {
+                    case 1: // pluma arriba
+                        plumaAbajo = false;
+                        break;
+                    case 2: // pluma abajo
+                        plumaAbajo = true;
+                        break;
+                    case 3: // girar a la derecha
+                        direccion = (direccion + 1) % 4;
+                        break;
+                    case 4: // girar a la izquierda
+                        direccion = (direccion + 3) % 4;
+                        break;
+                    case 5: // avanzar n espacios (el número viene después del 5)
+                        var pasos = comandos[i++];
+
+                        if (plumaAbajo)
+                            piso[fila][columna] = 1;
+
+                        for (var p = 0; p < pasos; ++p) {
+                            var nuevaFila = fila + deltaFila[direccion];
+                            var nuevaColumna = columna + deltaColumna[direccion];
+
+                            // la tortuga no sale del piso
+                            if (nuevaFila < 0 || nuevaFila >= TAMANO ||
+                                nuevaColumna < 0 || nuevaColumna >= TAMANO)
+                                break;
+
+                            fila = nuevaFila;
+                            columna = nuevaColumna;
+
+                            if (plumaAbajo)
+                                piso[fila][columna] = 1;
+                        } // fin de for
+                        break;
+                    case 6: // imprimir el arreglo
+                        salida += imprimirPiso() + "\n";
+                        break;
+                    case 9: // fin de datos
+                        return salida;
+                } // fin de switch
+            } // fin de while
+
+            return salida;
+        } // fin de la función ejecutar
+
+        // Se dibuja un cuadrado de 12 por 12
+        var cuadrado = [2,
+            5, 12, 3,
+            5, 12, 3,
+            5, 12, 3,
+            5, 12, 1,
+            6, 9];
+
+        // Se dibuja una escalera
+        var escalera = [2,
+            5, 3, 3, 5, 3, 4,
+            5, 3, 3, 5, 3, 4,
+            5, 3, 3, 5, 3,
+            6, 9];
+
+        function iniciar() {
+            document.getElementById("salida1").innerHTML = ejecutar(cuadrado);
+            document.getElementById("salida2").innerHTML = ejecutar(escalera);
+            document.getElementById("salida3").innerHTML = ejecutar(numero5);
+        } // fin de la función iniciar
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+</head>
+
+<body>
+    <h1>Gráficos de tortuga</h1>
+    <h2>Cuadrado de 12 por 12</h2>
+    <pre id="salida1"></pre>
+    <h2>Escalera</h2>
+    <pre id="salida2"></pre>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo10.14.html">&larr;Anterior</a>
+        <a class="boton" href="EjercicioNo10.16.html">Siguiente&rarr;</a>
+    </nav>
+</body>
+
+</html>

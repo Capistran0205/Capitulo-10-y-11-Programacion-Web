@@ -1,0 +1,62 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- AutoEvaluacionNo10.3.html -->
+<!-- Capítulo 10: Ejercicio de autoevaluación 10.3 -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <link rel="stylesheet" href="/Estilos/EstilosAutoEvaluacion.css">
+    <title>Ejercicio de Autoevaluación 10.3</title>
+    <script>
+        document.writeln("<h1>Ejercicio de Autoevaluación 10.3</h1>")
+        document.writeln("<hr>");
+        document.writeln("<p>Escriba instrucciones de JavaScript (con respecto al arreglo fracciones) para realizar cada una de las siguientes tareas:</p>");
+        document.writeln("<hr>");
+        document.writeln("<ol type='a'>");
+        document.writeln("<li>Declarar un arreglo con 10 elementos e inicliazar los elementos del arreglo en 0.</li>");
+        document.writeln("<li>Hacer referencia al elemento 3 del arreglo.</li>");
+        document.writeln("<li>Hacer referencia al elemento 4 del arreglo.</li>");
+        document.writeln("<li>Asignar el valor 1.667 al elemento 9 del arreglo.</li>");
+        document.writeln("<li>Asignar el valor 3.333 al elemento de menor numeración del arreglo.</li>");
+        document.writeln("<li>Sumar todos los elementos del arreglo mediante una instrucción for ... in. Definir la variable x como variable de control para el ciclo.</li>");
+        document.writeln("</ol>");
+        document.writeln("<h2>Solución:</h2>");
+        document.writeln("<ol type = 'a'>");
+        // a)
+        var fracciones = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+        document.writeln("<li>[0, 0, 0, 0 ,0, 0, 0, 0, 0, 0]</li>");
+        // b) y c)
+        fracciones[3];
+        document.writeln("<li>fracciones[3]</li>");
+        fracciones[4];
+        document.writeln("<li>fracciones[4]</li>");
+
+        // d)
+        fracciones[9] = 1.667;
+        document.writeln("<li>fracciones[9]</li>");
+
+        // e)
+        fracciones[0] = 3.333;
+        document.writeln("<li>fracciones[0]</li>");
+        // f)
+        var total = 0;
+        for (var x in fracciones) total += fracciones[x];
+
+        document.writeln("<li>El total de la suma del arreglo es:" + total + "</li>");
+        document.writeln("</ol>");
+
+    </script>
+</head>
+
+<body>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo10.2.html">&larr;Anterior</a>
+        <a class="boton" href="EjercicioNo10.4.html">Siguiente&rarr;</a>
+    </nav>
+</body>
+
+</html>

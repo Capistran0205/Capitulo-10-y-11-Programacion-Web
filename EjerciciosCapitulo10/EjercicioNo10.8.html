@@ -1,0 +1,73 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <title>Ejercicio 10.8: Instrucciones de JavaScript</title>
+    <script>
+        document.writeln("<h1>Ejercicio 10.8: Instrucciones de JavaScript</h1>");
+        document.writeln("<hr>");
+        document.writeln("<p>Escriba instrucciones de JavaScript para realizar cada una de las siguientes tareas</p>");
+        document.writeln("<hr>");
+        document.writeln("<ol type = 'a'>");
+        document.writeln("<li>Montar el valor del séptimo elemento del arreglo f.</li>");
+        document.writeln("<li>Inicializar cada uno de los cinco elementos de arreglo unidimensional g en 8.</li>");
+        document.writeln("<li>Calcular el total de los elementos del arreglo c, que contiene 100 elementos numéricos.</li>");
+        document.writeln("<li>Copiar el arreglo a de 11 elementos en la primera porción del arreglo b, que contiene 34 elementos.</li>");
+        document.writeln("<li>Determinar e imprimir el valor más pequeño y e más grande contenido en el arreglo w de 99 elementos de punto flotante.</li>");
+        document.writeln("</ol>");
+        document.writeln("<h2>Solución:</h2>");
+        // a)
+        var f = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        document.writeln("<p>Séptimo valor del array "+f[6]+"</p>");
+        // b)
+        var g = new Array (5);
+        for (var i = 0; i < 5; ++i) {
+            g[i] = 8;
+        }
+        document.writeln( "<p>"+g+"</p>" );
+        // c)
+        var total = 0;
+        var c = [10, 20, 30, 40, 50, 60, 70, 80];
+        for (var i = 0; i < c.length; ++i) {
+            total += c[i];
+        }
+        document.writeln("<p> Total de la suma de los elementos"+ total +"</p>");
+        // d)
+        var a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+        var b = Array( 11 );        
+        document.writeln("<p>Arreglo a: "+a+"</p>");
+        document.writeln("<p>Arreglo b: "+b+"</p>");
+        for (var i = 0; i < a.length; ++i) {
+            b[i] = a[i];
+        }
+        document.writeln("<p>Arreglo b con los valores de a: "+a+"</p>");
+        // e)
+        var w = [100, -50, 1000, 2, 40, 3];
+        var menor = w[0];
+        var mayor = w[0];
+
+        for (var i = 1; i < w.length; ++i) {
+            if (w[i] < menor)
+                menor = w[i];
+
+            if (w[i] > mayor)
+                mayor = w[i];
+        } // fin de for
+        document.writeln( "<p>Valores:</p>" );
+        document.writeln( "<p>Menor: >" + menor + "<br>Mayor: " + mayor+"</p>");
+    </script>
+</head>
+
+<body>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo10.7.html">&larr;Anterior</a>
+        <a class="boton" href="EjercicioNo10.9.html">Siguiente&rarr;</a>
+    </nav>
+</body>
+
+</html>

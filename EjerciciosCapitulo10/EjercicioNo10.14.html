@@ -1,0 +1,98 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <title>Ejercicio 10.14: Tiro de dos dados</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            margin-top: 1em;
+        }
+
+        th,
+        td {
+            border: 1px solid #888;
+            padding: 4px 12px;
+            text-align: right;
+        }
+    </style>
+    <script>
+        document.writeln("<h1>Ejercicio 10.14: Tiro de dos dados</h1>");
+        document.writeln("<hr>");
+        document.writeln("<p>Escriba una secuencia de comandos para simular el tiro de dos datos. La secuencia debe usar Math.random "+
+            "para tirar el primer dado y usar esa función de nuevo para tirar el segundo dado. Después, deberá calcularse la suma de los dos valores."+
+            "para el programa utilice un arreglo bidimensional (matriz) para calcular el número de veces que aprezca cada posible suma."+
+            "</p>");
+        document.writeln("<hr>");
+        document.writeln("<h2>Solución:</h2>");
+        var NUMERO_TIROS = 36000;
+
+        function simular() {
+            // tiros[ d1 ][ d2 ] cuenta las veces que salió la combinación (d1, d2)
+            var tiros = new Array(7);
+
+            for (var i = 0; i < 7; ++i) {
+                tiros[i] = [0, 0, 0, 0, 0, 0, 0];
+            }
+            // Se agregan los valores a toda la matriz
+            for (var n = 0; n < NUMERO_TIROS; ++n) {
+                var dado1 = Math.floor(1 + Math.random() * 6);
+                var dado2 = Math.floor(1 + Math.random() * 6);
+                ++tiros[dado1][dado2];
+            }
+
+            // sumas[ s ]: veces que la suma fue s (índices 2 a 12)
+            var sumas = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+            for (var d1 = 1; d1 <= 6; ++d1) {
+                for (var d2 = 1; d2 <= 6; ++d2) {
+                    sumas[d1 + d2] += tiros[d1][d2];
+                } // fin de for interno
+            } // fin de for externo
+
+            var tabla = "<table><caption>Resultados de " + NUMERO_TIROS +
+                " tiros</caption><thead><tr><th>Suma</th><th>Frecuencia</th>" +
+                "<th>% obtenido</th><th>% esperado</th></tr></thead><tbody>";
+
+            for (var suma = 2; suma <= 12; ++suma) {
+                var formas = 6 - Math.abs(suma - 7); // combinaciones que dan esa suma
+                tabla += "<tr><td>" + suma + "</td><td>" + sumas[suma] +
+                    "</td><td>" + (sumas[suma] / NUMERO_TIROS * 100).toFixed(2) +
+                    "</td><td>" + (formas / 36 * 100).toFixed(2) +
+                    "</td></tr>";
+            } // fin de for
+
+            tabla += "</tbody></table>";
+            document.getElementById("resultados").innerHTML = tabla;
+        } // fin de la función simular
+
+        function iniciar() {
+            document.getElementById("botonTirar").addEventListener(
+                "click", simular, false);
+            simular();
+        } // fin de la función iniciar
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+</head>
+
+<body>
+    <h1>Tiro de dos dados</h1>
+    <form action="#">
+        <input id="botonTirar" type="button" value="Simular de nuevo">
+    </form>
+    <div id="resultados"></div>
+    <p>Los totales son razonables si cada porcentaje obtenido queda cerca del esperado
+        (por ejemplo, el 7 cerca de 16.67 % y el 2 y el 12 cerca de 2.78 %).</p>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo10.13.html">&larr;Anterior</a>
+        <a class="boton" href="EjercicioNo10.15.html">Siguiente&rarr;</a>
+    </nav>
+</body>
+
+</html>

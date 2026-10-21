@@ -1,0 +1,90 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <link rel="stylesheet" href="/Estilos/Imagenes.css">
+    <title>Ejercicio 10.9: Preguntas sobre la declaración de una matriz</title>
+    <script>
+        document.writeln("<h1>Ejercicio 10.9: Preguntas sobre la declaración de una matriz</h1>");
+        document.writeln("<hr>");
+        document.writeln("<p>Considere un arreglo de dos por tres que almacena enteros</p>");
+        document.writeln("<hr>");
+        document.writeln("<ol type = 'a'>");
+        document.writeln("<li>Escriba una instrucción para declarar y crear el arreglo t.</li>");
+        document.writeln("<li>¿Cuántas filas tiene t?</li>");
+        document.writeln("<li>¿Cuántas columnas tiene t?</li>");
+        document.writeln("<li>¿Cuántos elementos tiene t?</li>");
+        document.writeln("<li>Escriba los nombres de todos los elementos en la fila 1 de t.</li>");
+        document.writeln("<li>Escriba los nombres de todos los elementos en la tercera columna de t.</li>");
+        document.writeln("<li>Escriba una sola instrucción para establecer el elemento de t en la fila 1 y la columna 2 en cero.</li>");
+        document.writeln("<li>Escriba una serie de instrucciones para inicializar cada elemento de t en cero.</li>");
+        document.writeln("<li>Escriba una instrucción for anidada para inicializar cada elemento de t en cero.</li>");
+        document.writeln("<li>Escriba una serie de instrucciones para determinar e imprimir el valor más pequeño en el arreglo t.</li>");
+        document.writeln("<li>Escriba una instrucción sin repetición para mostrar los elementos de la primera fila de t.</li>");
+        document.writeln("<li>Escriba una serie de instrucciones para imprimir el arreglo t en un formato tabular ordenado. Liste los índices de columnas como encabezados a lo largo de la parte superior y liste los índices de fila en la parte izquierda de cada fila.</li>");
+        document.writeln("</ol>");
+        document.writeln("<h2>Solución:</h2>");
+        var t = new Array(2);
+        t[0] = new Array(3);
+        t[1] = new Array(3);
+        document.writeln("<ol type = 'a'>");
+        document.writeln("<li></li>");
+        document.writeln("<li>Tiene " + t.length + " filas</li>");
+        document.writeln("<li>Tiene " + t[0].length + " columnas</li>");
+        document.writeln("<li>Tiene 6 elementos</li>");
+        document.writeln("<li>Los elementos de la fila 1 son t[1][0], t[1][1], t[1][2]</li>");
+        document.writeln("<li>Los elementos de la tercera columna (índice 2) son t[0][2] y t[1][2]</li>");
+        document.writeln("<li><code>t[ 1 ][ 2 ] = 0;</code></li>");
+        document.writeln("<li><code>t[ 0 ][ 0 ] = 0;   t[ 0 ][ 1 ] = 0;   t[ 0 ][ 2 ] = 0; t[ 1 ][ 0 ] = 0;   t[ 1 ][ 1 ] = 0;   t[ 1 ][ 2 ] = 0;</code></li>");
+        for (var fila = 0; fila < t.length; ++fila) {
+            for (var columna = 0; columna < t[fila].length; ++columna) {
+                t[fila][columna] = 0;
+            }
+        }
+        document.writeln("<li>" + t + "</li>");
+        var menor = t[0][0];
+
+        for (var fila = 0; fila < t.length; ++fila) {
+            for (var columna = 0; columna < t[fila].length; ++columna) {
+                if (t[fila][columna] < menor)
+                    menor = t[fila][columna];
+            }
+        }
+        document.writeln("<li>El valor más pequeño es " + menor + "</li>");
+        document.writeln("<li>" + t[0][0] + ", " + t[0][1] + ", " + t[0][2] + "</li>");
+        var salida = "<table><thead><tr><th></th>";
+
+        for (var columna = 0; columna < t[0].length; ++columna) {
+            salida += "<th>" + columna + "</th>";
+        }
+
+        salida += "</tr></thead><tbody>";
+
+        for (var fila = 0; fila < t.length; ++fila) {
+            salida += "<tr><th>" + fila + "</th>";
+
+            for (var columna = 0; columna < t[fila].length; ++columna) {
+                salida += "<td>" + t[fila][columna] + "</td>";
+            }
+
+            salida += "</tr>";
+        }
+        salida += "</tobody></table>";
+        document.writeln("<li>"+ salida +"</li>");
+        document.writeln("</ol>");
+    </script>
+</head>
+
+<body>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo10.8.html">&larr;Anterior</a>
+        <a class="boton" href="EjercicioNo10.10.html">Siguiente&rarr;</a>
+    </nav>
+</body>
+
+</html>

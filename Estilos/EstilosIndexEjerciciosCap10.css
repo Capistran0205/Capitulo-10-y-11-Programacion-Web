@@ -1,0 +1,61 @@
+/* Capítulo 10 · Ejercicios — Estilo Loki
+   Paleta: verde profundo casi negro, dorado del casco y marfil */
+
+body {
+   background-color: #0C1410;      /* fondo */
+   color: #E6F0EA;                 /* texto principal */
+   font-family: Georgia, 'Times New Roman', serif;
+   margin: 0;
+   padding: 20px 40px;
+   border-top: 10px solid #D4AF37; /* franja dorada superior */
+}
+
+h1 {
+   color: #D4AF37;
+   background-color: #0F3D2E;
+   border: 3px solid #D4AF37;
+   border-bottom: 8px solid #061F17;
+   padding: 0.4em 0.6em;
+   text-transform: uppercase;
+   letter-spacing: 2px;
+}
+
+p {
+   color: #E6F0EA;
+   line-height: 1.6;
+   max-width: 70ch;                /* líneas cómodas de leer */
+   border-left: 4px solid #D4AF37;
+   padding-left: 0.8em;
+}
+
+a {
+   color: #E6C65C;
+   font-weight: bold;
+}
+
+ul {
+   background-color: #14261D;
+   border: 3px solid #D4AF37;
+   padding: 1em 1em 1em 2.5em;
+   max-width: 60ch;
+}
+
+li {
+   color: #EEF5F0;
+   padding: 0.3em 0.5em;
+   border-bottom: 1px solid #2B4A3B;
+   list-style-type: square;
+}
+
+li::marker {
+   color: #D4AF37;
+}
+
+li:last-child {
+   border-bottom: none;
+}
+
+li:hover {
+   background-color: #D4AF37;
+   color: #0C1410;
+}

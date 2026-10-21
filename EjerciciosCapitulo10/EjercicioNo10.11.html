@@ -1,0 +1,48 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <title>Ejercicio 10.11: Instrucciones para un arreglo unidimensional</title>
+    <script>
+        document.writeln( "<h1>Ejercicio 10.11:  Instrucciones para un arreglo unidimensional</h1>" );
+        document.writeln( "<hr>" );
+        document.writeln( "<ol type = 'a'>" );
+        document.writeln( "<li>Establecer los 10 elementos del arreglo cuentas en ceros.</li>" );
+        document.writeln( "<li>Sumar 1 a cada uno de los 15 elementos del arreglo bono.</li>" );
+        document.writeln( "<li>Mostrar los cinco valores del arreglo mejoresPuntuaciones, separado por espacios.</li>" );
+        document.writeln( "</ol>" );
+        document.writeln( "<hr>" );
+        document.writeln( "<h2>Solución</h2>" );
+        var cuentas = new Array(10);
+        for(var i = 0; i < 10; i++){
+            cuentas[ i ] = 0;
+        }
+        document.writeln( "<ol type = 'a'>" );
+        document.writeln( "<li>"+ cuentas +"</li>" );
+        var bono = new Array(15);
+        for(var i = 0; i < 15; ++i){
+            bono[ i ] = i;
+        }
+        document.writeln( "<li>"+ bono +"</li>");
+        var mejoresPuntuaciones = new Array(5);
+        for(var i = 0; i<5; i++){
+             if(i % 2 != 0) // Aplicar bono
+                mejoresPuntuaciones[i] = bono[Math.floor(Math.random() * bono.length)];
+             else
+                mejoresPuntuaciones[i] = cuentas[Math.floor(Math.random() * cuentas.length)];
+        }
+        document.writeln( "<li>"+ mejoresPuntuaciones.join(", ") +"</li>" );
+        document.writeln( "</ol>" );
+    </script>
+</head>
+<body>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo10.10.html">&larr;Anterior</a>
+        <a class="boton" href="EjercicioNo10.12.html">Siguiente&rarr;</a>
+    </nav>
+</body>
+</html>

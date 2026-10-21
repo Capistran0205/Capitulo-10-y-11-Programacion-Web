@@ -1,0 +1,132 @@
+<!-- Capistran Ortiz Diego -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Estilos/Botones.css">
+    <link rel="stylesheet" href="/Estilos/Imagenes.css">
+    <title>Ejercicio 10.17: Simulación de la tortuga y la liebre</title>
+    <script>
+        document.writeln( "<h1>Ejercio 10.17: Simulación de la tortuga y la liebre.</h1>" );
+        document.writeln( "<hr>" );
+        document.writeln( "<p>En este problema, se recreará la clásica carrera de la tortuga y la liebre. Utilizará la generación de números aleatorios para "+
+            "desarrollar una simulación de esta carrera. "+
+            "Los competidores empezarán la carrera en la posición 1 de 70 posiciones. Cada posición representa a una posible posición a lo largo del curso de la carrera. "+
+            "EL primer competidor en llegar a la posición 70 o más allá recibe una cubeta con zanahorías y lechuga frescas. El recorrido se abre paso hasta la cima de una resbalosa montaña, "+
+            "por lo que en ocasiones los competidores pierden terreno. Un reloj hace tictac una vez por segundo. Con cada tic del reloj, su secuencia de comandos debe ajustar la posición de los animales de acuerdo con las siguientes reglas:</p>" );
+        document.writeln( "<img  src = \"/Resources/ReglasLiebreTortuga.png\"" );
+        document.writeln( "<hr>" );
+        document.writeln( "<h2>Solución:</h2>" )
+        var META = 70;
+
+        // genera un entero aleatorio de 1 a 10
+        function aleatorio() {
+            return Math.floor(1 + Math.random() * 10);
+        } // fin de la función aleatorio
+
+        function moverTortuga(posicion) {
+            var i = aleatorio();
+
+            if (i <= 5)
+                posicion += 3;  // paso pesado rápido
+            else if (i <= 7)
+                posicion -= 6;  // resbalón
+            else
+                posicion += 1;  // paso pesado lento
+
+            return (posicion < 1) ? 1 : posicion;
+        } // fin de la función moverTortuga
+
+        function moverLiebre(posicion) {
+            var i = aleatorio();
+
+            if (i <= 2)
+                posicion += 0;   // dormir
+            else if (i <= 4)
+                posicion += 9;   // gran salto
+            else if (i === 5)
+                posicion -= 12;  // gran resbalón
+            else if (i <= 8)
+                posicion += 1;   // pequeño salto
+            else
+                posicion -= 2;   // pequeño resbalón
+
+            return (posicion < 1) ? 1 : posicion;
+        } // fin de la función moverLiebre
+
+        // construye una línea con T y H en sus posiciones; si coinciden, ¡¡¡OUCH!!!
+        function construirLinea(tortuga, liebre) {
+            var linea = "";
+
+            if (tortuga === liebre) {
+                for (var p = 1; p < tortuga; ++p) {
+                    linea += " ";
+                } // fin de for
+
+                return linea + "¡¡¡OUCH!!!";
+            } // fin de if
+
+            var ultima = Math.max(META, tortuga, liebre);
+
+            for (var p = 1; p <= ultima; ++p) {
+                if (p === tortuga)
+                    linea += "T";
+                else if (p === liebre)
+                    linea += "L";
+                else
+                    linea += " ";
+            } // fin de for
+
+            return linea;
+        } // fin de la función construirLinea
+
+        function correrCarrera() {
+            var tortuga = 1, liebre = 1;
+            var texto = "Inician!\n";
+            var terminada = false;
+
+            while (!terminada) {
+                tortuga = moverTortuga(tortuga); // un tic del reloj
+                liebre = moverLiebre(liebre);
+                texto += construirLinea(tortuga, liebre) + "\n";
+
+                if (tortuga >= META || liebre >= META) {
+                    terminada = true;
+
+                    if (tortuga >= META && liebre >= META)
+                        texto += "Es un empate.\n";
+                    else if (tortuga >= META)
+                        texto += "¡LA TORTUGA HA GANADO!\n";
+                    else
+                        texto += "¡LA LIEBRE HA GANADO!.\n";
+                } // fin de if
+            } // fin de while
+
+            document.getElementById("carrera").innerHTML = texto;
+        } // fin de la función correrCarrera
+
+        function iniciar() {
+            document.getElementById("botonCarrera").addEventListener(
+                "click", correrCarrera, false);
+            correrCarrera();
+        } // fin de la función iniciar
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+</head>
+
+<body>
+    <h1>La tortuga y la liebre</h1>
+    <form action="#">
+        <input id="botonCarrera" type="button" value="Correr otra carrera">
+    </form>
+    <pre id="carrera"></pre>
+    <nav>
+        <a class="boton" href="Index_Ejercicios.html">Men&uacute; principal</a>
+        <a class="boton" href="EjercicioNo10.16.html">&larr;Anterior</a>
+    </nav>
+</body>
+
+</html>
