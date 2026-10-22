@@ -46,3 +46,5 @@ function protegerCheque() {
 function iniciar() {
     document.getElementById("botonProteger").addEventListener("click", protegerCheque, false);
 } // fin de la función iniciar
+
+window.addEventListener("load", iniciar, false);

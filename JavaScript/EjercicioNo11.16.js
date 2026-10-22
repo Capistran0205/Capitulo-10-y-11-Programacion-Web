@@ -9,7 +9,7 @@ function filtrar() {
     var salida = "";
 
     for (var i = 0; i < cadenas.length; ++i) {
-        if (cadenas[i].charAt(0) === "b")
+        if (cadenas[ i ].length >= 2 && cadenas[ i ].substring( cadenas[ i ].length - 2 ) === "ed")
             salida += cadenas[i] + "\n";
     } // fin de for
 
